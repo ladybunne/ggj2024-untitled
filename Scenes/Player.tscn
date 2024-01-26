@@ -46,9 +46,10 @@ width = 32
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
 size = Vector2(31, 63)
 
-[node name="Player" type="Node" node_paths=PackedStringArray("platformer_character")]
+[node name="Player" type="Node" node_paths=PackedStringArray("platformer_character", "camera")]
 script = ExtResource("1_uwtih")
 platformer_character = NodePath("PlatformerCharacter")
+camera = NodePath("PlatformerCharacter/Camera2D")
 
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
 collision_layer = 2
@@ -69,3 +70,7 @@ position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_qts00")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="PlatformerCharacter"]
+
+[node name="Camera2D" type="Camera2D" parent="PlatformerCharacter"]
+limit_left = 0
+limit_bottom = 720
