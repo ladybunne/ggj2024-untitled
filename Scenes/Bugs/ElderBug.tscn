@@ -1,8 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpkt0kbvntfsn"]
+[gd_scene load_steps=12 format=3 uid="uid://bpkt0kbvntfsn"]
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_aa4hb"]
 [ext_resource type="Script" path="res://CodeStuff/ElderBugMovement.gd" id="1_n15lr"]
+[ext_resource type="Resource" uid="uid://6teawrhy48ii" path="res://Assets/DialogueData/ElderBugDialogue.tres" id="2_38rdj"]
 [ext_resource type="Script" path="res://CodeStuff/ElderBug.gd" id="2_n4g52"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="3_l16eb"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="4_sau0y"]
+
+[sub_resource type="Resource" id="Resource_5k8td"]
+script = ExtResource("3_l16eb")
+name = "ElderBug"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_bx1ra"]
+script = ExtResource("4_sau0y")
+dialogue = ExtResource("2_38rdj")
+identity = SubResource("Resource_5k8td")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wibku"]
 size = Vector2(32, 32)
@@ -23,9 +43,11 @@ size = Vector2(32, 32)
 
 [node name="ElderBug" type="Node2D"]
 
-[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body") groups=["BugGroup"]]
+[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area") groups=["BugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("../CharacterBody2D")
+bug_data = SubResource("Resource_bx1ra")
+collision_area = NodePath("../CharacterBody2D/Area2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 visibility_layer = 4
