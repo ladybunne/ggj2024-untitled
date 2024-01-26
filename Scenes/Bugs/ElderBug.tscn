@@ -21,13 +21,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(32, 32)
 
-[node name="ExampleBug" type="Node2D"]
+[node name="ExampleBug2" type="Node2D"]
 
 [node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body") groups=["BugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("../CharacterBody2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
 script = ExtResource("1_n15lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
