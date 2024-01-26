@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://86jn37addt06"]
+[gd_scene load_steps=4 format=3 uid="uid://86jn37addt06"]
 
 [ext_resource type="PackedScene" uid="uid://c7lnso6as4k2e" path="res://Scenes/Level.tscn" id="1_yglj6"]
 [ext_resource type="PackedScene" uid="uid://bd5qcnbid5xsl" path="res://Scenes/Player.tscn" id="2_k5i3g"]
+[ext_resource type="Script" path="res://CodeStuff/SceneController.gd" id="3_4gswl"]
 
 [node name="TheGameScene" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_yglj6")]
 
 [node name="Player" parent="." instance=ExtResource("2_k5i3g")]
+
+[node name="SceneController" type="Node" parent="."]
+script = ExtResource("3_4gswl")
