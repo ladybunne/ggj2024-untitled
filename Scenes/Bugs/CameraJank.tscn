@@ -26,6 +26,7 @@ dialogue = ExtResource("3_pwryt")
 [node name="CameraJank" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 

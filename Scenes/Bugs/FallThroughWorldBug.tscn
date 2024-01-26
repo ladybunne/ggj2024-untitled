@@ -21,11 +21,13 @@ size = Vector2(32, 32)
 [node name="FallThroughWorldBug" type="Node2D"]
 
 [node name="BeeMain" type="Sprite2D" parent="."]
+visibility_layer = 4
 position = Vector2(32, 32)
 texture = ExtResource("1_bxac7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
+visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 

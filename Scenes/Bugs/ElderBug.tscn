@@ -28,6 +28,7 @@ script = ExtResource("2_n4g52")
 character_body = NodePath("../CharacterBody2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visibility_layer = 4
 collision_layer = 4
 script = ExtResource("1_n15lr")
 

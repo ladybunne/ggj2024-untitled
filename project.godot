@@ -66,6 +66,12 @@ player_interact={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Background"
+2d_render/layer_2="Player"
+2d_render/layer_3="Bugs"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

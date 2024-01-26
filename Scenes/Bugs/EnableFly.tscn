@@ -52,6 +52,7 @@ dialogue = ExtResource("4_rcetd")
 [node name="EnableFly" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 

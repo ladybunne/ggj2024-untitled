@@ -65,6 +65,7 @@ run_component = SubResource("Resource_ha0uj")
 jump_component = SubResource("Resource_3hrhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlatformerCharacter"]
+visibility_layer = 2
 texture = SubResource("GradientTexture2D_o44om")
 centered = false
 
