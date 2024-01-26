@@ -49,7 +49,7 @@ centered = false
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("collision_area")]
+[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
 script = ExtResource("1_5064r")
 bug_data = SubResource("Resource_7en53")
 collision_area = NodePath("../Area2D")
