@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://6aa52vpqyxm3"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_rumwn"]
+[ext_resource type="Script" path="res://CodeStuff/LockCamera.gd" id="2_csnus"]
+[ext_resource type="Resource" uid="uid://y5y8cl8yr2oq" path="res://Assets/DialogueData/CameraJank.tres" id="3_pwryt"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_ew5s5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rumwn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(32, 32)
+
+[sub_resource type="Resource" id="Resource_t4ddj"]
+script = ExtResource("5_ew5s5")
+dialogue = ExtResource("3_pwryt")
+
+[node name="CameraJank" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="LockCamera" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+script = ExtResource("2_csnus")
+bug_data = SubResource("Resource_t4ddj")
+collision_area = NodePath("../Area2D")
+
+[node name="BugNameLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -28.0
+offset_right = 53.0
+offset_bottom = -5.0
+text = "Lock camera"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://y5y8cl8yr2oq"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_nnyfo"]
+
+[resource]
+script = ExtResource("1_nnyfo")
+lines = Array[String](["The camera doesn't like you anymore"])
