@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const CLOSE_THRESHOLD = 100.0
+
 var player: PlatformerCharacter
 
 # Indicates whether the Elder bug is trying to follow the player
@@ -18,9 +20,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	if is_following and player:
-		print("Following player with translation")
-		print(player.position)
-		var target = player.position
-		#var bug
+		# Follows the player until he's within a certain range
+		if player.global_position.distance_to(global_position) > CLOSE_THRESHOLD:
+			var direction = (player.global_position - global_position).normalized()
+			velocity.x = SPEED * direction.x
+		else:
+			velocity.x = 0
 
 	move_and_slide()
