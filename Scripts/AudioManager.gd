@@ -15,8 +15,8 @@ var music_clips = {}
 
 # Called when the node enters the scene tree for the first time.
 func _init():
-	_get_audio_files("res://Audio/SFX",sfx_clips)
-	_get_audio_files("res://Audio/Music",music_clips)
+	_get_audio_files("res://Assets/Audio/SFX",sfx_clips)
+	_get_audio_files("res://Assets/Audio/Music",music_clips)
 	
 	# Add new busses for the sfx and music
 	_add_bus("Music")
