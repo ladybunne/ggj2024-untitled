@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cib0ams1ag7cc"]
+[gd_scene load_steps=6 format=3 uid="uid://cib0ams1ag7cc"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Dialogue/DialogueBox.gd" id="1_6b6j5"]
+[ext_resource type="Texture2D" uid="uid://drrlsbyxssrmd" path="res://Assets/Sprites/dialogue cursor.png" id="2_a7hv7"]
+[ext_resource type="Texture2D" uid="uid://bcapm5wxh5en7" path="res://Assets/Sprites/dialogue cursor done.png" id="3_14hvf"]
 
 [sub_resource type="Gradient" id="Gradient_dngcj"]
 offsets = PackedFloat32Array(0)
@@ -9,13 +11,19 @@ colors = PackedColorArray(0.87, 0.4872, 0.83172, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qjvwg"]
 gradient = SubResource("Gradient_dngcj")
 
-[node name="DialogueBox" type="PanelContainer"]
+[node name="DialogueBox" type="PanelContainer" node_paths=PackedStringArray("portrait_rect", "title_label", "dialogue_label", "dialogue_cursor")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6b6j5")
+portrait_rect = NodePath("MarginContainer/HBoxContainer/PortraitRect")
+title_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Title")
+dialogue_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Dialogue")
+dialogue_cursor = NodePath("MarginContainer/HBoxContainer/VBoxContainer/DialogueCursor")
+dialogue_cursor_not_done = ExtResource("2_a7hv7")
+dialogue_cursor_done = ExtResource("3_14hvf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -39,16 +47,24 @@ size_flags_horizontal = 3
 
 [node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 36
-text = "Name"
+theme_override_font_sizes/normal_font_size = 30
+text = "Bug Name"
 fit_content = true
 autowrap_mode = 0
 
 [node name="Dialogue" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 26
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum posuere urna, eu gravida massa tristique vel."
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+
+[node name="DialogueCursor" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("2_a7hv7")
+stretch_mode = 2

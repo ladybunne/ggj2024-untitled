@@ -5,6 +5,7 @@ class_name BugEntity extends Entity
 @export var collision_area: Area2D
 
 signal goal_satisfied
+signal start_dialogue(p_bug_entity: BugEntity)
 
 var player_inside: PlatformerCharacter
 
@@ -36,6 +37,7 @@ func _input(event):
 	if event.is_action_pressed("player_interact"):
 		if bug_data == null:
 			return
-		print("")
-		for line in bug_data.dialogue.lines:
-			print(line)
+		on_start_dialogue()
+
+func on_start_dialogue():
+	start_dialogue.emit(self)
