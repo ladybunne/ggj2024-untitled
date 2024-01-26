@@ -22,6 +22,10 @@ FlowController="*res://Scripts/FlowController.gd"
 GameController="*res://Scripts/GameController.gd"
 SaveController="*res://Scripts/SaveController.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
