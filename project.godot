@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game Jam Practice 2024"
+config/name="Melbourne Global Game Jam"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
