@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bd5qcnbid5xsl"]
 
-[ext_resource type="Script" path="res://bunne-gdkit/Systems/Entity/entity.gd" id="1_vvohm"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_uwtih"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/platformer_character.gd" id="2_4suwj"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/run_component.gd" id="3_svf3h"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/jump_component.gd" id="4_e5ixk"]
@@ -46,8 +46,9 @@ width = 32
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
 size = Vector2(32, 64)
 
-[node name="Player" type="Node"]
-script = ExtResource("1_vvohm")
+[node name="Player" type="Node" node_paths=PackedStringArray("platformer_character")]
+script = ExtResource("1_uwtih")
+platformer_character = NodePath("PlatformerCharacter")
 
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
 script = ExtResource("2_4suwj")
