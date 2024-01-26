@@ -15,8 +15,8 @@ layer_0/tile_data = PackedInt32Array(1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0
 [node name="ExampleBug" parent="." instance=ExtResource("2_2fvri")]
 position = Vector2(1114, 616)
 
-[node name="ExampleBug" parent="ExampleBug" instance=ExtResource("3_lb514")]
-position = Vector2(-813, -71)
-
 [node name="InputScrambler" parent="." instance=ExtResource("3_xuscr")]
 position = Vector2(592, 521)
+
+[node name="ElderBug" parent="." instance=ExtResource("3_lb514")]
+position = Vector2(301, 545)

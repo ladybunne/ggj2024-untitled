@@ -44,7 +44,7 @@ gradient = SubResource("Gradient_eqyud")
 width = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
-size = Vector2(32, 64)
+size = Vector2(31, 63)
 
 [node name="Player" type="Node" node_paths=PackedStringArray("platformer_character")]
 script = ExtResource("1_uwtih")
