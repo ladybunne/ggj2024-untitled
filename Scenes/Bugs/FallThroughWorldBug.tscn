@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://pivjj1vyj67s"]
+[gd_scene load_steps=6 format=3 uid="uid://pivjj1vyj67s"]
 
+[ext_resource type="Texture2D" uid="uid://buakaatt3nbo4" path="res://Assets/Sprites/Bee_Main.png" id="1_bxac7"]
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_xyk5r"]
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBug.gd" id="2_24r3v"]
 
@@ -19,7 +20,12 @@ size = Vector2(32, 32)
 
 [node name="FallThroughWorldBug" type="Node2D"]
 
+[node name="BeeMain" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("1_bxac7")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
@@ -33,3 +39,10 @@ shape = SubResource("RectangleShape2D_clf8f")
 
 [node name="BugEntity" type="Node" parent="." groups=["BugGroup"]]
 script = ExtResource("2_24r3v")
+
+[node name="Debug label (hide this later)" type="Label" parent="."]
+offset_left = -70.0
+offset_top = -34.0
+offset_right = 98.0
+offset_bottom = -11.0
+text = "FallThroughWorldBug"
