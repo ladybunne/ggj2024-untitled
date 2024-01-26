@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpkt0kbvntfsn"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_aa4hb"]
+[ext_resource type="Script" path="res://CodeStuff/ElderBugMovement.gd" id="1_n15lr"]
+[ext_resource type="Script" path="res://CodeStuff/ElderBug.gd" id="2_n4g52"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibku"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aa4hb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(32, 32)
+
+[node name="ExampleBug" type="Node2D"]
+
+[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body") groups=["BugGroup"]]
+script = ExtResource("2_n4g52")
+character_body = NodePath("../CharacterBody2D")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_n15lr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_wibku")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="BugNameLabel" type="Label" parent="CharacterBody2D"]
+offset_left = -21.0
+offset_top = -28.0
+offset_right = 53.0
+offset_bottom = -5.0
+text = "Elder Bug"
