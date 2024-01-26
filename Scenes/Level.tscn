@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2yw2m2hg0uak"]
+[gd_scene load_steps=7 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="PackedScene" uid="uid://dww4w0hgjgmtd" path="res://Scenes/Bugs/ExampleBug.tscn" id="2_2fvri"]
 [ext_resource type="PackedScene" uid="uid://bpkt0kbvntfsn" path="res://Scenes/Bugs/ElderBug.tscn" id="3_lb514"]
 [ext_resource type="PackedScene" uid="uid://dibodwmououir" path="res://Scenes/Bugs/InputScrambler.tscn" id="3_xuscr"]
 [ext_resource type="PackedScene" uid="uid://dsc4k10lqaagt" path="res://Scenes/FallthroughTerrain.tscn" id="5_of3de"]
+[ext_resource type="PackedScene" uid="uid://pivjj1vyj67s" path="res://Scenes/Bugs/FallThroughWorldBug.tscn" id="6_6ugdf"]
 
 [node name="Level" type="Node2D"]
 
@@ -23,3 +24,6 @@ position = Vector2(576, 512)
 position = Vector2(301, 545)
 
 [node name="FallthroughTerrain" parent="." instance=ExtResource("5_of3de")]
+
+[node name="FallThroughWorldBug" parent="." instance=ExtResource("6_6ugdf")]
+position = Vector2(992, 192)
