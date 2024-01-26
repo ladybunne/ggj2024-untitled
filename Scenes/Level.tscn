@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7lnso6as4k2e"]
+[gd_scene load_steps=4 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="PackedScene" uid="uid://dww4w0hgjgmtd" path="res://Scenes/Bugs/ExampleBug.tscn" id="2_2fvri"]
+[ext_resource type="PackedScene" uid="uid://dibodwmououir" path="res://Scenes/Bugs/InputScrambler.tscn" id="3_xuscr"]
 
 [node name="Level" type="Node2D"]
 
@@ -12,3 +13,6 @@ layer_0/tile_data = PackedInt32Array(1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0
 
 [node name="ExampleBug" parent="." instance=ExtResource("2_2fvri")]
 position = Vector2(416, 640)
+
+[node name="InputScrambler" parent="." instance=ExtResource("3_xuscr")]
+position = Vector2(787, 638)
