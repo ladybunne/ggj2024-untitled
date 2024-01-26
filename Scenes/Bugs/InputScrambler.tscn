@@ -53,6 +53,13 @@ shape = SubResource("RectangleShape2D_clf8f")
 
 [node name="InputScramble" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
 script = ExtResource("1_qcft0")
-move_names = Array[String](["move_left_name", "move_right_name", "jump_name"])
+move_names = Array[String](["move_left_name", "move_right_name", "jump_name", "move_down_name"])
 bug_data = SubResource("Resource_6rpbp")
 collision_area = NodePath("../Area2D")
+
+[node name="BugNameLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -28.0
+offset_right = 53.0
+offset_bottom = -5.0
+text = "Input scrambler"

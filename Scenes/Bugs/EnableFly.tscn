@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://boaruh1pv6g8p"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_jt0um"]
+[ext_resource type="Script" path="res://CodeStuff/EnableFly.gd" id="2_lghlg"]
+[ext_resource type="Script" path="res://CodeStuff/Fly.gd" id="3_ldsc7"]
+[ext_resource type="Resource" uid="uid://14avskl8vmgt" path="res://Assets/DialogueData/NoGravity.tres" id="4_rcetd"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_qg2cn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jt0um")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(32, 32)
+
+[sub_resource type="Resource" id="Resource_k2ef6"]
+script = ExtResource("3_ldsc7")
+fly_speed = 800.0
+jump_height_tiles = 5.0
+jump_duration = 0.4
+terminal_velocity = 0
+coyote_time = 0.05
+air_jumps = 0
+refresh_air_jumps_on_wallslide = false
+glide_enabled = false
+glide_fall_speed = 2.0
+wallslide_enabled = false
+wallslide_speed = 3.0
+walljump_kick = 1.5
+walljump_hold_in_required = true
+walljump_rejump_while_going_up = true
+walljump_coyote_time = 0.08
+flight_enabled = false
+flight_speed = 5.0
+hold_up_to_wallcling = false
+wallcling_duration = 0.0
+defer_hvel_to_run_component = true
+jumpsquat_time = 0.0
+rejump_buffer_time = 0.25
+
+[sub_resource type="Resource" id="Resource_27rqk"]
+script = ExtResource("5_qg2cn")
+dialogue = ExtResource("4_rcetd")
+
+[node name="EnableFly" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="EnableFly" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+script = ExtResource("2_lghlg")
+flyComponent = SubResource("Resource_k2ef6")
+bug_data = SubResource("Resource_27rqk")
+collision_area = NodePath("../Area2D")
+
+[node name="BugNameLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -28.0
+offset_right = 53.0
+offset_bottom = -5.0
+text = "Enable flying"
