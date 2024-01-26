@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtuodk4v4rfhj"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/SplashScreen/UI/SplashScreenUI.gd" id="1_d56d6"]
+[ext_resource type="Texture2D" uid="uid://cvkfu8kt0ynau" path="res://bunne-gdkit/Systems/SplashScreen/UI/ladybunne productions.png" id="2_7na4m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lua7"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="SplashScreenUI" type="CanvasLayer" node_paths=PackedStringArray("texture_rect", "start_delay", "fade_in", "wait_at_full_opacity", "fade_out", "wait_at_no_opacity")]
+script = ExtResource("1_d56d6")
+logo = ExtResource("2_7na4m")
+texture_rect = NodePath("PanelContainer/CenterContainer/TextureRect")
+start_delay = NodePath("StartDelay")
+fade_in = NodePath("FadeIn")
+wait_at_full_opacity = NodePath("WaitAtFullOpacity")
+fade_out = NodePath("FadeOut")
+wait_at_no_opacity = NodePath("WaitAtNoOpacity")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6lua7")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_7na4m")
+
+[node name="StartDelay" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="FadeIn" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="WaitAtFullOpacity" type="Timer" parent="."]
+one_shot = true
+
+[node name="FadeOut" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="WaitAtNoOpacity" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="StartDelay" to="." method="start_delay_end"]
+[connection signal="timeout" from="FadeIn" to="." method="fade_in_end"]
+[connection signal="timeout" from="WaitAtFullOpacity" to="." method="wait_at_full_opacity_end"]
+[connection signal="timeout" from="FadeOut" to="." method="fade_out_end"]
+[connection signal="timeout" from="WaitAtNoOpacity" to="." method="wait_at_no_opacity_end"]

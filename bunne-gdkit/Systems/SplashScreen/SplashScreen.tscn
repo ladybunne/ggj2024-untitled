@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfqsdjl5dckqv"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/SplashScreen/SplashScreen.gd" id="1_b63iw"]
+[ext_resource type="PackedScene" uid="uid://dtuodk4v4rfhj" path="res://bunne-gdkit/Systems/SplashScreen/UI/SplashScreenUI.tscn" id="1_f1evs"]
+
+[node name="SplashScreen" type="Node2D"]
+script = ExtResource("1_b63iw")
+
+[node name="SplashScreenUI" parent="." instance=ExtResource("1_f1evs")]
+
+[connection signal="done" from="SplashScreenUI" to="." method="splash_done"]
