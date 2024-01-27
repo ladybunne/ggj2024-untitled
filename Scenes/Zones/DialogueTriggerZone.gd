@@ -1,7 +1,8 @@
 extends Area2D
-
+class_name DialogueTriggerZone
 @export var dialogue_to_trigger: DialogueData
 @export var one_shot: bool = true
+
 @export var dialogue_manager: DialogueManager
 
 func _enter_tree():
