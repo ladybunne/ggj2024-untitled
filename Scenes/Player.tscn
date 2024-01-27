@@ -58,6 +58,7 @@ limit_bottom = 720
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
 visibility_layer = 2
 collision_layer = 2
+collision_mask = 129
 script = ExtResource("2_4suwj")
 collision_shape = NodePath("CollisionShape2D")
 wallslide_shapecast = NodePath("ShapeCast2D")
