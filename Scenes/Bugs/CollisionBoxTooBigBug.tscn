@@ -8,10 +8,10 @@
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_228cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(158, 153)
+size = Vector2(89, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oossl"]
-size = Vector2(256, 224)
+size = Vector2(175, 109)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ppcd"]
-size = Vector2(256, 224)
+size = Vector2(175, 109)
 
 [sub_resource type="Resource" id="Resource_5gtjt"]
 script = ExtResource("4_ppr5b")
@@ -47,11 +47,12 @@ identity = SubResource("Resource_5gtjt")
 [node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
 
 [node name="Interaction Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area2D"]
-position = Vector2(68, 55.5)
+position = Vector2(34.5, 31)
 shape = SubResource("RectangleShape2D_clf8f")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -61,18 +62,18 @@ mass = 0.11
 script = ExtResource("1_hponk")
 
 [node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(64, 80)
+position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_oossl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 visibility_layer = 4
 texture_filter = 1
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 animation = &"tall_boi"
 centered = false
 
 [node name="DebugLabel (but kind of want to keep it?)?" type="Label" parent="RigidBody2D"]
+visible = false
 offset_left = -32.0
 offset_top = -42.0
 offset_right = 178.0
@@ -83,7 +84,7 @@ text = "Lonely Collider Too Big Bug"
 collision_layer = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/CharacterBody2D"]
-position = Vector2(64, 80)
+position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_3ppcd")
 
 [node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
@@ -91,3 +92,5 @@ script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../Interaction Area2D")
 root_node = NodePath("..")
+show_talk_prompt = false
+show_name_label = false

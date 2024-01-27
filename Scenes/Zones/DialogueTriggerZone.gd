@@ -2,9 +2,12 @@
 extends Area2D
 class_name DialogueTriggerZone
 @export var dialogue_to_trigger: DialogueData
+@export var dialogue_owner: Node2D
+var bug_data: BugData
 @export var one_shot: bool = true
 @export var dialogue_manager: DialogueManager
 @export var collision_shape: CollisionShape2D
+
 var zone_width: float = 50
 var zone_height: float = 50
 
@@ -27,6 +30,13 @@ func update_shape():
 
 func _ready():
 	dialogue_manager = get_tree().get_first_node_in_group("DialogueManager")
+	#TODO get Kara to forgive me for this:
+	for thing in dialogue_owner.get_children():
+		print(thing.name)
+		if thing.has_signal("goal_satisfied"):
+			print(thing.name+" is the forealreal")
+			bug_data = thing.bug_data
+			print("holy shit if this works")
 	pass
 
 func _on_body_entered(body):

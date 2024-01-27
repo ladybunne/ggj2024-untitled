@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cjgtpoq5bpnao"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_bw5lv"]
+
+[resource]
+script = ExtResource("1_bw5lv")
+lines = Array[String](["[sfx name=buzz-loop-1]HMPH!", "Why does everyone keep avoiding me!?", "I wish just ONE person would stand next to me."])

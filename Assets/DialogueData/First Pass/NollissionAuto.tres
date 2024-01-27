@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bpioyibnf2rca"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_bvqwa"]
+
+[resource]
+script = ExtResource("1_bvqwa")
+lines = Array[String](["[sfx name=insect-answer-glitch]*sigh*...", "It feels like everybody just walks right by me"])

@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://pivjj1vyj67s"]
+[gd_scene load_steps=13 format=3 uid="uid://pivjj1vyj67s"]
 
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBugMovement.gd" id="1_m482h"]
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBug.gd" id="2_24r3v"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="3_m78oe"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_r131q"]
 [ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/BugSprites/Ladybug.png" id="4_sbaki"]
-[ext_resource type="Resource" uid="uid://dkjgpksajhmpj" path="res://Assets/DialogueData/FallThroughWorld.tres" id="5_mh5vy"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="6_o3r41"]
+
+[sub_resource type="Resource" id="Resource_ax3y4"]
+script = ExtResource("3_m78oe")
+lines = Array[String](["[sfx name=insect-falling]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaahhhhhhhhhhhhhhhhhhh", "hhhhhh....", "...", "...Press C to pick up bugs."])
 
 [sub_resource type="Resource" id="Resource_nublt"]
 script = ExtResource("4_r131q")
@@ -22,7 +26,7 @@ dev_notes = ""
 
 [sub_resource type="Resource" id="Resource_o4rca"]
 script = ExtResource("6_o3r41")
-dialogue = ExtResource("5_mh5vy")
+dialogue = SubResource("Resource_ax3y4")
 identity = SubResource("Resource_nublt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc3lm"]
