@@ -18,8 +18,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		print("falling?")
-		print(velocity)
 		
 	if is_following and platformer_character:
 		# Follows the player until he's within a certain range

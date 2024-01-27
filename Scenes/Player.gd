@@ -11,8 +11,14 @@ class_name Player extends Entity
 @export var level_ref: Node2D
 @export_group("")
 
+@export var y_death_barrier: float = 5000.0
+
 var currently_colliding_with_bug: BugEntity
 var currently_held_bug: BugEntity
+var start_position: Vector2
+
+func _ready():
+	start_position = platformer_character.global_position
 
 func _input(event):
 	if event.is_action_pressed("player_pick_up") and pickup_enabled:
@@ -48,3 +54,9 @@ func _process(delta):
 		platformer_character.get_node("AnimatedSprite2D").play("Idle")
 	elif platformer_character.animation_state == platformer_character.AnimationState.RUN:
 		platformer_character.get_node("AnimatedSprite2D").play("Walking")
+	
+	# Check if we've fallen off the edge
+	if platformer_character.global_position.y > y_death_barrier:
+		platformer_character.global_position = start_position
+		platformer_character.reset_velocity()
+		
