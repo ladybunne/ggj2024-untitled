@@ -25,6 +25,8 @@ var name_label: Control
 
 @export var talking_completes_goal: bool = false
 
+@export var show_talk_prompt: bool = true
+@export var show_name_label: bool = true
 @export var name_label_string: String = "Bug Display Name"
 
 func _ready():
@@ -32,15 +34,17 @@ func _ready():
 		collision_area.body_entered.connect(player_entered)
 		collision_area.body_exited.connect(player_exited)
 	
-	talk_prompt = TALK_PROMPT_SCENE.instantiate()
-	root_node.add_child.call_deferred(talk_prompt)
-	talk_prompt.visible = false
-	(func(): talk_prompt.position = Vector2(-(talk_prompt.size.x / 2) + 16, -64)).call_deferred()
+	if show_talk_prompt:
+		talk_prompt = TALK_PROMPT_SCENE.instantiate()
+		root_node.add_child.call_deferred(talk_prompt)
+		talk_prompt.visible = false
+		(func(): talk_prompt.position = Vector2(-(talk_prompt.size.x / 2) + 16, -64)).call_deferred()
 	
-	name_label = NAME_LABEL_SCENE.instantiate()
-	root_node.add_child.call_deferred(name_label)
-	name_label.label.text = name_label_string
-	(func(): name_label.position = Vector2(-(name_label.size.x / 2) + 16, -32)).call_deferred()
+	if show_name_label:
+		name_label = NAME_LABEL_SCENE.instantiate()
+		root_node.add_child.call_deferred(name_label)
+		name_label.label.text = name_label_string
+		(func(): name_label.position = Vector2(-(name_label.size.x / 2) + 16, -32)).call_deferred()
 
 func give_player_ref(p_player: Player):
 	player = p_player
@@ -54,14 +58,16 @@ func player_entered(body: Node2D):
 	if platformer_entered != null:
 		platformer_inside = platformer_entered
 		player.currently_colliding_with_bug = self
-		talk_prompt.visible = true
+		if talk_prompt != null:
+			talk_prompt.visible = true
 		
 func player_exited(body: Node2D):
 	var platformer_exited := body as PlatformerCharacter
 	if platformer_exited != null:
 		platformer_inside = null
 		player.currently_colliding_with_bug = null
-		talk_prompt.visible = false
+		if talk_prompt != null:
+			talk_prompt.visible = false
 
 func picked_up():
 	pass
