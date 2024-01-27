@@ -35,7 +35,7 @@ layer_1/tile_data = PackedInt32Array(1441792, 3, 0, 1441793, 3, 0, 1441794, 3, 0
 script = ExtResource("1_qyd4o")
 scenario_root_node = NodePath("..")
 invisible_wall = NodePath("../InvisibleWall")
-new_camera_x_limit = 3500
+new_camera_x_limit = 2936
 autocomplate_player_start = 1500
 
 [node name="ElderBug" parent="." instance=ExtResource("4_ps6eb")]
