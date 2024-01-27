@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=5 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_rojly"]
+[ext_resource type="PackedScene" uid="uid://creevntwyjedw" path="res://Scenes/THEBOAT.tscn" id="4_wkxrt"]
 
 [node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_mepmr")
@@ -11,7 +12,13 @@ manager = NodePath("ScenarioManager")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_rojly")
 format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 0, 0, 1441792, 0, 0, 1376257, 0, 0, 1441793, 0, 0, 1376258, 0, 0, 1441794, 0, 0, 1376259, 0, 0, 1441795, 0, 0, 1376260, 0, 0, 1441796, 0, 0, 1376261, 0, 0, 1441797, 0, 0, 1376262, 0, 0, 1441798, 0, 0, 1376263, 0, 0, 1441799, 0, 0, 1376264, 0, 0, 1441800, 0, 0, 1376265, 0, 0, 1441801, 0, 0, 1376266, 0, 0, 1441802, 0, 0, 1376267, 0, 0, 1441803, 0, 0, 1376268, 0, 0, 1441804, 0, 0, 1376269, 0, 0, 1441805, 0, 0, 1376270, 0, 0, 1441806, 0, 0, 1376271, 0, 0, 1441807, 0, 0, 1376272, 0, 0, 1441808, 0, 0, 1376273, 0, 0, 1441809, 0, 0, 1376274, 0, 0, 1441810, 0, 0, 1376275, 0, 0, 1441811, 0, 0, 1376276, 0, 0, 1441812, 0, 0, 1376277, 0, 0, 1441813, 0, 0, 1376278, 0, 0, 1441814, 0, 0, 1376279, 0, 0, 1441815, 0, 0, 1376280, 0, 0, 1441816, 0, 0, 1376281, 0, 0, 1441817, 0, 0, 1376282, 0, 0, 1441818, 0, 0, 1376283, 0, 0, 1441819, 0, 0, 1376284, 0, 0, 1441820, 0, 0, 1376285, 0, 0, 1441821, 0, 0, 1376286, 0, 0, 1441822, 0, 0, 1376287, 0, 0, 1441823, 0, 0, 1376288, 0, 0, 1441824, 0, 0, 1376289, 0, 0, 1441825, 0, 0)
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(1376256, 3, 0, 1376257, 3, 0, 1376258, 3, 0, 1376259, 3, 0, 1376260, 3, 0, 1376261, 3, 0, 1376262, 3, 0, 1376263, 3, 0, 1376264, 3, 0, 1376265, 3, 0, 1376266, 3, 0, 1376267, 3, 0, 1376268, 3, 0, 1376269, 3, 0, 1376270, 3, 0, 1376271, 3, 0, 1376272, 3, 0, 1376273, 3, 0, 1376274, 3, 0, 1376275, 3, 0, 1376276, 3, 0, 1376277, 3, 0, 1376278, 3, 0, 1376279, 3, 0, 1376280, 3, 0, 1376281, 3, 0, 1376282, 3, 0, 1376283, 3, 0, 1376284, 3, 0, 1376285, 3, 0, 1376286, 3, 0, 1376287, 3, 0, 1376288, 3, 0, 1376289, 3, 0)
 
 [node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_8jm3o")
 scenario_root_node = NodePath("..")
+
+[node name="THE BOAT" parent="." instance=ExtResource("4_wkxrt")]
+position = Vector2(1152, 544)

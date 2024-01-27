@@ -69,6 +69,7 @@ camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
+limit_right = 5888
 limit_bottom = 720
 
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]

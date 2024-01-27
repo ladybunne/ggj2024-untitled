@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://creevntwyjedw"]
+
+[ext_resource type="Texture2D" uid="uid://cj3335itw6xbb" path="res://Assets/Sprites/MoreSnacuumStuff/Boat.png" id="1_fuxrl"]
+
+[node name="THE BOAT" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fuxrl")
+centered = false

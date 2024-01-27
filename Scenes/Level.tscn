@@ -72,6 +72,7 @@ position = Vector2(1024, 345)
 position = Vector2(2336, 0)
 
 [node name="ThirdScenario" parent="Scenarios" instance=ExtResource("12_m7she")]
+position = Vector2(4608, 0)
 
 [node name="HidingBug" parent="." instance=ExtResource("11_w7b48")]
 z_index = -1
