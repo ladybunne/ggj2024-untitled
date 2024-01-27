@@ -5,7 +5,7 @@ extends Node
 func _ready():
 	AudioManager.play_music("its_a_feature_extended_silly")
 	 # most people turn volume down so lets start with it turned down
-	AudioManager.set_music_volume(0.7)
+	AudioManager.set_music_volume(0.3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

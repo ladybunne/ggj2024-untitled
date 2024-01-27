@@ -48,6 +48,7 @@ func on_goal_satisfied(p_bug_entity: BugEntity):
 func on_scenario_finished():
 	print("finished!")
 	scenario_finished.emit()
+	AudioManager.play_sfx("Yes-bongo")
 	if invisible_wall != null:
 		# Disable collisions
 		invisible_wall.collision_layer = 0
