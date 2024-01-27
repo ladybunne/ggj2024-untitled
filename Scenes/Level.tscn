@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2yw2m2hg0uak"]
+[gd_scene load_steps=26 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_l5giv"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="14_7yxv0"]
 [ext_resource type="PackedScene" uid="uid://maw8tdch1dmp" path="res://Scenes/Bugs/ObjectBug.tscn" id="14_n8d3k"]
 [ext_resource type="Texture2D" uid="uid://cb05jikn5cqug" path="res://Assets/Sprites/crate.png" id="14_relam"]
+[ext_resource type="PackedScene" uid="uid://bv114wkn8fvm3" path="res://Scenes/Bugs/CameraShyBug.tscn" id="22_gq7ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku85y"]
 size = Vector2(100, 95)
@@ -200,3 +201,6 @@ texture = ExtResource("14_7yxv0")
 [node name="SignSprite" type="Sprite2D" parent="."]
 position = Vector2(117, 656)
 texture = ExtResource("13_tm8kh")
+
+[node name="CameraShyBug" parent="." instance=ExtResource("22_gq7ee")]
+position = Vector2(1785, 632)
