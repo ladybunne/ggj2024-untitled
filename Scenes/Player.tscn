@@ -56,6 +56,7 @@ limit_left = 0
 limit_bottom = 720
 
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
+visibility_layer = 2
 collision_layer = 2
 script = ExtResource("2_4suwj")
 collision_shape = NodePath("CollisionShape2D")
@@ -71,10 +72,13 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerCharacter"]
 visible = false
+visibility_layer = 2
 position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_qts00")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="PlatformerCharacter"]
+visibility_layer = 2
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlatformerCharacter"]
+visibility_layer = 2
 remote_path = NodePath("../../Camera2D")

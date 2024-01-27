@@ -38,6 +38,7 @@ dialogue = ExtResource("2_jvksg")
 identity = SubResource("Resource_6k2u4")
 
 [node name="ExampleBug" type="Node2D"]
+visibility_layer = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
@@ -45,10 +46,12 @@ sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 4
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 

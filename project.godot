@@ -87,6 +87,7 @@ player_pick_up={
 2d_render/layer_1="Background"
 2d_render/layer_2="Player"
 2d_render/layer_3="Bugs"
+2d_render/layer_4="Dialogue"
 
 [rendering]
 

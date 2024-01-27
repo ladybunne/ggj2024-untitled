@@ -19,6 +19,7 @@ animations = [{
 size = Vector2(32, 32)
 
 [node name="FallThroughWorldBug" type="Node2D"]
+visibility_layer = 4
 
 [node name="BeeMain" type="Sprite2D" parent="."]
 visibility_layer = 4
@@ -32,10 +33,12 @@ sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 4
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
@@ -43,6 +46,7 @@ shape = SubResource("RectangleShape2D_clf8f")
 script = ExtResource("2_24r3v")
 
 [node name="Debug label (hide this later)" type="Label" parent="."]
+visibility_layer = 4
 offset_left = -70.0
 offset_top = -34.0
 offset_right = 98.0

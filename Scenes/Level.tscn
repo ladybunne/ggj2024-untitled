@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://6aa52vpqyxm3" path="res://Scenes/Bugs/CameraJank.tscn" id="8_6t1uk"]
 
 [node name="Level" type="Node2D"]
+visibility_layer = 7
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_gsnrl")

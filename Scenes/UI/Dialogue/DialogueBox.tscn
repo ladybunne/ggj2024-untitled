@@ -12,6 +12,7 @@ colors = PackedColorArray(0.87, 0.4872, 0.83172, 1)
 gradient = SubResource("Gradient_dngcj")
 
 [node name="DialogueBox" type="PanelContainer" node_paths=PackedStringArray("portrait_rect", "title_label", "dialogue_label", "dialogue_cursor")]
+visibility_layer = 8
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,6 +27,7 @@ dialogue_cursor_not_done = ExtResource("2_a7hv7")
 dialogue_cursor_done = ExtResource("3_14hvf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visibility_layer = 8
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -33,19 +35,23 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="PortraitRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visibility_layer = 8
 layout_mode = 2
 texture = SubResource("GradientTexture2D_qjvwg")
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visibility_layer = 8
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Bug Name"
@@ -53,6 +59,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="Dialogue" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visibility_layer = 8
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -63,6 +70,7 @@ scroll_active = false
 autowrap_mode = 2
 
 [node name="DialogueCursor" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
