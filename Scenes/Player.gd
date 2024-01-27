@@ -29,6 +29,10 @@ func _input(event):
 			currently_held_bug.root_node.reparent(level_ref)
 			currently_held_bug.root_node.scale.y = 1
 			currently_held_bug.root_node.position = platformer_character.position + Vector2(32, 32)
+			var collision = currently_held_bug.get_parent() as RigidBody2D
+			if collision != null:
+				# Enable physics for the picked-up bug
+				collision.freeze = false
 			currently_held_bug = null
 		# Pick up a bug if we're colliding with it.
 		else:
@@ -39,6 +43,10 @@ func _input(event):
 			currently_held_bug.root_node.reparent(platformer_character)
 			currently_held_bug.root_node.scale.y = -1
 			currently_held_bug.root_node.position = Vector2(0, 0)
+			var collision = currently_held_bug.get_parent() as RigidBody2D
+			if collision != null:
+				# Disable physics for the picked-up bug
+				collision.freeze = true
 			#print("picked up bug: " + currently_held_bug.to_string())
 
 func _process(delta):
