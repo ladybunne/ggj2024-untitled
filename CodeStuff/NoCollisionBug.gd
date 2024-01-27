@@ -1,6 +1,6 @@
 # NoCollision bug is lonely because they can't get to their
 # partner as everything just goes through them.
-extends BugEntity
+class_name NoCollisionBug extends BugEntity
 
 func _ready():
 	super._ready()
