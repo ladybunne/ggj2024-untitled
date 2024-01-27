@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5hvnlu3x2aql"]
+[gd_scene load_steps=14 format=3 uid="uid://5hvnlu3x2aql"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_qyd4o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_wx0a3"]
@@ -13,8 +13,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaxhd"]
 size = Vector2(36, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xknjb"]
-size = Vector2(195, 63)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mewd"]
+size = Vector2(140, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tukki"]
+size = Vector2(247, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m5vh"]
 size = Vector2(20, 679)
@@ -73,8 +76,8 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElderDialogueChangeBox"]
-position = Vector2(-12.5, -16.5)
-shape = SubResource("RectangleShape2D_xknjb")
+position = Vector2(-40, -16)
+shape = SubResource("RectangleShape2D_5mewd")
 
 [node name="ElderTargetArea" type="Area2D" parent="." groups=["ElderBugTarget"]]
 position = Vector2(1231, 691)
@@ -82,8 +85,8 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElderTargetArea"]
-position = Vector2(42.5, -16.5)
-shape = SubResource("RectangleShape2D_xknjb")
+position = Vector2(16.5, -39)
+shape = SubResource("RectangleShape2D_tukki")
 
 [node name="FallthroughTerrain" parent="." instance=ExtResource("9_2tojp")]
 position = Vector2(96, 320)
