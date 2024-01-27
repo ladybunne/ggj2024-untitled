@@ -20,6 +20,8 @@ var scene_controller: SceneController
 const TALK_PROMPT_SCENE: PackedScene = preload("res://Scenes/UI/TalkPrompt.tscn")
 var talk_prompt: Control
 
+@export var talking_completes_goal: bool = false
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
@@ -67,10 +69,11 @@ func _input(event):
 		if bug_data == null:
 			return
 		on_start_dialogue()
-		on_goal_satisfied()
 
 func on_start_dialogue():
 	start_dialogue.emit(self)
+	if talking_completes_goal: 
+		on_goal_satisfied()
 
 func on_goal_satisfied():
 	goal_satisfied.emit(self)
