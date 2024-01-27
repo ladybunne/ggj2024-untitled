@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd5qcnbid5xsl"]
+[gd_scene load_steps=11 format=3 uid="uid://bd5qcnbid5xsl"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_uwtih"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/platformer_character.gd" id="2_4suwj"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/run_component.gd" id="3_svf3h"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/jump_component.gd" id="4_e5ixk"]
-[ext_resource type="Texture2D" uid="uid://dmrt378aj03ex" path="res://Assets/Sprites/Bee_Main_updated.png" id="5_y1lup"]
+[ext_resource type="Texture2D" uid="uid://b44k4q3pdvn5f" path="res://Assets/Sprites/BeePlayer/Bee_walk1.png" id="5_abfmy"]
+[ext_resource type="Texture2D" uid="uid://bxh3h3phcuks5" path="res://Assets/Sprites/BeePlayer/Bee_walk2.png" id="6_41372"]
 
 [sub_resource type="Resource" id="Resource_ha0uj"]
 script = ExtResource("3_svf3h")
@@ -36,6 +37,28 @@ defer_hvel_to_run_component = true
 jumpsquat_time = 0.0
 rejump_buffer_time = 0.25
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_os5mo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_abfmy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_abfmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_41372")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
 size = Vector2(63.5, 63)
 
@@ -58,11 +81,11 @@ wallslide_shapecast = NodePath("ShapeCast2D")
 run_component = SubResource("Resource_ha0uj")
 jump_component = SubResource("Resource_3hrhj")
 
-[node name="Sprite2D" type="Sprite2D" parent="PlatformerCharacter"]
-visibility_layer = 2
-texture_filter = 1
-texture = ExtResource("5_y1lup")
-centered = false
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlatformerCharacter"]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_os5mo")
+animation = &"Walking"
+frame_progress = 0.944242
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerCharacter"]
 visibility_layer = 2

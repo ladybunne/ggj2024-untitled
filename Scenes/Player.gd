@@ -36,7 +36,15 @@ func _input(event):
 			#print("picked up bug: " + currently_held_bug.to_string())
 
 func _process(delta):
+	# Update the sprite flipped
 	if platformer_character.facing_right:
-		platformer_character.get_node("Sprite2D").flip_h = true
+		platformer_character.get_node("AnimatedSprite2D").flip_h = true
 	else:
-		platformer_character.get_node("Sprite2D").flip_h = false
+		platformer_character.get_node("AnimatedSprite2D").flip_h = false
+
+	# Take the current animation state from the platformer controller fsm
+	# and swap the animation
+	if platformer_character.animation_state == platformer_character.AnimationState.IDLE:
+		platformer_character.get_node("AnimatedSprite2D").play("Idle")
+	elif platformer_character.animation_state == platformer_character.AnimationState.RUN:
+		platformer_character.get_node("AnimatedSprite2D").play("Walking")

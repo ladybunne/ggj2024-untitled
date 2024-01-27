@@ -179,7 +179,7 @@ func update_animation_state():
 		facing_right = true
 	if velocity.x < 0:
 		facing_right = false
-	
+		
 	# Preliminary state stuff. Will be improved later.
 	if dash_component != null and dash_component.is_dashing():
 			animation_state = AnimationState.DASH
