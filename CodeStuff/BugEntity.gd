@@ -35,7 +35,7 @@ func _ready():
 	talk_prompt = TALK_PROMPT_SCENE.instantiate()
 	root_node.add_child.call_deferred(talk_prompt)
 	talk_prompt.visible = false
-	talk_prompt.position = Vector2(-64, -96)
+	(func(): talk_prompt.position = Vector2(-(talk_prompt.size.x / 2) + 16, -64)).call_deferred()
 	
 	name_label = NAME_LABEL_SCENE.instantiate()
 	root_node.add_child.call_deferred(name_label)

@@ -5,11 +5,13 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uy1rl"]
 
 [node name="NameLabel" type="PanelContainer" node_paths=PackedStringArray("label")]
+visibility_layer = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_uy1rl")
 script = ExtResource("1_0kc3g")
 label = NodePath("MarginContainer/RichTextLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visibility_layer = 8
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
@@ -17,6 +19,7 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
