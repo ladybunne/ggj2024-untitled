@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bll33c5uq2xv0"]
+[gd_scene load_steps=4 format=3 uid="uid://bll33c5uq2xv0"]
 
 [ext_resource type="Script" path="res://Scenes/Zones/DialogueTriggerZone.gd" id="1_42r0s"]
+[ext_resource type="Resource" uid="uid://bkonkcgmxwdm3" path="res://Assets/DialogueData/MagicBoxDialogue.tres" id="2_irx7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8l41"]
+size = Vector2(100, 50)
 
-[node name="DialogueTriggerZone" type="Area2D"]
+[node name="DialogueTriggerZone" type="Area2D" node_paths=PackedStringArray("collision_shape")]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_42r0s")
+dialogue_to_trigger = ExtResource("2_irx7l")
+collision_shape = NodePath("CollisionShape2D")
+Zone_Width = 29.935
+Zone_Height = 25.285
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j8l41")

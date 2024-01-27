@@ -29,7 +29,7 @@ letterboxer = NodePath("../Letterboxing")
 [node name="DialogueUI" parent="." instance=ExtResource("4_as5ok")]
 visible = false
 
-[node name="DialogueManager" type="Node" parent="."]
+[node name="DialogueManager" type="Node" parent="." groups=["DialogueManager"]]
 script = ExtResource("5_n6fbc")
 
 [node name="Letterboxing" parent="." instance=ExtResource("6_jppbn")]
