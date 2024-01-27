@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=2 format=3 uid="uid://wyv5u3k1a6tx"]
+
+[ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 
 [node name="ThirdScenario" type="Node2D"]
+
+[node name="ScenarioManager" type="Node" parent="."]
+script = ExtResource("1_8jm3o")
