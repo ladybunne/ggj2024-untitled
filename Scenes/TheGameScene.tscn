@@ -38,4 +38,4 @@ script = ExtResource("5_n6fbc")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="QuestListUi" parent="CanvasLayer" instance=ExtResource("8_0xuwc")]
-position = Vector2(940, 28)
+position = Vector2(848, 8)

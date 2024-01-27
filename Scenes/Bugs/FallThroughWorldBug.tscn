@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://pivjj1vyj67s"]
+[gd_scene load_steps=12 format=3 uid="uid://pivjj1vyj67s"]
 
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBugMovement.gd" id="1_m482h"]
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBug.gd" id="2_24r3v"]

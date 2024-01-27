@@ -7,8 +7,11 @@
 content_margin_left = 9.0
 content_margin_top = 3.0
 
-[node name="QuestListUi" type="Node2D"]
+[node name="QuestListUi" type="Node2D" node_paths=PackedStringArray("quest_item_1", "quest_item_2", "quest_item_3")]
 script = ExtResource("1_sle6b")
+quest_item_1 = NodePath("QuestItem1")
+quest_item_2 = NodePath("QuestItem2")
+quest_item_3 = NodePath("QuestItem3")
 
 [node name="These arent really Quests per se" type="Node" parent="."]
 
@@ -18,32 +21,33 @@ script = ExtResource("1_sle6b")
 offset_left = 32.0
 offset_right = 544.0
 offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 27
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mulil")
 item_count = 3
-item_0/text = "Help bugs find love."
+item_0/text = "Make a new ladybug friend.."
 item_0/selectable = false
-item_1/text = "Check Item 2"
+item_1/text = "Help bugs find love."
 item_1/selectable = false
-item_2/text = "Check Item 3"
+item_2/text = "Hide and Seek, here I come!"
 item_2/selectable = false
 
 [node name="QuestItem1" type="Sprite2D" parent="."]
-modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+modulate = Color(0, 0, 0, 0.396078)
 position = Vector2(32, 41)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_vtlf2")
 offset = Vector2(-32, -32)
 
 [node name="QuestItem2" type="Sprite2D" parent="."]
-modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+modulate = Color(0, 0, 0, 0.392157)
 position = Vector2(32, 81)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_vtlf2")
 offset = Vector2(-32, -32)
 
 [node name="QuestItem3" type="Sprite2D" parent="."]
-modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+modulate = Color(0, 0, 0, 0.4)
 position = Vector2(32, 120)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_vtlf2")
