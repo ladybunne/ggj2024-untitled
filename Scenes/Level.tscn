@@ -53,8 +53,9 @@ position = Vector2(301, 545)
 
 [node name="FallthroughTerrain" parent="." instance=ExtResource("5_of3de")]
 
-[node name="FallThroughWorldBug" parent="." instance=ExtResource("6_6ugdf")]
-position = Vector2(704, 320)
+[node name="FallThroughWorldBug" parent="." node_paths=PackedStringArray("terrain") instance=ExtResource("6_6ugdf")]
+position = Vector2(828, 320)
+terrain = NodePath("../FallthroughTerrain")
 
 [node name="EnableFly" parent="." instance=ExtResource("7_ndji5")]
 position = Vector2(1284, 313)

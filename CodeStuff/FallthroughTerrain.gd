@@ -1,12 +1,22 @@
-extends Node
+class_name FallthroughTerrain extends Node
 
-@export var collision_area: Area2D
+@export var collision_area: CollisionShape2D
 
-# Called when the node enters the scene tree for the first time.
+@export var solid_color: Color
+
+@export var fallthrough_color: Color
+
+var rectangle: ColorRect
+
 func _ready():
-	pass # Replace with function body.
+	rectangle = find_child("ColorRect") as ColorRect
+	if rectangle != null:
+		rectangle.color = fallthrough_color
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func toggleCollision():
+	collision_area.disabled = !collision_area.disabled
+	if rectangle != null:
+		if collision_area.disabled:
+			rectangle.color = fallthrough_color
+		else:
+			rectangle.color = solid_color

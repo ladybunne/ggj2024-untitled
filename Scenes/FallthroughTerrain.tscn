@@ -7,13 +7,15 @@ size = Vector2(192, 64)
 
 [node name="FallthroughTerrain" type="Node" node_paths=PackedStringArray("collision_area")]
 script = ExtResource("1_gd4ql")
-collision_area = NodePath("Area2D")
+collision_area = NodePath("StaticBody2D/CollisionShape2D")
+fallthrough_color = Color(0.145098, 0.145098, 0.145098, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(864, 416)
 shape = SubResource("RectangleShape2D_hbsjd")
+disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 768.0

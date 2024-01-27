@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://pivjj1vyj67s"]
+[gd_scene load_steps=10 format=3 uid="uid://pivjj1vyj67s"]
 
+[ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBugMovement.gd" id="1_m482h"]
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBug.gd" id="2_24r3v"]
 [ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/BugSprites/Ladybug.png" id="4_sbaki"]
 [ext_resource type="Resource" uid="uid://dkjgpksajhmpj" path="res://Assets/DialogueData/FallThroughWorld.tres" id="5_mh5vy"]
@@ -26,9 +27,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(112, 76)
 
-[node name="CharacterBody2D" type="StaticBody2D"]
-visibility_layer = 4
-collision_layer = 4
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_m482h")
 
 [node name="FallThroughWorldBug2" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_24r3v")
