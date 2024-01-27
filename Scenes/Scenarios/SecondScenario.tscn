@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx2tq8urrjyhy"]
+[gd_scene load_steps=12 format=3 uid="uid://cx2tq8urrjyhy"]
 
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_yftaf"]
 [ext_resource type="Texture2D" uid="uid://qj8x8w66s1gs" path="res://Assets/Design/collisionleveldesign.png" id="2_5twla"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bll33c5uq2xv0" path="res://Scenes/Zones/DialogueTriggerZone.tscn" id="8_luj6x"]
 [ext_resource type="Resource" uid="uid://bpioyibnf2rca" path="res://Assets/DialogueData/First Pass/NollissionAuto.tres" id="9_rnwqd"]
 [ext_resource type="Resource" uid="uid://cjgtpoq5bpnao" path="res://Assets/DialogueData/First Pass/ToollisionAuto.tres" id="10_275mp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw6bf"]
+size = Vector2(21, 1058.5)
 
 [node name="SecondScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_yftaf")
@@ -39,9 +42,12 @@ position = Vector2(414, 295)
 [node name="RepelBug" parent="." instance=ExtResource("5_d8e6y")]
 position = Vector2(800, -96)
 
-[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
+[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node", "invisible_wall")]
 script = ExtResource("7_umfnc")
 scenario_root_node = NodePath("..")
+invisible_wall = NodePath("../InvisibleWall")
+new_camera_x_limit = 6400
+autocomplate_player_start = 3100
 
 [node name="DialogueTriggerZone" parent="." node_paths=PackedStringArray("dialogue_owner") instance=ExtResource("8_luj6x")]
 position = Vector2(98, 647)
@@ -54,3 +60,10 @@ dialogue_to_trigger = ExtResource("10_275mp")
 dialogue_owner = NodePath("../LonelyCollisionBoxTooBigBug")
 Zone_Width = 100.0
 Zone_Height = 50.0
+
+[node name="InvisibleWall" type="StaticBody2D" parent="."]
+position = Vector2(1295, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
+position = Vector2(376, -106.75)
+shape = SubResource("RectangleShape2D_tw6bf")
