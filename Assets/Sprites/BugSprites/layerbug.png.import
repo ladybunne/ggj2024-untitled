@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0mied5lpvc"
-path="res://.godot/imported/Rhino_Beetle.png-01f3c37ecfe12a970a94d6b40d0fb03a.ctex"
+uid="uid://7jclis41d0hm"
+path="res://.godot/imported/layerbug.png-1766bebcaafd9e0a1e201c4e4945b658.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Rhino_Beetle.png"
-dest_files=["res://.godot/imported/Rhino_Beetle.png-01f3c37ecfe12a970a94d6b40d0fb03a.ctex"]
+source_file="res://Assets/Sprites/BugSprites/layerbug.png"
+dest_files=["res://.godot/imported/layerbug.png-1766bebcaafd9e0a1e201c4e4945b658.ctex"]
 
 [params]
 

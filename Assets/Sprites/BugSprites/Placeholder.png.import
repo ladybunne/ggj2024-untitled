@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwrynj0un4j2l"
-path="res://.godot/imported/Stickbug.png-244ad5dd0455c37ed887f610d811df94.ctex"
+uid="uid://b60mwkkbbtghj"
+path="res://.godot/imported/Placeholder.png-9e90c7723107a3e2b897c6a27b4b7dd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Stickbug.png"
-dest_files=["res://.godot/imported/Stickbug.png-244ad5dd0455c37ed887f610d811df94.ctex"]
+source_file="res://Assets/Sprites/BugSprites/Placeholder.png"
+dest_files=["res://.godot/imported/Placeholder.png-9e90c7723107a3e2b897c6a27b4b7dd9.ctex"]
 
 [params]
 

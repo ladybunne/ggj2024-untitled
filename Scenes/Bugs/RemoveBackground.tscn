@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cis8mnefn8mc1"]
+[gd_scene load_steps=9 format=3 uid="uid://cis8mnefn8mc1"]
 
-[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_3523n"]
-[ext_resource type="Resource" uid="uid://bmrbgh73sxsjh" path="res://Assets/DialogueData/RemoveBackground.tres" id="3_21557"]
+[ext_resource type="Texture2D" uid="uid://dfyeuoputrc5c" path="res://Assets/Sprites/BugSprites/Background Deleter.png" id="1_kmnsk"]
+[ext_resource type="Resource" path="res://Assets/DialogueData/RemoveBackground.tres" id="3_21557"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_pqwy1"]
 [ext_resource type="Script" path="res://CodeStuff/RemoveBackground.gd" id="6_q7ycx"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3523n")
+"texture": ExtResource("1_kmnsk")
 }],
 "loop": true,
 "name": &"default",
@@ -17,13 +17,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(32, 32)
+size = Vector2(113, 78)
 
 [sub_resource type="Resource" id="Resource_5gq2q"]
 script = ExtResource("5_pqwy1")
 dialogue = ExtResource("3_21557")
 
-[node name="RemoveBackground" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptino"]
+size = Vector2(58, 64)
+
+[node name="RemoveBackground" type="StaticBody2D"]
 visibility_layer = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -38,7 +41,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visibility_layer = 4
-position = Vector2(16, 16)
+position = Vector2(33.5, 25)
 shape = SubResource("RectangleShape2D_clf8f")
 
 [node name="RemoveBackground" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
@@ -47,3 +50,7 @@ bug_data = SubResource("Resource_5gq2q")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
 name_label_string = "Remove background"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31, 32)
+shape = SubResource("RectangleShape2D_ptino")

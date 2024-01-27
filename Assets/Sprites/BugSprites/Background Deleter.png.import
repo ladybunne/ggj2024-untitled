@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b60mwkkbbtghj"
-path="res://.godot/imported/Placeholder.png-66eee474033f222eb37e00dcccd6957a.ctex"
+uid="uid://dfyeuoputrc5c"
+path="res://.godot/imported/Background Deleter.png-bcc1bc4f37cb68e860620f23394c14e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Placeholder.png"
-dest_files=["res://.godot/imported/Placeholder.png-66eee474033f222eb37e00dcccd6957a.ctex"]
+source_file="res://Assets/Sprites/BugSprites/Background Deleter.png"
+dest_files=["res://.godot/imported/Background Deleter.png-bcc1bc4f37cb68e860620f23394c14e4.ctex"]
 
 [params]
 

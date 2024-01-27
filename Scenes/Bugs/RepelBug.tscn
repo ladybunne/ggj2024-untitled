@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0u2rqorp4mlo"]
 
 [ext_resource type="Script" path="res://CodeStuff/RepelBugPhysics.gd" id="1_27vnl"]
-[ext_resource type="Texture2D" uid="uid://d0mied5lpvc" path="res://Assets/Sprites/Rhino_Beetle.png" id="1_angif"]
+[ext_resource type="Texture2D" uid="uid://d0mied5lpvc" path="res://Assets/Sprites/BugSprites/Rhino_Beetle.png" id="1_angif"]
 [ext_resource type="Script" path="res://CodeStuff/RepelBug.gd" id="2_iy1sd"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_1k1fl"]
 
@@ -36,7 +36,7 @@ script = ExtResource("1_27vnl")
 [node name="RepelBug" type="Node" parent="RigidBody2D" node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_iy1sd")
 bug_data = SubResource("Resource_2skh8")
-collision_area = NodePath("../Interation Area 2D")
+collision_area = NodePath("../Talkbox")
 root_node = NodePath("../..")
 
 [node name="DebugLabel" type="Label" parent="RigidBody2D"]
@@ -46,12 +46,12 @@ offset_right = 71.0
 offset_bottom = -8.0
 text = "Repel Bug"
 
-[node name="Interation Area 2D" type="Area2D" parent="RigidBody2D"]
+[node name="Talkbox" type="Area2D" parent="RigidBody2D"]
 visibility_layer = 4
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Interation Area 2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Talkbox"]
 visibility_layer = 4
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_clf8f")

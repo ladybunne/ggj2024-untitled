@@ -1,20 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://pivjj1vyj67s"]
+[gd_scene load_steps=9 format=3 uid="uid://pivjj1vyj67s"]
 
-[ext_resource type="Texture2D" uid="uid://buakaatt3nbo4" path="res://Assets/Sprites/Bee_Main.png" id="1_bxac7"]
-[ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBugMovement.gd" id="1_cggw5"]
-[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_xyk5r"]
 [ext_resource type="Script" path="res://CodeStuff/FallThroughWorldBug.gd" id="2_24r3v"]
+[ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/BugSprites/Ladybug.png" id="4_sbaki"]
 [ext_resource type="Resource" uid="uid://dkjgpksajhmpj" path="res://Assets/DialogueData/FallThroughWorld.tres" id="5_mh5vy"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="6_o3r41"]
 
+[sub_resource type="Resource" id="Resource_o4rca"]
+script = ExtResource("6_o3r41")
+dialogue = ExtResource("5_mh5vy")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc3lm"]
-size = Vector2(47, 58)
+size = Vector2(51, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xyk5r")
+"texture": ExtResource("4_sbaki")
 }],
 "loop": true,
 "name": &"default",
@@ -22,52 +24,37 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(47, 58)
+size = Vector2(112, 76)
 
-[sub_resource type="Resource" id="Resource_o4rca"]
-script = ExtResource("6_o3r41")
-dialogue = ExtResource("5_mh5vy")
-
-[node name="FallThroughWorldBug" type="Node2D"]
-visibility_layer = 4
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="StaticBody2D"]
 visibility_layer = 4
 collision_layer = 4
-script = ExtResource("1_cggw5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="FallThroughWorldBug2" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_24r3v")
+bug_data = SubResource("Resource_o4rca")
+collision_area = NodePath("../TalkBox")
+root_node = NodePath("")
+name_label_string = "FallThroughWorldBug"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 4
-position = Vector2(30.5, 35)
+position = Vector2(28.5, 35)
 shape = SubResource("RectangleShape2D_qc3lm")
 
-[node name="BeeMain" type="Sprite2D" parent="CharacterBody2D"]
-visibility_layer = 4
-texture_filter = 1
-position = Vector2(32, 32)
-texture = ExtResource("1_bxac7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-visible = false
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="TalkBox" type="Area2D" parent="."]
 visibility_layer = 4
 position = Vector2(16, 14)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkBox"]
 visibility_layer = 4
-position = Vector2(14.5, 21)
+position = Vector2(15, 12)
 shape = SubResource("RectangleShape2D_clf8f")
-
-[node name="FallThroughWorldBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
-script = ExtResource("2_24r3v")
-bug_data = SubResource("Resource_o4rca")
-collision_area = NodePath("../CharacterBody2D/Area2D")
-root_node = NodePath("..")
-name_label_string = "FallThroughWorldBug"
