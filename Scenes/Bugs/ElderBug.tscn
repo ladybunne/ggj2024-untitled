@@ -27,7 +27,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_5k8td"]
 script = ExtResource("3_l16eb")
-name = "ElderBug"
+name = "Place Elder"
 icon = ExtResource("3_w80y2")
 category = "Uncategorised"
 tags = Array[String]([])

@@ -47,7 +47,6 @@ identity = SubResource("Resource_5gtjt")
 [node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
 
 [node name="Interaction Area2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -87,7 +86,7 @@ collision_layer = 66
 position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_3ppcd")
 
-[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup", "TrueLove"]]
 script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../Interaction Area2D")

@@ -13,7 +13,7 @@ lines = Array[String](["[sfx name=insect-falling]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 [sub_resource type="Resource" id="Resource_nublt"]
 script = ExtResource("4_r131q")
-name = "Fallbug"
+name = "Stepanie"
 icon = ExtResource("4_sbaki")
 category = "Uncategorised"
 tags = Array[String]([])
@@ -54,6 +54,7 @@ script = ExtResource("2_24r3v")
 bug_data = SubResource("Resource_o4rca")
 collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
+show_name_label = false
 name_label_string = "FallThroughWorldBug"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

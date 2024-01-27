@@ -47,7 +47,7 @@ script = ExtResource("6_o23k8")
 dialogue = ExtResource("4_3p2y5")
 identity = SubResource("Resource_u17cq")
 
-[node name="NoCollisionBug" type="Node2D"]
+[node name="NoCollisionBug" type="Node2D" groups=["TrueLove"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
