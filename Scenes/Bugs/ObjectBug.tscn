@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://maw8tdch1dmp"]
+
+[ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="1_1gldk"]
+[ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_c8w06"]
+[ext_resource type="Resource" uid="uid://b8t2n8ld8hkur" path="res://Assets/DialogueData/ExampleBug.tres" id="3_iaw3u"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_05jtw"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_txb7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1gldk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_6k2u4"]
+script = ExtResource("4_05jtw")
+name = "Object Bug"
+icon = ExtResource("1_1gldk")
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_7en53"]
+script = ExtResource("5_txb7s")
+dialogue = ExtResource("3_iaw3u")
+identity = SubResource("Resource_6k2u4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppy56"]
+size = Vector2(33, 31)
+
+[node name="ObjectBug" type="Node2D"]
+visibility_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="ExampleBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_c8w06")
+bug_data = SubResource("Resource_7en53")
+collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
+name_label_string = "Example Bug"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16.5, 15.5)
+shape = SubResource("RectangleShape2D_ppy56")

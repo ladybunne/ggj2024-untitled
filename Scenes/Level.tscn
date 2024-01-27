@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2yw2m2hg0uak"]
+[gd_scene load_steps=22 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="PackedScene" uid="uid://dww4w0hgjgmtd" path="res://Scenes/Bugs/ExampleBug.tscn" id="2_2fvri"]
@@ -12,10 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://cis8mnefn8mc1" path="res://Scenes/Bugs/RemoveBackground.tscn" id="10_sturp"]
 [ext_resource type="PackedScene" uid="uid://cxorvbegiv6sf" path="res://Scenes/Bugs/HidingBug.tscn" id="11_w7b48"]
 [ext_resource type="Texture2D" uid="uid://cavr8p2syal82" path="res://Assets/Sprites/Well.png" id="12_4sht6"]
+[ext_resource type="Texture2D" uid="uid://d1m6fdwjact36" path="res://Assets/Sprites/Lamp.png" id="13_hdccb"]
 [ext_resource type="PackedScene" uid="uid://2w1vqmntt0c6" path="res://Scenes/Bugs/LetterboxBug.tscn" id="13_qm4wy"]
+[ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="13_tm8kh"]
+[ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="14_7yxv0"]
+[ext_resource type="PackedScene" uid="uid://maw8tdch1dmp" path="res://Scenes/Bugs/ObjectBug.tscn" id="14_n8d3k"]
+[ext_resource type="Texture2D" uid="uid://cb05jikn5cqug" path="res://Assets/Sprites/crate.png" id="14_relam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku85y"]
 size = Vector2(100, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6fi"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw6ow"]
+size = Vector2(36, 22)
 
 [node name="Level" type="Node2D"]
 visibility_layer = 7
@@ -55,6 +66,9 @@ position = Vector2(2336, 0)
 z_index = -1
 position = Vector2(1326, 546)
 
+[node name="ObjectBug" parent="." instance=ExtResource("14_n8d3k")]
+position = Vector2(1514, 641)
+
 [node name="Well" type="StaticBody2D" parent="."]
 position = Vector2(512, 622)
 
@@ -67,3 +81,110 @@ texture = ExtResource("12_4sht6")
 
 [node name="LetterboxBug" parent="." instance=ExtResource("13_qm4wy")]
 position = Vector2(1477, 412)
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(665, 602)
+texture = ExtResource("13_hdccb")
+
+[node name="Lamp2" type="Sprite2D" parent="."]
+position = Vector2(1018, 602)
+texture = ExtResource("13_hdccb")
+
+[node name="Crate" type="StaticBody2D" parent="."]
+position = Vector2(1920, 656)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate"]
+texture = ExtResource("14_relam")
+
+[node name="Crate2" type="StaticBody2D" parent="."]
+position = Vector2(1920, 624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate2"]
+texture = ExtResource("14_relam")
+
+[node name="Crate3" type="StaticBody2D" parent="."]
+position = Vector2(1984, 656)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate3"]
+texture = ExtResource("14_relam")
+
+[node name="Crate4" type="StaticBody2D" parent="."]
+position = Vector2(1984, 624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate4"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate4"]
+texture = ExtResource("14_relam")
+
+[node name="Crate5" type="StaticBody2D" parent="."]
+position = Vector2(1984, 592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate5"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate5"]
+texture = ExtResource("14_relam")
+
+[node name="Crate6" type="StaticBody2D" parent="."]
+position = Vector2(2058, 656)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate6"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate6"]
+texture = ExtResource("14_relam")
+
+[node name="Crate7" type="StaticBody2D" parent="."]
+position = Vector2(2058, 625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate7"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate7"]
+texture = ExtResource("14_relam")
+
+[node name="Crate8" type="StaticBody2D" parent="."]
+position = Vector2(2058, 593)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate8"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate8"]
+texture = ExtResource("14_relam")
+
+[node name="Crate9" type="StaticBody2D" parent="."]
+position = Vector2(2058, 561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate9"]
+shape = SubResource("RectangleShape2D_gg6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate9"]
+texture = ExtResource("14_relam")
+
+[node name="Lamp3" type="Sprite2D" parent="."]
+position = Vector2(910, 315)
+texture = ExtResource("13_hdccb")
+
+[node name="RopeCoil" type="StaticBody2D" parent="."]
+position = Vector2(758, 660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCoil"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_pw6ow")
+
+[node name="Sprite2D" type="Sprite2D" parent="RopeCoil"]
+texture = ExtResource("14_7yxv0")
+
+[node name="SignSprite" type="Sprite2D" parent="."]
+position = Vector2(117, 656)
+texture = ExtResource("13_tm8kh")
