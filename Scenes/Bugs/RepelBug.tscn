@@ -39,6 +39,13 @@ bug_data = SubResource("Resource_2skh8")
 collision_area = NodePath("../Talkbox")
 root_node = NodePath("../..")
 
+[node name="BetweenYellingTimer" type="Timer" parent="RigidBody2D/RepelBug"]
+one_shot = true
+
+[node name="YellingTimer" type="Timer" parent="RigidBody2D/RepelBug"]
+one_shot = true
+autostart = true
+
 [node name="DebugLabel" type="Label" parent="RigidBody2D"]
 offset_left = -6.0
 offset_top = -31.0
@@ -66,3 +73,15 @@ centered = false
 [node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_loxb1")
+
+[node name="YellingLabel" type="Label" parent="RigidBody2D"]
+offset_left = -173.0
+offset_top = -128.0
+offset_right = 242.0
+offset_bottom = -79.0
+text = "GARGHH!!!! I'm the STRONGEST Bug ever.
+Debuggers couldn't push me horizontally if htey tried!"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="RigidBody2D/RepelBug/BetweenYellingTimer" to="RigidBody2D/RepelBug" method="_on_between_yelling_timer_timeout"]
+[connection signal="timeout" from="RigidBody2D/RepelBug/YellingTimer" to="RigidBody2D/RepelBug" method="_on_yelling_timer_timeout"]

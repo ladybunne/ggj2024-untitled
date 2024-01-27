@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="1_1gldk"]
 [ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_c8w06"]
-[ext_resource type="Resource" uid="uid://unn1hwra6nfh" path="res://Assets/DialogueData/ObjectBug.tres" id="3_deepw"]
+[ext_resource type="Resource" path="res://Assets/DialogueData/ObjectBug.tres" id="3_deepw"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_05jtw"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_txb7s"]
 
