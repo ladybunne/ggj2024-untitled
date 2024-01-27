@@ -13,8 +13,8 @@ deceleration = 0.0
 
 [sub_resource type="Resource" id="Resource_3hrhj"]
 script = ExtResource("4_e5ixk")
-jump_height_tiles = 5.0
-jump_duration = 0.4
+jump_height_tiles = 6.0
+jump_duration = 0.28
 terminal_velocity = 0
 coyote_time = 0.05
 air_jumps = 0
@@ -61,7 +61,6 @@ collision_layer = 2
 script = ExtResource("2_4suwj")
 collision_shape = NodePath("CollisionShape2D")
 wallslide_shapecast = NodePath("ShapeCast2D")
-grid_height = 64
 run_component = SubResource("Resource_ha0uj")
 jump_component = SubResource("Resource_3hrhj")
 

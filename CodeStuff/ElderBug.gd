@@ -19,8 +19,13 @@ func _input(event):
 
 func picked_up():
 	super.picked_up()
+	# Enable this for crimes.
+	#character_body.position = root_node.position
+	character_body.position = Vector2.ZERO
 	character_body.process_mode = Node.PROCESS_MODE_DISABLED
 
 func dropped():
 	super.dropped()
+	#character_body.position = root_node.position
+	character_body.position = Vector2.ZERO
 	character_body.process_mode = Node.PROCESS_MODE_INHERIT

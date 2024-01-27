@@ -16,9 +16,10 @@ func _input(event):
 	if event.is_action_pressed("player_pick_up"):
 		# Drop a bug if we have one already.
 		if currently_held_bug != null:
-			print("dropped bug: " + currently_held_bug.to_string())
-			currently_held_bug.root_node.reparent(level_ref)
+			#print("dropped bug: " + currently_held_bug.to_string())
 			currently_held_bug.dropped()
+			currently_held_bug.root_node.reparent(level_ref)
+			currently_held_bug.root_node.scale.y = 1
 			currently_held_bug.root_node.position = platformer_character.position + Vector2(32, 32)
 			currently_held_bug = null
 		# Pick up a bug if we're colliding with it.
@@ -28,5 +29,6 @@ func _input(event):
 			currently_held_bug = currently_colliding_with_bug
 			currently_held_bug.picked_up()
 			currently_held_bug.root_node.reparent(platformer_character)
-			currently_held_bug.root_node.position = Vector2(0, -32)
-			print("picked up bug: " + currently_held_bug.to_string())
+			currently_held_bug.root_node.scale.y = -1
+			currently_held_bug.root_node.position = Vector2(0, 0)
+			#print("picked up bug: " + currently_held_bug.to_string())
