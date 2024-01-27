@@ -31,6 +31,10 @@ var name_label: Control
 
 @export var is_goal_bug: bool = false
 
+@export var sound_on_interact: String
+@export var sound_on_pickup: String
+@export var sound_on_drop: String
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
@@ -72,10 +76,12 @@ func player_exited(body: Node2D):
 			talk_prompt.visible = false
 
 func picked_up():
-	pass
+	if sound_on_pickup.length():
+		AudioManager.play_sfx(sound_on_pickup)
 
 func dropped():
-	pass
+	if sound_on_drop.length():
+		AudioManager.play_sfx(sound_on_drop)
 
 func _input(event):
 	if platformer_inside == null:
@@ -90,6 +96,8 @@ func _input(event):
 
 func on_start_dialogue():
 	start_dialogue.emit(self)
+	if sound_on_interact.length():
+		AudioManager.play_sfx(sound_on_interact)
 	if talking_completes_goal: 
 		on_goal_satisfied()
 
