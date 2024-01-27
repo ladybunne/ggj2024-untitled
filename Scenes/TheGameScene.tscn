@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://86jn37addt06"]
 
-[ext_resource type="PackedScene" uid="uid://di30hfatvcpj" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
 [ext_resource type="PackedScene" uid="uid://c2yw2m2hg0uak" path="res://Scenes/Level.tscn" id="1_yglj6"]
 [ext_resource type="PackedScene" uid="uid://bd5qcnbid5xsl" path="res://Scenes/Player.tscn" id="2_k5i3g"]
 [ext_resource type="Script" path="res://CodeStuff/SceneController.gd" id="3_4gswl"]
@@ -18,6 +18,12 @@ layer = -1
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
 level_ref = NodePath("../Level")
+
+[node name="Camera2D" parent="Player" index="0"]
+position = Vector2(3578, 598)
+
+[node name="PlatformerCharacter" parent="Player" index="1"]
+position = Vector2(3578, 598)
 
 [node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "level", "dialogue_ui", "dialogue_manager", "letterboxer")]
 script = ExtResource("3_4gswl")
@@ -39,3 +45,5 @@ script = ExtResource("5_n6fbc")
 
 [node name="QuestListUi" parent="CanvasLayer" instance=ExtResource("8_0xuwc")]
 position = Vector2(848, 8)
+
+[editable path="Player"]
