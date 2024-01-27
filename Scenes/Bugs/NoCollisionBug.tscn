@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c014pv8qpjv28"]
+[gd_scene load_steps=6 format=3 uid="uid://c014pv8qpjv28"]
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_ce5de"]
 [ext_resource type="Script" path="res://CodeStuff/NoCollisionBug.gd" id="2_6tgpc"]
+[ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/Ladybug.png" id="2_58gbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
@@ -12,16 +13,25 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_58gbo")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(32, 32)
 
-[node name="ExampleBug" type="Node2D"]
+[node name="NoCollisionBug" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
+animation = &"new_animation"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
