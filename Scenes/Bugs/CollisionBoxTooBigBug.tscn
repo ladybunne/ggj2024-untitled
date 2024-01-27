@@ -40,7 +40,7 @@ script = ExtResource("5_228cw")
 dialogue = ExtResource("3_5kjtr")
 identity = SubResource("Resource_5gtjt")
 
-[node name="ExampleBug" type="Node2D"]
+[node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -61,7 +61,8 @@ visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
-[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../CharacterBody2D/Interaction Area2D")
+root_node = NodePath("..")
