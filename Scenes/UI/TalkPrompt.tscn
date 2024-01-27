@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2rpp2twxmtsh"]
+
+[ext_resource type="Script" path="res://Scenes/UI/TalkPrompt.gd" id="1_iya35"]
+
+[node name="TalkPrompt" type="PanelContainer"]
+script = ExtResource("1_iya35")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Talk to bug: [X]"
+fit_content = true
+autowrap_mode = 0

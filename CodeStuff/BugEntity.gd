@@ -17,10 +17,18 @@ var player: Player
 var platformer_character: PlatformerCharacter
 var scene_controller: SceneController
 
+const TALK_PROMPT_SCENE: PackedScene = preload("res://Scenes/UI/TalkPrompt.tscn")
+var talk_prompt: Control
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
 		collision_area.body_exited.connect(player_exited)
+	
+	talk_prompt = TALK_PROMPT_SCENE.instantiate()
+	root_node.add_child.call_deferred(talk_prompt)
+	talk_prompt.visible = false
+	talk_prompt.position = Vector2(-64, -64)
 
 func give_player_ref(p_player: Player):
 	player = p_player
@@ -34,12 +42,14 @@ func player_entered(body: Node2D):
 	if platformer_entered != null:
 		platformer_inside = platformer_entered
 		player.currently_colliding_with_bug = self
+		talk_prompt.visible = true
 		
 func player_exited(body: Node2D):
 	var platformer_exited := body as PlatformerCharacter
 	if platformer_exited != null:
 		platformer_inside = null
 		player.currently_colliding_with_bug = null
+		talk_prompt.visible = false
 
 func picked_up():
 	pass

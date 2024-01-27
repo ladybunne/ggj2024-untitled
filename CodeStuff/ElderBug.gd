@@ -17,6 +17,9 @@ func _input(event):
 		print("Interacted with ElderBug")
 		character_body.is_following = true
 
+func _process(delta):
+	talk_prompt.position = character_body.position - Vector2(talk_prompt.size.x / 2, 64)
+
 func picked_up():
 	super.picked_up()
 	# Enable this for crimes.
