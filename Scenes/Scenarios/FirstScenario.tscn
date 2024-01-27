@@ -33,7 +33,7 @@ script = ExtResource("1_qyd4o")
 scenario_root_node = NodePath("..")
 
 [node name="ElderBug" parent="." instance=ExtResource("4_ps6eb")]
-position = Vector2(263, 640)
+position = Vector2(263, 479)
 
 [node name="FallThroughFloorBug" parent="." node_paths=PackedStringArray("terrain") instance=ExtResource("5_fa1a8")]
 position = Vector2(993, 639)
