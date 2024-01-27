@@ -6,6 +6,8 @@ var points: int = 0
 @export var scenario_root_node: Node
 @export var invisible_wall: StaticBody2D
 @export var new_camera_x_limit: int
+@export var autocomplete: bool
+@export var autocomplate_player_start: int
 
 var goal_satisfied_bugs: Array[BugEntity]
 var player: Player
@@ -29,6 +31,11 @@ func _ready():
 	player = get_tree().get_first_node_in_group("Player")
 	if player != null:
 		camera = player.find_child("Camera2D") as Camera2D
+	if autocomplete:
+		# Start with this scenario already completed
+		on_scenario_finished()
+		var platformer_character = player.find_child("PlatformerCharacter") as PlatformerCharacter
+		platformer_character.global_position.x = autocomplate_player_start
 
 func on_goal_satisfied(p_bug_entity: BugEntity):
 	if goal_satisfied_bugs.has(p_bug_entity):

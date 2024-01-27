@@ -36,6 +36,7 @@ script = ExtResource("1_qyd4o")
 scenario_root_node = NodePath("..")
 invisible_wall = NodePath("../InvisibleWall")
 new_camera_x_limit = 3500
+autocomplate_player_start = 1500
 
 [node name="ElderBug" parent="." instance=ExtResource("4_ps6eb")]
 position = Vector2(263, 638)
