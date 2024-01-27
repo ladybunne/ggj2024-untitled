@@ -55,11 +55,12 @@ visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="InputScramble" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+[node name="InputScramble" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("1_qcft0")
 move_names = Array[String](["move_left_name", "move_right_name", "jump_name", "move_down_name"])
 bug_data = SubResource("Resource_6rpbp")
 collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
 
 [node name="BugNameLabel" type="Label" parent="."]
 visibility_layer = 4
