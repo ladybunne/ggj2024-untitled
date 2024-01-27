@@ -27,7 +27,7 @@ func _ready():
 		if not bug.is_goal_bug:
 			continue
 		bug.goal_satisfied.connect(on_goal_satisfied)
-		print(bug)
+		print(self, " goal bug: ", bug)
 	player = get_tree().get_first_node_in_group("Player")
 	if player != null:
 		camera = player.find_child("Camera2D") as Camera2D

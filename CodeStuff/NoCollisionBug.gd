@@ -10,4 +10,4 @@ func _ready():
 func body_entered(target):
 	if target.is_in_group("Partners"):
 		print("NoCollisionBug goal satisfied! yayyyyy")
-		goal_satisfied.emit()
+		goal_satisfied.emit(self)

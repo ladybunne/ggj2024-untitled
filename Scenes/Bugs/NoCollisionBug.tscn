@@ -72,3 +72,4 @@ root_node = NodePath("..")
 show_talk_prompt = false
 show_name_label = false
 name_label_string = "No CollisionBug"
+is_goal_bug = true

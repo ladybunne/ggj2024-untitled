@@ -14,4 +14,4 @@ func _input(event):
 			# Toggle collisions with the floor
 			body.collision_mask ^= 1
 			body.toggleTerrainCollision()
-			goal_satisfied.emit()
+			goal_satisfied.emit(self)
