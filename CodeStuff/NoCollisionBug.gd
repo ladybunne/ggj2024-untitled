@@ -5,7 +5,9 @@ extends BugEntity
 func _ready():
 	super._ready()
 	print("Init NoCollisionBug")
+	collision_area.body_entered.connect(body_entered)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func body_entered(target):
+	print(target, "yay goal satisfied.")
+	if target.is_in_group("Partners"):
+		print(target, "Yay. goal! satisfied!")

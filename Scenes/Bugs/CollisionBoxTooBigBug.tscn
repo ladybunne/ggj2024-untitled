@@ -11,7 +11,7 @@
 size = Vector2(384, 320)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oossl"]
-size = Vector2(256, 256)
+size = Vector2(256, 224)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ppcd"]
-size = Vector2(256, 256)
+size = Vector2(256, 224)
 
 [sub_resource type="Resource" id="Resource_5gtjt"]
 script = ExtResource("4_ppr5b")
@@ -47,7 +47,6 @@ identity = SubResource("Resource_5gtjt")
 [node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
 
 [node name="Interaction Area2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -62,7 +61,7 @@ mass = 0.11
 script = ExtResource("1_hponk")
 
 [node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(64, 64)
+position = Vector2(64, 80)
 shape = SubResource("RectangleShape2D_oossl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
@@ -81,13 +80,13 @@ offset_bottom = -19.0
 text = "Lonely Collider Too Big Bug"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="RigidBody2D"]
-collision_layer = 64
+collision_layer = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/CharacterBody2D"]
-position = Vector2(64, 64)
+position = Vector2(64, 80)
 shape = SubResource("RectangleShape2D_3ppcd")
 
-[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup", "Partners"]]
 script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../Interaction Area2D")
