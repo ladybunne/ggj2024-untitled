@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://86jn37addt06"]
+[gd_scene load_steps=9 format=3 uid="uid://86jn37addt06"]
 
-[ext_resource type="PackedScene" uid="uid://di30hfatvcpj" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
 [ext_resource type="PackedScene" uid="uid://c2yw2m2hg0uak" path="res://Scenes/Level.tscn" id="1_yglj6"]
 [ext_resource type="PackedScene" uid="uid://bd5qcnbid5xsl" path="res://Scenes/Player.tscn" id="2_k5i3g"]
 [ext_resource type="Script" path="res://CodeStuff/SceneController.gd" id="3_4gswl"]
 [ext_resource type="PackedScene" uid="uid://mvudtnb68tbs" path="res://Scenes/UI/Dialogue/DialogueUI.tscn" id="4_as5ok"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_manager.gd" id="5_n6fbc"]
 [ext_resource type="PackedScene" uid="uid://cs20cvynk80gc" path="res://Scenes/UI/Letterboxing/Letterboxing.tscn" id="6_jppbn"]
+[ext_resource type="PackedScene" uid="uid://brbgg5dyonpwc" path="res://Scenes/UI/QuestListUI.tscn" id="8_0xuwc"]
 
 [node name="TheGameScene" type="Node"]
 
@@ -33,3 +34,8 @@ visible = false
 script = ExtResource("5_n6fbc")
 
 [node name="Letterboxing" parent="." instance=ExtResource("6_jppbn")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuestListUi" parent="CanvasLayer" instance=ExtResource("8_0xuwc")]
+position = Vector2(940, 28)

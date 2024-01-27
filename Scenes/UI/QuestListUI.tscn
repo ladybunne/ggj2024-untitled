@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://brbgg5dyonpwc"]
+
+[ext_resource type="Texture2D" uid="uid://c24nrpa6jvptn" path="res://Assets/Sprites/BugSprites/generic hue bug.png" id="1_vtlf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mulil"]
+content_margin_left = 9.0
+content_margin_top = 3.0
+
+[node name="QuestListUi" type="Node2D"]
+
+[node name="These arent really Quests per se" type="Node" parent="."]
+
+[node name="Should be hidden until you speak to the ElderBug" type="Node" parent="."]
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 32.0
+offset_right = 544.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mulil")
+item_count = 3
+item_0/text = "Help bugs find love."
+item_1/text = "Check Item 2"
+item_2/text = "Check Item 3"
+
+[node name="QuestItem1" type="Sprite2D" parent="."]
+modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+position = Vector2(32, 41)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vtlf2")
+offset = Vector2(-32, -32)
+
+[node name="QuestItem2" type="Sprite2D" parent="."]
+modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+position = Vector2(32, 81)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vtlf2")
+offset = Vector2(-32, -32)
+
+[node name="QuestItem3" type="Sprite2D" parent="."]
+modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
+position = Vector2(32, 120)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vtlf2")
+offset = Vector2(-32, -32)

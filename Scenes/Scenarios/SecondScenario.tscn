@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6n2rkacp7lqf"]
+[gd_scene load_steps=8 format=3 uid="uid://cx2tq8urrjyhy"]
 
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_yftaf"]
 [ext_resource type="Texture2D" uid="uid://qj8x8w66s1gs" path="res://Assets/Design/collisionleveldesign.png" id="2_5twla"]
