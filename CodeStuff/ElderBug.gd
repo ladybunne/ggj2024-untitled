@@ -1,11 +1,17 @@
 extends BugEntity
 
 @export var character_body: CharacterBody2D
-
+var dialogue_change_trigger_area: Area2D
+@export var alternate_dialogue: DialogueData
 func _ready():
 	super._ready()
+	dialogue_change_trigger_area = get_tree().get_first_node_in_group("ElderBugTrigger")
+	dialogue_change_trigger_area.body_entered.connect(change_dialogue)
 	print("Init Elder bug")
 	character_body.is_following = false 
+
+func change_dialogue():
+	bug_data.dialogue = alternate_dialogue
 
 func give_player_ref(p_player: Player):
 	super(p_player)

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://by3h17ocqqfj5"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_tato4"]
+
+[resource]
+script = ExtResource("1_tato4")
+lines = Array[String](["Oh! Hello there little one. What's your name?", "[sp=p]I'm Bee! Bee Friend.", "[sp=b]Heh. Neat. Well maybe you can help me out by [i]befriending[/i] some of my townsfolk.", "They're an ecclectic bunch.", "... Lead the way! I'll follow you."])

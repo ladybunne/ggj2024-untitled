@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://5hvnlu3x2aql"]
+[gd_scene load_steps=12 format=3 uid="uid://5hvnlu3x2aql"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_qyd4o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_wx0a3"]
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_6jg67"]
 [ext_resource type="PackedScene" uid="uid://bpkt0kbvntfsn" path="res://Scenes/Bugs/ElderBug.tscn" id="4_ps6eb"]
 [ext_resource type="PackedScene" uid="uid://pivjj1vyj67s" path="res://Scenes/Bugs/FallThroughWorldBug.tscn" id="5_fa1a8"]
+[ext_resource type="Texture2D" uid="uid://d1m6fdwjact36" path="res://Assets/Sprites/Lamp.png" id="6_f1trv"]
+[ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="7_ivgsw"]
+[ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="8_pri7b"]
+[ext_resource type="PackedScene" uid="uid://dsc4k10lqaagt" path="res://Scenes/FallthroughTerrain.tscn" id="9_2tojp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qaxhd"]
+size = Vector2(36, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xknjb"]
+size = Vector2(30, 27)
 
 [node name="FirstScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_wx0a3")
@@ -14,9 +24,9 @@ manager = NodePath("ScenarioManager")
 tile_set = ExtResource("2_6jg67")
 format = 2
 layer_0/name = "BaseLayer"
-layer_0/tile_data = PackedInt32Array(1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441818, 0, 0, 1441819, 0, 65536, 1441820, 0, 65536, 1441821, 0, 65536, 1441822, 0, 65536, 1441823, 0, 65536, 1441824, 0, 65536, 1441825, 0, 65536, 1441826, 0, 65536, 1441827, 0, 65536, 1441828, 0, 65536, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1507355, 0, 65536, 1507364, 0, 65536, 1376275, 0, 0, 1376274, 0, 0)
+layer_0/tile_data = PackedInt32Array(1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441818, 0, 0, 1441819, 0, 65536, 1441820, 0, 65536, 1441821, 0, 65536, 1441822, 0, 65536, 1441823, 0, 65536, 1441824, 0, 65536, 1441825, 0, 65536, 1441826, 0, 65536, 1441827, 0, 65536, 1441828, 0, 65536, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1507355, 0, 65536, 1507364, 0, 65536)
 layer_1/name = "Foreground"
-layer_1/tile_data = PackedInt32Array(1441792, 3, 0, 1441793, 3, 0, 1441794, 3, 0, 1441795, 3, 0, 1441796, 3, 0, 1441797, 3, 0, 1441798, 3, 0, 1441799, 3, 0, 1441800, 3, 0, 1441801, 3, 0, 1441802, 3, 0, 1441803, 3, 0, 1441804, 3, 0, 1441805, 3, 0, 1441806, 3, 0, 1441807, 3, 0, 1441808, 3, 0, 1441809, 3, 0, 1441812, 3, 0, 1441813, 3, 0, 1441814, 3, 0, 1441815, 3, 0, 1441816, 3, 0, 1441817, 3, 0, 1441818, 3, 0, 1441819, 3, 0, 1441820, 3, 0, 1441821, 3, 0, 1441822, 3, 0, 1441823, 3, 0, 1441824, 3, 0, 1441825, 3, 0, 1441826, 3, 0, 1441827, 3, 0, 1441828, 3, 0, 1441829, 3, 0, 1441830, 3, 0, 1441831, 3, 0, 1376275, 1, 0, 1376274, 1, 0)
+layer_1/tile_data = PackedInt32Array(1441792, 3, 0, 1441793, 3, 0, 1441794, 3, 0, 1441795, 3, 0, 1441796, 3, 0, 1441797, 3, 0, 1441798, 3, 0, 1441799, 3, 0, 1441800, 3, 0, 1441801, 3, 0, 1441802, 3, 0, 1441803, 3, 0, 1441804, 3, 0, 1441805, 3, 0, 1441806, 3, 0, 1441807, 3, 0, 1441808, 3, 0, 1441809, 3, 0, 1441812, 3, 0, 1441813, 3, 0, 1441814, 3, 0, 1441815, 3, 0, 1441816, 3, 0, 1441817, 3, 0, 1441818, 3, 0, 1441819, 3, 0, 1441820, 3, 0, 1441821, 3, 0, 1441822, 3, 0, 1441823, 3, 0, 1441824, 3, 0, 1441825, 3, 0, 1441826, 3, 0, 1441827, 3, 0, 1441828, 3, 0, 1441829, 3, 0, 1441830, 3, 0, 1441831, 3, 0, 1441810, 3, 0, 1441811, 3, 0)
 
 [node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_qyd4o")
@@ -25,5 +35,38 @@ scenario_root_node = NodePath("..")
 [node name="ElderBug" parent="." instance=ExtResource("4_ps6eb")]
 position = Vector2(263, 640)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_fa1a8")]
+[node name="FallThroughFloorBug" parent="." node_paths=PackedStringArray("terrain") instance=ExtResource("5_fa1a8")]
 position = Vector2(993, 639)
+terrain = NodePath("../FallthroughTerrain")
+
+[node name="Lamp3" type="Sprite2D" parent="."]
+position = Vector2(52, 634)
+texture = ExtResource("6_f1trv")
+
+[node name="Lamp4" type="Sprite2D" parent="."]
+position = Vector2(882, 634)
+texture = ExtResource("6_f1trv")
+
+[node name="RopeCoil" type="StaticBody2D" parent="."]
+position = Vector2(591, 694)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCoil"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_qaxhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="RopeCoil"]
+texture = ExtResource("7_ivgsw")
+
+[node name="SignSprite" type="Sprite2D" parent="."]
+position = Vector2(1214, 688)
+texture = ExtResource("8_pri7b")
+
+[node name="Area2D" type="Area2D" parent="." groups=["ElderBugTrigger"]]
+position = Vector2(543, 689)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, 1.5)
+shape = SubResource("RectangleShape2D_xknjb")
+
+[node name="FallthroughTerrain" parent="." instance=ExtResource("9_2tojp")]
+position = Vector2(96, 320)

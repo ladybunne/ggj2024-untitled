@@ -1,4 +1,4 @@
-class_name FallthroughTerrain extends Node
+class_name FallthroughTerrain extends Node2D
 
 @export var collision_area: CollisionShape2D
 

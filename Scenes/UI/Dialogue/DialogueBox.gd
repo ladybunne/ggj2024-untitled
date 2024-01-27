@@ -37,7 +37,7 @@ func update_ui(p_line: String, p_done: bool):
 		title_label.text = "Narrator"
 	elif is_player:
 		portrait_rect.texture = player_portrait
-		title_label.text = "THE PLAYER NAME (PLEASE SET THIS)"
+		title_label.text = "Bee Friend!"
 	elif bug_entity != null and bug_entity.bug_data != null and bug_entity.bug_data.identity != null:
 		portrait_rect.texture = bug_entity.bug_data.identity.icon
 		title_label.text = bug_entity.bug_data.identity.name
