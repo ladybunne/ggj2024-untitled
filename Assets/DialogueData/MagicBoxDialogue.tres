@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bkonkcgmxwdm3"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_no5ff"]
+
+[resource]
+script = ExtResource("1_no5ff")
+lines = Array[String](["This is the magic at the top of the crates. Behold."])
