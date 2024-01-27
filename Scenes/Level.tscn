@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2yw2m2hg0uak"]
+[gd_scene load_steps=10 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="PackedScene" uid="uid://dww4w0hgjgmtd" path="res://Scenes/Bugs/ExampleBug.tscn" id="2_2fvri"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://pivjj1vyj67s" path="res://Scenes/Bugs/FallThroughWorldBug.tscn" id="6_6ugdf"]
 [ext_resource type="PackedScene" uid="uid://boaruh1pv6g8p" path="res://Scenes/Bugs/EnableFly.tscn" id="7_ndji5"]
 [ext_resource type="PackedScene" uid="uid://6aa52vpqyxm3" path="res://Scenes/Bugs/CameraJank.tscn" id="8_6t1uk"]
-[ext_resource type="PackedScene" uid="uid://m7ncdk54n4f0" path="res://Scenes/Bugs/CollisionBoxTooBigBug.tscn" id="9_qs4oi"]
 [ext_resource type="PackedScene" uid="uid://cis8mnefn8mc1" path="res://Scenes/Bugs/RemoveBackground.tscn" id="10_sturp"]
 
 [node name="Level" type="Node2D"]
@@ -38,9 +37,6 @@ position = Vector2(1284, 313)
 
 [node name="CameraJank" parent="." instance=ExtResource("8_6t1uk")]
 position = Vector2(1119, 635)
-
-[node name="ExampleBug2" parent="." instance=ExtResource("9_qs4oi")]
-position = Vector2(1824, 544)
 
 [node name="RemoveBackground" parent="." instance=ExtResource("10_sturp")]
 position = Vector2(1024, 345)

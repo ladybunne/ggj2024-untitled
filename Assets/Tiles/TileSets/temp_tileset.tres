@@ -1,6 +1,22 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ddoy7l1eh33e7"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ddoy7l1eh33e7"]
 
+[ext_resource type="Texture2D" uid="uid://dqisrm3msabbd" path="res://Assets/Sprites/Rocky_Ground.png" id="1_gvj8r"]
 [ext_resource type="Texture2D" uid="uid://chiw6cgqwjfo1" path="res://Assets/Tiles/Atlas/black_and_white.png" id="1_u3m2j"]
+[ext_resource type="Texture2D" uid="uid://c3xqm7638yle8" path="res://Assets/Sprites/Grass_Topper_offsetVer.png" id="2_1ogyt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_010cc"]
+texture = ExtResource("1_gvj8r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksfi2"]
+texture = ExtResource("2_1ogyt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7d5u"]
 texture = ExtResource("1_u3m2j")
@@ -17,3 +33,5 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_r7d5u")
+sources/0 = SubResource("TileSetAtlasSource_010cc")
+sources/1 = SubResource("TileSetAtlasSource_ksfi2")
