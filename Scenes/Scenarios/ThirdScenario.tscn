@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=4 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
+[ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_rojly"]
 
 [node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_mepmr")
 manager = NodePath("ScenarioManager")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_rojly")
+format = 2
 
 [node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_8jm3o")
