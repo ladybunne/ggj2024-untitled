@@ -5,9 +5,11 @@ func _ready():
 	super._ready()
 	print("Init FallThroughWorld bug")
 
-func give_player_ref(p_player: Player):
-	super(p_player)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _input(event):
+	super._input(event)
+	if platformer_inside != null and event.is_action_pressed("player_interact"):
+		var body = root_node.find_child("CharacterBody2D") as FallThroughWorldBugMovement
+		if body != null:
+			body.enableGravity = !body.enableGravity
+			# Toggle collisions with the floor
+			body.collision_mask ^= 1
