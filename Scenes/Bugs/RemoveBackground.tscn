@@ -24,7 +24,7 @@ script = ExtResource("5_pqwy1")
 dialogue = ExtResource("3_21557")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptino"]
-size = Vector2(58, 64)
+size = Vector2(64, 64)
 
 [node name="RemoveBackground" type="StaticBody2D"]
 visibility_layer = 4
@@ -52,5 +52,5 @@ root_node = NodePath("..")
 name_label_string = "Remove background"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31, 32)
+position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_ptino")

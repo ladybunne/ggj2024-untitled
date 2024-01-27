@@ -35,8 +35,8 @@ position = Vector2(1440, 544)
 
 [node name="RemovableHouse" type="Sprite2D" parent="."]
 visibility_layer = 128
-position = Vector2(800, 384)
-scale = Vector2(9.5, 8.375)
+position = Vector2(800, 400)
+scale = Vector2(9, 8.5)
 texture = SubResource("GradientTexture2D_6gq85")
 
 [node name="RemoveBackgroundBug" parent="." instance=ExtResource("5_5btf2")]
