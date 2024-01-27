@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=3 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
+[ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
 
-[node name="ThirdScenario" type="Node2D"]
+[node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
+script = ExtResource("1_mepmr")
+manager = NodePath("ScenarioManager")
 
 [node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_8jm3o")

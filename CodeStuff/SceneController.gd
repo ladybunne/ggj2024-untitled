@@ -1,12 +1,14 @@
 class_name SceneController extends Node
 
+@export_group("References")
 @export var player: Player
-var platformer_character: PlatformerCharacter
-
+@export var level: Level
 @export var dialogue_ui: DialogueUI
 @export var dialogue_manager: DialogueManager
-
 @export var letterboxer: Letterboxer
+@export_group("")
+
+var platformer_character: PlatformerCharacter
 
 ## This is to control the state of the game, when transitioning between things
 ## like the normal view, a tutorial popup, a dialogue instance, a choice, and so on.
@@ -14,7 +16,6 @@ enum UIState {NORMAL, DIALOGUE}
 
 ## The current state of the UI.
 @export var ui_state: UIState = UIState.NORMAL
-
 
 func _ready():
 	platformer_character = player.platformer_character
@@ -32,7 +33,10 @@ func _ready():
 			dialogue_ui.set_bug(p_bug)
 			dialogue_manager.data = p_bug.bug_data.dialogue
 			)
-		 
+	
+	# Scenario / level stuff
+	for scenario in level.scenarios:
+		scenario.manager.scenario_finished.connect(on_scenario_completed)
 	
 	# Connect the DialogueManager and the Dialogue UI.
 	if dialogue_manager != null:
@@ -45,6 +49,8 @@ func _ready():
 		dialogue_ui.advance_button.pressed.connect(advance_dialogue)
 		dialogue_manager.on_scene_started()
 		dialogue_manager.on_dialogue_changed()
+		
+	
 
 func advance_dialogue():
 	dialogue_manager.advance()
@@ -64,8 +70,7 @@ func on_dialogue_done():
 	ui_state = UIState.NORMAL
 	player.platformer_character.movement_enabled = true
 
-func on_bug_goal_completed():
-	# Logic
+func on_scenario_completed():
 	pass
 
 func toggle_letterboxing():

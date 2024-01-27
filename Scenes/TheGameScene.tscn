@@ -18,9 +18,10 @@ layer = -1
 [node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
 level_ref = NodePath("../Level")
 
-[node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "dialogue_ui", "dialogue_manager", "letterboxer")]
+[node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "level", "dialogue_ui", "dialogue_manager", "letterboxer")]
 script = ExtResource("3_4gswl")
 player = NodePath("../Player")
+level = NodePath("../Level")
 dialogue_ui = NodePath("../DialogueUI")
 dialogue_manager = NodePath("../DialogueManager")
 letterboxer = NodePath("../Letterboxing")
