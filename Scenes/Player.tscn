@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd5qcnbid5xsl"]
+[gd_scene load_steps=9 format=3 uid="uid://bd5qcnbid5xsl"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_uwtih"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/platformer_character.gd" id="2_4suwj"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/run_component.gd" id="3_svf3h"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/PlatformerCharacter/Components/jump_component.gd" id="4_e5ixk"]
+[ext_resource type="Texture2D" uid="uid://dmrt378aj03ex" path="res://Assets/Sprites/Bee_Main_updated.png" id="5_y1lup"]
 
 [sub_resource type="Resource" id="Resource_ha0uj"]
 script = ExtResource("3_svf3h")
@@ -35,14 +36,6 @@ defer_hvel_to_run_component = true
 jumpsquat_time = 0.0
 rejump_buffer_time = 0.25
 
-[sub_resource type="Gradient" id="Gradient_eqyud"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.640523, 0.391736, 0.770075, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o44om"]
-gradient = SubResource("Gradient_eqyud")
-width = 32
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
 size = Vector2(31, 63)
 
@@ -67,7 +60,8 @@ jump_component = SubResource("Resource_3hrhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlatformerCharacter"]
 visibility_layer = 2
-texture = SubResource("GradientTexture2D_o44om")
+texture_filter = 1
+texture = ExtResource("5_y1lup")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerCharacter"]

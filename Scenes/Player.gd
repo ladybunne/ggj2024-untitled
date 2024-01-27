@@ -32,3 +32,9 @@ func _input(event):
 			currently_held_bug.root_node.scale.y = -1
 			currently_held_bug.root_node.position = Vector2(0, 0)
 			#print("picked up bug: " + currently_held_bug.to_string())
+
+func _process(delta):
+	if platformer_character.facing_right:
+		platformer_character.get_node("Sprite2D").flip_h = true
+	else:
+		platformer_character.get_node("Sprite2D").flip_h = false
