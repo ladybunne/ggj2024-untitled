@@ -64,7 +64,7 @@ position = Vector2(800, 431)
 scale = Vector2(9, 8.5)
 texture = SubResource("GradientTexture2D_6gq85")
 
-[node name="BugCharacters" type="Node" parent="."]
+[node name="BugCharacters" type="Node2D" parent="."]
 
 [node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
 position = Vector2(2385, -811)
@@ -85,7 +85,7 @@ visible = false
 position = Vector2(304, 272)
 shape = SubResource("RectangleShape2D_7w7ay")
 
-[node name="Scenery" type="Node" parent="."]
+[node name="Scenery" type="Node2D" parent="."]
 
 [node name="Sign" type="Sprite2D" parent="Scenery"]
 z_index = -1
