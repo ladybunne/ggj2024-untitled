@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxorvbegiv6sf"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_hdovq"]
+[ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_su81a"]
+[ext_resource type="Resource" uid="uid://dac6gyyj72w5" path="res://Assets/DialogueData/HidingBug.tres" id="3_uuja0"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_n171i"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_fphja"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hdovq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(45, 46)
+
+[sub_resource type="Resource" id="Resource_6k2u4"]
+script = ExtResource("4_n171i")
+name = "Example Bug"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_7en53"]
+script = ExtResource("5_fphja")
+dialogue = ExtResource("3_uuja0")
+identity = SubResource("Resource_6k2u4")
+
+[node name="HidingBug" type="Node2D"]
+visibility_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 4
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 4
+position = Vector2(17.5, 16)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="ExampleBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_su81a")
+bug_data = SubResource("Resource_7en53")
+collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
