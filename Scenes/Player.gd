@@ -13,6 +13,8 @@ class_name Player extends Entity
 
 @export var y_death_barrier: float = 5000.0
 
+@export var drop_bug_offset: float = 64.0
+
 var currently_colliding_with_bug: BugEntity
 var currently_held_bug: BugEntity
 var start_position: Vector2
@@ -28,7 +30,10 @@ func _input(event):
 			currently_held_bug.dropped()
 			currently_held_bug.root_node.reparent(level_ref)
 			currently_held_bug.root_node.scale.y = 1
-			currently_held_bug.root_node.position = platformer_character.position + Vector2(32, 32)
+			if platformer_character.facing_right:
+				currently_held_bug.root_node.position = platformer_character.position + Vector2(drop_bug_offset, 0)
+			else:
+				currently_held_bug.root_node.position = platformer_character.position + Vector2(-drop_bug_offset, 0)
 			var collision = currently_held_bug.get_parent() as RigidBody2D
 			if collision != null:
 				# Enable physics for the picked-up bug
