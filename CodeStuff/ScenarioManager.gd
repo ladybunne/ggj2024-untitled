@@ -18,6 +18,8 @@ func _ready():
 		var bug := bug_uncasted as BugEntity
 		if bug == null:
 			continue
+		if not bug.is_goal_bug:
+			continue
 		bug.goal_satisfied.connect(on_goal_satisfied)
 		print(bug)
 

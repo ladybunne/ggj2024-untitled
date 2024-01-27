@@ -29,6 +29,8 @@ var name_label: Control
 @export var show_name_label: bool = true
 @export var name_label_string: String = "Bug Display Name"
 
+@export var is_goal_bug: bool = false
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
