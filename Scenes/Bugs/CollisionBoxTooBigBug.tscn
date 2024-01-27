@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://m7ncdk54n4f0"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_crdjm"]
+[ext_resource type="Script" path="res://CodeStuff/CollisionBoxTooBigBug.gd" id="2_q3b4v"]
+[ext_resource type="Resource" uid="uid://x27f8ev7aieq" path="res://Assets/DialogueData/CollisionBoxTooBig.tres" id="3_5kjtr"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_ppr5b"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_228cw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(224, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oossl"]
+size = Vector2(160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_crdjm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_5gtjt"]
+script = ExtResource("4_ppr5b")
+name = "LonelyCollisionBoxTooBigBug"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_3q3cb"]
+script = ExtResource("5_228cw")
+dialogue = ExtResource("3_5kjtr")
+identity = SubResource("Resource_5gtjt")
+
+[node name="ExampleBug" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Interaction Area2D" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Area2D"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_oossl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+script = ExtResource("2_q3b4v")
+bug_data = SubResource("Resource_3q3cb")
+collision_area = NodePath("../CharacterBody2D/Interaction Area2D")
