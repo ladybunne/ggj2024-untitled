@@ -67,3 +67,4 @@ script = ExtResource("2_6tgpc")
 bug_data = SubResource("Resource_dbt8h")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
+name_label_string = "No CollisionBug"

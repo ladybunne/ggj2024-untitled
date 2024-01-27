@@ -69,10 +69,4 @@ script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../CharacterBody2D/Interaction Area2D")
 root_node = NodePath("..")
-
-[node name="DebugLabel (but kind of want to keep it?)?" type="Label" parent="."]
-offset_left = -32.0
-offset_top = -42.0
-offset_right = 178.0
-offset_bottom = -19.0
-text = "Lonely Collider Too Big Bug"
+name_label_string = "Lonely Collider Too Big Bug"

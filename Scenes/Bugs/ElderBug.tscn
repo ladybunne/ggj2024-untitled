@@ -51,6 +51,7 @@ character_body = NodePath("../CharacterBody2D")
 bug_data = SubResource("Resource_bx1ra")
 collision_area = NodePath("../CharacterBody2D/Area2D")
 root_node = NodePath("..")
+name_label_string = "Elder Bug"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 visibility_layer = 4
@@ -76,11 +77,3 @@ collision_mask = 2
 visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
-
-[node name="BugNameLabel" type="Label" parent="CharacterBody2D"]
-visibility_layer = 4
-offset_left = -21.0
-offset_top = -28.0
-offset_right = 53.0
-offset_bottom = -5.0
-text = "Elder Bug"

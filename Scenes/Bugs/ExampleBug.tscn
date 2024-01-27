@@ -60,3 +60,4 @@ script = ExtResource("1_5064r")
 bug_data = SubResource("Resource_7en53")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
+name_label_string = "Example Bug"

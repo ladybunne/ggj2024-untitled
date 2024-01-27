@@ -65,16 +65,9 @@ visibility_layer = 4
 position = Vector2(14.5, 21)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="Debug label (hide this later)" type="Label" parent="CharacterBody2D"]
-visibility_layer = 4
-offset_left = -70.0
-offset_top = -34.0
-offset_right = 98.0
-offset_bottom = -11.0
-text = "FallThroughWorldBug"
-
 [node name="FallThroughWorldBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_24r3v")
 bug_data = SubResource("Resource_o4rca")
 collision_area = NodePath("../CharacterBody2D/Area2D")
 root_node = NodePath("..")
+name_label_string = "FallThroughWorldBug"

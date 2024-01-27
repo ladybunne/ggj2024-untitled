@@ -20,7 +20,12 @@ var scene_controller: SceneController
 const TALK_PROMPT_SCENE: PackedScene = preload("res://Scenes/UI/TalkPrompt.tscn")
 var talk_prompt: Control
 
+const NAME_LABEL_SCENE: PackedScene = preload("res://Scenes/UI/NameLabel.tscn")
+var name_label: Control
+
 @export var talking_completes_goal: bool = false
+
+@export var name_label_string: String = "Bug Display Name"
 
 func _ready():
 	if collision_area != null:
@@ -30,7 +35,12 @@ func _ready():
 	talk_prompt = TALK_PROMPT_SCENE.instantiate()
 	root_node.add_child.call_deferred(talk_prompt)
 	talk_prompt.visible = false
-	talk_prompt.position = Vector2(-64, -64)
+	talk_prompt.position = Vector2(-64, -96)
+	
+	name_label = NAME_LABEL_SCENE.instantiate()
+	root_node.add_child.call_deferred(name_label)
+	name_label.label.text = name_label_string
+	(func(): name_label.position = Vector2(-(name_label.size.x / 2) + 16, -32)).call_deferred()
 
 func give_player_ref(p_player: Player):
 	player = p_player

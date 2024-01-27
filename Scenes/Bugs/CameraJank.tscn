@@ -46,11 +46,4 @@ script = ExtResource("2_csnus")
 bug_data = SubResource("Resource_t4ddj")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
-
-[node name="BugNameLabel" type="Label" parent="."]
-visibility_layer = 4
-offset_left = -21.0
-offset_top = -28.0
-offset_right = 53.0
-offset_bottom = -5.0
-text = "Lock camera"
+name_label_string = "Lock camera"

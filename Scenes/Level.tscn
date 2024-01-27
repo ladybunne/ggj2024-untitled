@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://boaruh1pv6g8p" path="res://Scenes/Bugs/EnableFly.tscn" id="7_ndji5"]
 [ext_resource type="PackedScene" uid="uid://6aa52vpqyxm3" path="res://Scenes/Bugs/CameraJank.tscn" id="8_6t1uk"]
 [ext_resource type="PackedScene" uid="uid://6n2rkacp7lqf" path="res://Scenes/LonelyCollisionLevel.tscn" id="10_fx4yq"]
-[ext_resource type="PackedScene" path="res://Scenes/Bugs/RemoveBackground.tscn" id="10_sturp"]
+[ext_resource type="PackedScene" uid="uid://cis8mnefn8mc1" path="res://Scenes/Bugs/RemoveBackground.tscn" id="10_sturp"]
 [ext_resource type="PackedScene" uid="uid://cxorvbegiv6sf" path="res://Scenes/Bugs/HidingBug.tscn" id="11_w7b48"]
 [ext_resource type="Texture2D" uid="uid://cavr8p2syal82" path="res://Assets/Sprites/Well.png" id="12_4sht6"]
 
