@@ -8,6 +8,6 @@ func _ready():
 	collision_area.body_entered.connect(body_entered)
 
 func body_entered(target):
-	print(target, "yay goal satisfied.")
 	if target.is_in_group("Partners"):
-		print(target, "Yay. goal! satisfied!")
+		print("NoCollisionBug goal satisfied! yayyyyy")
+		goal_satisfied.emit()

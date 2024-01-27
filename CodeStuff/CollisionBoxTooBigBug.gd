@@ -1,4 +1,4 @@
-extends BugEntity
+class_name CollisionBoxTooBigBug extends BugEntity
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

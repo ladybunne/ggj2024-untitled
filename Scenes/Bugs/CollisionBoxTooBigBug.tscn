@@ -79,14 +79,14 @@ offset_right = 178.0
 offset_bottom = -19.0
 text = "Lonely Collider Too Big Bug"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="RigidBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="RigidBody2D" groups=["Partners"]]
 collision_layer = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/CharacterBody2D"]
 position = Vector2(64, 80)
 shape = SubResource("RectangleShape2D_3ppcd")
 
-[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup", "Partners"]]
+[node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
 collision_area = NodePath("../Interaction Area2D")

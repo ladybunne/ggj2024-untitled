@@ -31,7 +31,7 @@ layer_1/tile_data = PackedInt32Array(2097158, 3, 0, 2097159, 3, 0, 2097160, 3, 0
 position = Vector2(192, 608)
 
 [node name="LonelyCollisionBoxTooBigBug" parent="." instance=ExtResource("4_phg2l")]
-position = Vector2(480, 128)
+position = Vector2(361, 141)
 
 [node name="RepelBug" parent="." instance=ExtResource("5_d8e6y")]
 position = Vector2(800, -96)
