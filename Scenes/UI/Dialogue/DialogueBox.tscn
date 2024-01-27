@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cib0ams1ag7cc"]
+[gd_scene load_steps=9 format=3 uid="uid://cib0ams1ag7cc"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Dialogue/DialogueBox.gd" id="1_6b6j5"]
 [ext_resource type="Texture2D" uid="uid://drrlsbyxssrmd" path="res://Assets/Sprites/dialogue cursor.png" id="2_a7hv7"]
 [ext_resource type="Texture2D" uid="uid://bcapm5wxh5en7" path="res://Assets/Sprites/dialogue cursor done.png" id="3_14hvf"]
+[ext_resource type="Texture2D" uid="uid://buakaatt3nbo4" path="res://Assets/Sprites/Bee_Main.png" id="4_0jxlx"]
 [ext_resource type="Script" path="res://CodeStuff/oh god so cursed/SFXEffect.gd" id="4_k5omg"]
 
 [sub_resource type="Gradient" id="Gradient_dngcj"]
@@ -29,6 +30,7 @@ dialogue_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Dialogue"
 dialogue_cursor = NodePath("MarginContainer/HBoxContainer/VBoxContainer/DialogueCursor")
 dialogue_cursor_not_done = ExtResource("2_a7hv7")
 dialogue_cursor_done = ExtResource("3_14hvf")
+player_portrait = ExtResource("4_0jxlx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visibility_layer = 8
