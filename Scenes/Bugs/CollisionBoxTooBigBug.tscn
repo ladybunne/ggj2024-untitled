@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://m7ncdk54n4f0"]
+[gd_scene load_steps=12 format=3 uid="uid://m7ncdk54n4f0"]
 
+[ext_resource type="Script" path="res://CodeStuff/CollisionBoxTooBigPhysics.gd" id="1_hponk"]
 [ext_resource type="Texture2D" uid="uid://bwrynj0un4j2l" path="res://Assets/Sprites/Stickbug.png" id="1_yr716"]
 [ext_resource type="Script" path="res://CodeStuff/CollisionBoxTooBigBug.gd" id="2_q3b4v"]
 [ext_resource type="Resource" uid="uid://x27f8ev7aieq" path="res://Assets/DialogueData/CollisionBoxTooBig.tres" id="3_5kjtr"]
@@ -42,21 +43,25 @@ identity = SubResource("Resource_5gtjt")
 
 [node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Interaction Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Interaction Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area2D"]
 position = Vector2(64, 32)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 3
+mass = 0.11
+script = ExtResource("1_hponk")
+
+[node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_oossl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 visibility_layer = 4
 texture_filter = 1
 scale = Vector2(2, 2)
@@ -64,9 +69,15 @@ sprite_frames = SubResource("SpriteFrames_kmcyf")
 animation = &"tall_boi"
 centered = false
 
+[node name="DebugLabel (but kind of want to keep it?)?" type="Label" parent="RigidBody2D"]
+offset_left = -32.0
+offset_top = -42.0
+offset_right = 178.0
+offset_bottom = -19.0
+text = "Lonely Collider Too Big Bug"
+
 [node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_q3b4v")
 bug_data = SubResource("Resource_3q3cb")
-collision_area = NodePath("../CharacterBody2D/Interaction Area2D")
+collision_area = NodePath("../Interaction Area2D")
 root_node = NodePath("..")
-name_label_string = "Lonely Collider Too Big Bug"

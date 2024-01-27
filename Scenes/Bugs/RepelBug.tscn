@@ -60,6 +60,5 @@ animation = &"new_animation"
 centered = false
 
 [node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-visible = false
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_loxb1")

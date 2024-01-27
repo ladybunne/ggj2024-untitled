@@ -70,12 +70,12 @@ texture = SubResource("GradientTexture2D_o44om")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerCharacter"]
-visible = false
 visibility_layer = 2
 position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_qts00")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="PlatformerCharacter"]
+visible = false
 visibility_layer = 2
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlatformerCharacter"]

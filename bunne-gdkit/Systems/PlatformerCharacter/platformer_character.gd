@@ -231,8 +231,8 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	var push_force = 80.0
-	# Resolve collisions
+	# Resolve collisions (applies impulses
+	var push_force = 45.0
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
