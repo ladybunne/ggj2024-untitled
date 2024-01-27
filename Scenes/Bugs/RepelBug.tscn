@@ -1,44 +1,65 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0u2rqorp4mlo"]
+[gd_scene load_steps=8 format=3 uid="uid://b0u2rqorp4mlo"]
 
-[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_ee7t7"]
+[ext_resource type="Texture2D" uid="uid://d0mied5lpvc" path="res://Assets/Sprites/Rhino_Beetle.png" id="1_angif"]
 [ext_resource type="Script" path="res://CodeStuff/RepelBug.gd" id="2_iy1sd"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_1k1fl"]
+
+[sub_resource type="Resource" id="Resource_2skh8"]
+script = ExtResource("5_1k1fl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ee7t7")
+"texture": ExtResource("1_angif")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(32, 32)
-
-[sub_resource type="Resource" id="Resource_2skh8"]
-script = ExtResource("5_1k1fl")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loxb1"]
+size = Vector2(64, 64)
 
 [node name="RepelBug" type="Node2D"]
 visibility_layer = 4
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visibility_layer = 4
-sprite_frames = SubResource("SpriteFrames_kmcyf")
-centered = false
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="RepelBug" type="Node" parent="RigidBody2D" node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_iy1sd")
+bug_data = SubResource("Resource_2skh8")
+collision_area = NodePath("../Interation Area 2D")
+root_node = NodePath("../..")
+
+[node name="DebugLabel" type="Label" parent="RigidBody2D"]
+offset_left = -6.0
+offset_top = -31.0
+offset_right = 71.0
+offset_bottom = -8.0
+text = "Repel Bug"
+
+[node name="Interation Area 2D" type="Area2D" parent="RigidBody2D"]
 visibility_layer = 4
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Interation Area 2D"]
 visibility_layer = 4
-position = Vector2(16, 16)
+position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="RepelBug" type="Node" parent="." groups=["BugGroup"]]
-script = ExtResource("2_iy1sd")
-bug_data = SubResource("Resource_2skh8")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+visibility_layer = 4
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+animation = &"new_animation"
+centered = false
+
+[node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_loxb1")
