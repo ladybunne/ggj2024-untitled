@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b0u2rqorp4mlo" path="res://Scenes/Bugs/RepelBug.tscn" id="5_d8e6y"]
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="7_umfnc"]
 [ext_resource type="PackedScene" uid="uid://bll33c5uq2xv0" path="res://Scenes/Zones/DialogueTriggerZone.tscn" id="8_luj6x"]
-[ext_resource type="Resource" uid="uid://bpioyibnf2rca" path="res://Assets/DialogueData/First Pass/NollissionAuto.tres" id="9_rnwqd"]
-[ext_resource type="Resource" uid="uid://cjgtpoq5bpnao" path="res://Assets/DialogueData/First Pass/ToollisionAuto.tres" id="10_275mp"]
+[ext_resource type="Resource" path="res://Assets/DialogueData/First Pass/NollissionAuto.tres" id="9_rnwqd"]
+[ext_resource type="Resource" path="res://Assets/DialogueData/First Pass/ToollisionAuto.tres" id="10_275mp"]
 
 [node name="SecondScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_yftaf")
