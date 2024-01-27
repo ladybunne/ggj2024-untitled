@@ -77,3 +77,4 @@ bug_data = SubResource("Resource_bx1ra")
 collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
 name_label_string = "Elder Bug"
+is_goal_bug = true

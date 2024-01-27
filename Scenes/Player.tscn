@@ -62,7 +62,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
 size = Vector2(63.5, 63)
 
-[node name="Player" type="Node" node_paths=PackedStringArray("platformer_character", "camera")]
+[node name="Player" type="Node" node_paths=PackedStringArray("platformer_character", "camera") groups=["Player"]]
 script = ExtResource("1_uwtih")
 platformer_character = NodePath("PlatformerCharacter")
 camera = NodePath("Camera2D")
@@ -70,8 +70,11 @@ y_death_barrier = 730.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_right = 5888
+limit_right = 1385
 limit_bottom = 720
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
 visibility_layer = 2

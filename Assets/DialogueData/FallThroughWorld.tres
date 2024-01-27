@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_n381f")
-lines = Array[String](["[sfx=insect-falling]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaahhhhhhhhhhhhhhhhhhh", "hhhhhh....", "...", "...Press C to pick up bugs."])
+lines = Array[String](["[sfx name=insect-falling]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaahhhhhhhhhhhhhhhhhhh", "hhhhhh....", "...", "...Press C to pick up bugs."])
