@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_rojly"]
-[ext_resource type="PackedScene" uid="uid://creevntwyjedw" path="res://Scenes/THEBOAT.tscn" id="4_wkxrt"]
+[ext_resource type="PackedScene" path="res://Scenes/THEBOAT.tscn" id="4_wkxrt"]
 
 [node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_mepmr")

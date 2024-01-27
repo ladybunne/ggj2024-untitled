@@ -7,23 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b60mwkkbbtghj" path="res://Assets/Sprites/BugSprites/Placeholder.png" id="3_w80y2"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="4_sau0y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibku"]
-size = Vector2(32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_w80y2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(32, 32)
-
 [sub_resource type="Resource" id="Resource_5k8td"]
 script = ExtResource("3_l16eb")
 name = "ElderBug"
@@ -42,6 +25,9 @@ script = ExtResource("4_sau0y")
 dialogue = ExtResource("2_38rdj")
 identity = SubResource("Resource_5k8td")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(139, 84)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wibku"]
 size = Vector2(65, 64)
 
@@ -55,9 +41,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(65, 64)
 
 [node name="ElderBug" type="Node2D"]
 visibility_layer = 4
@@ -75,7 +58,17 @@ visibility_layer = 4
 collision_layer = 4
 script = ExtResource("1_n15lr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TalkBox" type="Area2D" parent="CharacterBody2D"]
+visibility_layer = 4
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/TalkBox"]
+visibility_layer = 4
+position = Vector2(35.5, 22)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 visibility_layer = 4
 position = Vector2(32.5, 32)
 shape = SubResource("RectangleShape2D_wibku")
@@ -85,21 +78,3 @@ visibility_layer = 4
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
-
-[node name="TalkBox" type="Area2D" parent="CharacterBody2D"]
-visibility_layer = 4
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/TalkBox"]
-visibility_layer = 4
-position = Vector2(32.5, 32)
-shape = SubResource("RectangleShape2D_clf8f")
-
-[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup"]]
-script = ExtResource("2_n4g52")
-character_body = NodePath("..")
-bug_data = SubResource("Resource_bx1ra")
-collision_area = NodePath("../Area2D")
-root_node = NodePath("..")
-name_label_string = "Elder Bug"
