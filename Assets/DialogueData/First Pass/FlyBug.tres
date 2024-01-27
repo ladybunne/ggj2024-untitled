@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_4ymwe")
-lines = Array[String](["You're a fly!", "[sp=p]Silly, I'm a Bee! [i]you're[/i] a fly", "[sp=b]YOU. FLY."])
+lines = Array[String](["You're a fly!", "[sp=p]I'm a Bee, silly! [i]you're[/i] a fly", "[sp=b]YOU. FLY.", "[sp=p]Heh, if you say so!"])
