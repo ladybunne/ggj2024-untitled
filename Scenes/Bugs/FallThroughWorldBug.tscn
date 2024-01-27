@@ -34,7 +34,7 @@ collision_layer = 4
 script = ExtResource("2_24r3v")
 bug_data = SubResource("Resource_o4rca")
 collision_area = NodePath("../TalkBox")
-root_node = NodePath("")
+root_node = NodePath("..")
 name_label_string = "FallThroughWorldBug"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
