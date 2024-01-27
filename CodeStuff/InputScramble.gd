@@ -19,7 +19,7 @@ func _input(event):
 			for i in range(len(move_names)):
 				var temporarySwap = platformer_character.get(move_names[i])
 				var target = randi_range(0, len(move_names) - 1)
-				platformer_character.set(move_names[i], player.get(move_names[target]))
+				platformer_character.set(move_names[i], platformer_character.get(move_names[target]))
 				platformer_character.set(move_names[target], temporarySwap)
 			# Need to call init_run_component()/init_jump_component() to
 			# reinitialise move_left_name/move_right_name in the run/jump
