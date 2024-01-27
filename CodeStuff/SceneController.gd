@@ -6,6 +6,8 @@ var platformer_character: PlatformerCharacter
 @export var dialogue_ui: DialogueUI
 @export var dialogue_manager: DialogueManager
 
+@export var letterboxer: Letterboxer
+
 ## This is to control the state of the game, when transitioning between things
 ## like the normal view, a tutorial popup, a dialogue instance, a choice, and so on.
 enum UIState {NORMAL, DIALOGUE}
@@ -65,6 +67,9 @@ func on_dialogue_done():
 func on_bug_goal_completed():
 	# Logic
 	pass
+
+func toggle_letterboxing():
+	letterboxer.toggle()
 
 func _input(event):
 	if ui_state == UIState.DIALOGUE:

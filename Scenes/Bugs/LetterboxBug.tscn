@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://2w1vqmntt0c6"]
+
+[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_5dmmt"]
+[ext_resource type="Script" path="res://CodeStuff/ToggleCinematic.gd" id="2_pryj7"]
+[ext_resource type="Resource" uid="uid://cq2esoyor4xgi" path="res://Assets/DialogueData/ToggleCinematic.tres" id="3_vwmck"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_e32sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5dmmt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(32, 32)
+
+[sub_resource type="Resource" id="Resource_bxrn0"]
+script = ExtResource("5_e32sc")
+dialogue = ExtResource("3_vwmck")
+
+[node name="LetterboxBug" type="Node2D"]
+visibility_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 4
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 4
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="ToggleCinematic" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_pryj7")
+bug_data = SubResource("Resource_bxrn0")
+collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
+name_label_string = "Cinematic"

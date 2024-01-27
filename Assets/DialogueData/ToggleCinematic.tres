@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cq2esoyor4xgi"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_2y5n3"]
+
+[resource]
+script = ExtResource("1_2y5n3")
+lines = Array[String](["This is the beginning of a 15-minute cutscene"])

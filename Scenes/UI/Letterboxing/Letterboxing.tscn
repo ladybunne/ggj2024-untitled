@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs20cvynk80gc"]
+
+[ext_resource type="Script" path="res://CodeStuff/Letterboxer.gd" id="1_ogfim"]
+
+[node name="Letterboxing" type="Node2D" node_paths=PackedStringArray("top_bar", "bottom_bar")]
+script = ExtResource("1_ogfim")
+top_bar = NodePath("CanvasLayer/ColorRect2")
+bottom_bar = NodePath("CanvasLayer/ColorRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+visibility_layer = 8
+offset_right = 1280.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visibility_layer = 8
+offset_top = 720.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
