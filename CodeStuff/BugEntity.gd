@@ -15,6 +15,7 @@ var platformer_inside: PlatformerCharacter
 # Scene controller gives every bug a ref to the player
 var player: Player
 var platformer_character: PlatformerCharacter
+var scene_controller: SceneController
 
 func _ready():
 	if collision_area != null:
@@ -24,6 +25,9 @@ func _ready():
 func give_player_ref(p_player: Player):
 	player = p_player
 	platformer_character = p_player.platformer_character
+	
+func give_scene_controller_ref(p_scene_controller: SceneController):
+	scene_controller = p_scene_controller
 	
 func player_entered(body: Node2D):
 	var platformer_entered := body as PlatformerCharacter
@@ -46,7 +50,10 @@ func dropped():
 func _input(event):
 	if platformer_inside == null:
 		return
+	# Need to check the dialogue state.
 	if event.is_action_pressed("player_interact"):
+		if scene_controller.ui_state == scene_controller.UIState.DIALOGUE:
+			return 
 		if bug_data == null:
 			return
 		on_start_dialogue()

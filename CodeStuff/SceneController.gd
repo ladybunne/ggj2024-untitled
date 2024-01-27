@@ -25,6 +25,7 @@ func _ready():
 		if bug == null:
 			continue
 		bug.give_player_ref(player)
+		bug.give_scene_controller_ref(self)
 		bug.start_dialogue.connect(func(p_bug: BugEntity): 
 			dialogue_ui.set_bug(p_bug)
 			dialogue_manager.data = p_bug.bug_data.dialogue
@@ -59,15 +60,16 @@ func on_dialogue_changed(p_line: String, _p_done: bool):
 
 func on_dialogue_done():
 	ui_state = UIState.NORMAL
-	player.platformer_character.movement_enabled = true
+	(func(): player.platformer_character.movement_enabled = true).call_deferred()
 
 func on_bug_goal_completed():
 	# Logic
 	pass
 
 func _input(event):
-	if event.is_action_pressed("player_jump") and ui_state == UIState.DIALOGUE:
-		advance_dialogue()
+	if ui_state == UIState.DIALOGUE:
+		if event.is_action_pressed("player_jump") or event.is_action_pressed("player_interact"):
+			advance_dialogue()
 	
 	# Debug stuff below this line!
 	if not OS.is_debug_build():
