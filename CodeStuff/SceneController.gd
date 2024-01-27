@@ -39,7 +39,7 @@ func _ready():
 		dialogue_manager.dialogue_changed.connect(dialogue_ui.dialogue_box.update_ui)
 		dialogue_manager.dialogue_changed.connect(on_dialogue_changed)
 		dialogue_manager.dialogue_done.connect(dialogue_ui.on_dialogue_done)
-		dialogue_manager.dialogue_done.connect(on_dialogue_done)
+		dialogue_manager.dialogue_done.connect(func(): self.on_dialogue_done.call_deferred())
 		dialogue_ui.advance_button.pressed.connect(advance_dialogue)
 		dialogue_manager.on_scene_started()
 		dialogue_manager.on_dialogue_changed()
@@ -60,7 +60,7 @@ func on_dialogue_changed(p_line: String, _p_done: bool):
 
 func on_dialogue_done():
 	ui_state = UIState.NORMAL
-	(func(): player.platformer_character.movement_enabled = true).call_deferred()
+	player.platformer_character.movement_enabled = true
 
 func on_bug_goal_completed():
 	# Logic
