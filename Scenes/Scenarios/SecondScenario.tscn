@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0u2rqorp4mlo" path="res://Scenes/Bugs/RepelBug.tscn" id="5_d8e6y"]
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="7_umfnc"]
 
-[node name="LonelyCollisionLevel" type="Node2D" node_paths=PackedStringArray("manager")]
+[node name="SecondScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_yftaf")
 manager = NodePath("ScenarioManager")
 
