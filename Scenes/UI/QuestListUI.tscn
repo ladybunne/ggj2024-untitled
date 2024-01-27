@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://brbgg5dyonpwc"]
+[gd_scene load_steps=4 format=3 uid="uid://brbgg5dyonpwc"]
 
+[ext_resource type="Script" path="res://CodeStuff/QuestListUI.gd" id="1_sle6b"]
 [ext_resource type="Texture2D" uid="uid://c24nrpa6jvptn" path="res://Assets/Sprites/BugSprites/generic hue bug.png" id="1_vtlf2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mulil"]
@@ -7,6 +8,7 @@ content_margin_left = 9.0
 content_margin_top = 3.0
 
 [node name="QuestListUi" type="Node2D"]
+script = ExtResource("1_sle6b")
 
 [node name="These arent really Quests per se" type="Node" parent="."]
 
@@ -20,8 +22,11 @@ theme_override_font_sizes/font_size = 27
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mulil")
 item_count = 3
 item_0/text = "Help bugs find love."
+item_0/selectable = false
 item_1/text = "Check Item 2"
+item_1/selectable = false
 item_2/text = "Check Item 3"
+item_2/selectable = false
 
 [node name="QuestItem1" type="Sprite2D" parent="."]
 modulate = Color(0.796078, 0.796078, 0.796078, 0.337255)
