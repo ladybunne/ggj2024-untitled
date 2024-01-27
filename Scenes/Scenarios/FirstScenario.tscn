@@ -14,7 +14,7 @@
 size = Vector2(36, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xknjb"]
-size = Vector2(104, 63)
+size = Vector2(195, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m5vh"]
 size = Vector2(20, 679)
@@ -81,7 +81,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElderTargetArea"]
-position = Vector2(-3, -16.5)
+position = Vector2(42.5, -16.5)
 shape = SubResource("RectangleShape2D_xknjb")
 
 [node name="FallthroughTerrain" parent="." instance=ExtResource("9_2tojp")]
