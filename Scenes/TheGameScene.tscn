@@ -18,12 +18,6 @@ layer = -1
 [node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
 level_ref = NodePath("../Level")
 
-[node name="Camera2D" parent="Player" index="0"]
-position = Vector2(3265, -93)
-
-[node name="PlatformerCharacter" parent="Player" index="1"]
-position = Vector2(3265, -93)
-
 [node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "dialogue_ui", "dialogue_manager", "letterboxer")]
 script = ExtResource("3_4gswl")
 player = NodePath("../Player")
@@ -38,5 +32,3 @@ visible = false
 script = ExtResource("5_n6fbc")
 
 [node name="Letterboxing" parent="." instance=ExtResource("6_jppbn")]
-
-[editable path="Player"]

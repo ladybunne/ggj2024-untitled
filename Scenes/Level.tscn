@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2yw2m2hg0uak"]
+[gd_scene load_steps=24 format=3 uid="uid://c2yw2m2hg0uak"]
 
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="1_gsnrl"]
 [ext_resource type="PackedScene" uid="uid://dww4w0hgjgmtd" path="res://Scenes/Bugs/ExampleBug.tscn" id="2_2fvri"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://pivjj1vyj67s" path="res://Scenes/Bugs/FallThroughWorldBug.tscn" id="6_6ugdf"]
 [ext_resource type="PackedScene" uid="uid://boaruh1pv6g8p" path="res://Scenes/Bugs/EnableFly.tscn" id="7_ndji5"]
 [ext_resource type="PackedScene" uid="uid://6aa52vpqyxm3" path="res://Scenes/Bugs/CameraJank.tscn" id="8_6t1uk"]
-[ext_resource type="PackedScene" uid="uid://6n2rkacp7lqf" path="res://Scenes/LonelyCollisionLevel.tscn" id="10_fx4yq"]
+[ext_resource type="PackedScene" uid="uid://6n2rkacp7lqf" path="res://Scenes/Scenarios/LonelyCollisionLevel.tscn" id="10_fbcx1"]
+[ext_resource type="PackedScene" uid="uid://5hvnlu3x2aql" path="res://Scenes/Scenarios/FirstScenario.tscn" id="10_pd0x2"]
 [ext_resource type="PackedScene" uid="uid://cis8mnefn8mc1" path="res://Scenes/Bugs/RemoveBackground.tscn" id="10_sturp"]
 [ext_resource type="PackedScene" uid="uid://cxorvbegiv6sf" path="res://Scenes/Bugs/HidingBug.tscn" id="11_w7b48"]
 [ext_resource type="Texture2D" uid="uid://cavr8p2syal82" path="res://Assets/Sprites/Well.png" id="12_4sht6"]
+[ext_resource type="PackedScene" uid="uid://wyv5u3k1a6tx" path="res://Scenes/Scenarios/ThirdScenario.tscn" id="12_m7she"]
 [ext_resource type="Texture2D" uid="uid://d1m6fdwjact36" path="res://Assets/Sprites/Lamp.png" id="13_hdccb"]
 [ext_resource type="PackedScene" uid="uid://2w1vqmntt0c6" path="res://Scenes/Bugs/LetterboxBug.tscn" id="13_qm4wy"]
 [ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="13_tm8kh"]
@@ -59,8 +61,14 @@ position = Vector2(1119, 635)
 [node name="RemoveBackground" parent="." instance=ExtResource("10_sturp")]
 position = Vector2(1024, 345)
 
-[node name="LonelyCollisionLevel" parent="." instance=ExtResource("10_fx4yq")]
+[node name="Scenarios" type="Node" parent="."]
+
+[node name="FirstScenario" parent="Scenarios" instance=ExtResource("10_pd0x2")]
+
+[node name="LonelyCollisionLevel" parent="Scenarios" instance=ExtResource("10_fbcx1")]
 position = Vector2(2336, 0)
+
+[node name="ThirdScenario" parent="Scenarios" instance=ExtResource("12_m7she")]
 
 [node name="HidingBug" parent="." instance=ExtResource("11_w7b48")]
 z_index = -1
