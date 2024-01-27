@@ -21,7 +21,7 @@ layer_0/tile_data = PackedInt32Array(1507327, 2, 0, 65535, 2, 0, 131071, 2, 0, 1
 [node name="FirstScenario" parent="Scenarios" instance=ExtResource("10_pd0x2")]
 
 [node name="SecondScenario" parent="Scenarios" instance=ExtResource("10_fbcx1")]
-position = Vector2(2336, 0)
+position = Vector2(1281, 32)
 
 [node name="ThirdScenario" parent="Scenarios" instance=ExtResource("12_m7she")]
 position = Vector2(4608, 0)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://CodeStuff/FallthroughTerrain.gd" id="1_gd4ql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsjd"]
-size = Vector2(398, 64)
+size = Vector2(584, 64)
 
 [node name="FallthroughTerrain" type="Node2D" node_paths=PackedStringArray("collision_area")]
 script = ExtResource("1_gd4ql")
@@ -13,7 +13,7 @@ fallthrough_color = Color(0.145098, 0.145098, 0.145098, 1)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(890, 416)
+position = Vector2(983, 416)
 shape = SubResource("RectangleShape2D_hbsjd")
 disabled = true
 

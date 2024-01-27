@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_ce5de"]
 [ext_resource type="Script" path="res://CodeStuff/NoCollisionBug.gd" id="2_6tgpc"]
-[ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/BugSprites/Ladybug.png" id="2_58gbo"]
+[ext_resource type="Texture2D" uid="uid://blhbx6oqqxdvo" path="res://Assets/Sprites/BugSprites/SadStickbug.png" id="2_csamm"]
 [ext_resource type="Resource" uid="uid://55gkxioec0gn" path="res://Assets/DialogueData/NoCollisionBug.tres" id="4_3p2y5"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="5_1s3em"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="6_o23k8"]
@@ -19,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_58gbo")
+"texture": ExtResource("2_csamm")
 }],
 "loop": true,
 "name": &"new_animation",

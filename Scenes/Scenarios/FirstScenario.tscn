@@ -14,7 +14,7 @@
 size = Vector2(36, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xknjb"]
-size = Vector2(30, 27)
+size = Vector2(69, 63)
 
 [node name="FirstScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_wx0a3")
@@ -33,7 +33,7 @@ script = ExtResource("1_qyd4o")
 scenario_root_node = NodePath("..")
 
 [node name="ElderBug" parent="." instance=ExtResource("4_ps6eb")]
-position = Vector2(263, 479)
+position = Vector2(263, 638)
 
 [node name="FallThroughFloorBug" parent="." node_paths=PackedStringArray("terrain") instance=ExtResource("5_fa1a8")]
 position = Vector2(993, 639)
@@ -61,11 +61,13 @@ texture = ExtResource("7_ivgsw")
 position = Vector2(1214, 688)
 texture = ExtResource("8_pri7b")
 
-[node name="Area2D" type="Area2D" parent="." groups=["ElderBugTrigger"]]
+[node name="ElderDialogueChangeBox" type="Area2D" parent="." groups=["ElderBugTrigger"]]
 position = Vector2(543, 689)
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElderDialogueChangeBox"]
+position = Vector2(-12.5, -16.5)
 shape = SubResource("RectangleShape2D_xknjb")
 
 [node name="FallthroughTerrain" parent="." instance=ExtResource("9_2tojp")]

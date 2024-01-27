@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_u2t3j")
-lines = Array[String]([])
+lines = Array[String](["Well... this is embarassing.", "Could you talk to my friend over there? I'm sure they'll know what to do."])

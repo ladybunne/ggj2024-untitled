@@ -8,12 +8,16 @@ signal spoke_to_elder
 func _ready():
 	super._ready()
 	dialogue_change_trigger_area = get_tree().get_first_node_in_group("ElderBugTrigger")
-	dialogue_change_trigger_area.body_entered.connect(change_dialogue)
+	dialogue_change_trigger_area.connect("body_entered", change_dialogue)
+	print(dialogue_change_trigger_area.name)	
 	print("Init Elder bug")
 	character_body.is_following = false 
 
-func change_dialogue():
-	bug_data.dialogue = alternate_dialogue
+func change_dialogue(hopefully_this: Node2D):
+	print(hopefully_this.name)
+	if hopefully_this == character_body:
+		bug_data.dialogue = alternate_dialogue
+		print("things changed")
 
 func give_player_ref(p_player: Player):
 	super(p_player)

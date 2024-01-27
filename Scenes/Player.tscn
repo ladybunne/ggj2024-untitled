@@ -66,6 +66,7 @@ size = Vector2(63.5, 63)
 script = ExtResource("1_uwtih")
 platformer_character = NodePath("PlatformerCharacter")
 camera = NodePath("Camera2D")
+y_death_barrier = 730.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
