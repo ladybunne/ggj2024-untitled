@@ -4,5 +4,6 @@
 
 [node name="FirstScenario" type="Node2D"]
 
-[node name="ScenarioManager" type="Node" parent="."]
+[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_qyd4o")
+scenario_root_node = NodePath("..")
