@@ -7,32 +7,33 @@ class_name BugEntity extends Entity
 signal goal_satisfied
 signal start_dialogue(p_bug_entity: BugEntity)
 
-var player_inside: PlatformerCharacter
+var platformer_inside: PlatformerCharacter
 
 # Scene controller gives every bug a ref to the player
-var player: PlatformerCharacter
+var player: Player
+var platformer_character: PlatformerCharacter
 
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
 		collision_area.body_exited.connect(player_exited)
 
-func give_player_ref(p_player: PlatformerCharacter):
+func give_player_ref(p_player: Player):
 	player = p_player
+	platformer_character = p_player.platformer_character
 	
-
 func player_entered(body: Node2D):
-	var player := body as PlatformerCharacter
-	if player != null:
-		player_inside = player
+	var platformer_entered := body as PlatformerCharacter
+	if platformer_entered != null:
+		platformer_inside = platformer_entered
 		
 func player_exited(body: Node2D):
-	var player := body as PlatformerCharacter
-	if player != null:
-		player_inside = null
+	var platformer_exited := body as PlatformerCharacter
+	if platformer_exited != null:
+		platformer_inside = null
 
 func _input(event):
-	if player_inside == null:
+	if platformer_inside == null:
 		return
 	if event.is_action_pressed("player_interact"):
 		if bug_data == null:

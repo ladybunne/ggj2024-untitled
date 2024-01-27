@@ -7,12 +7,12 @@ func _ready():
 	print("Init Elder bug")
 	character_body.is_following = false 
 
-func give_player_ref(p_player: PlatformerCharacter):
+func give_player_ref(p_player: Player):
 	super(p_player)
-	character_body.player = p_player
+	character_body.platformer_character = p_player.platformer_character
 
 func _input(event):
 	super._input(event)
-	if player_inside != null and event.is_action_pressed("player_interact"):
+	if platformer_inside != null and event.is_action_pressed("player_interact"):
 		print("Interacted with ElderBug")
 		character_body.is_following = true

@@ -24,7 +24,7 @@ func _ready():
 		var bug := bug_uncasted as BugEntity
 		if bug == null:
 			continue
-		bug.give_player_ref(platformer_character)
+		bug.give_player_ref(player)
 		bug.start_dialogue.connect(func(p_bug: BugEntity): 
 			dialogue_ui.set_bug(p_bug)
 			dialogue_manager.data = p_bug.bug_data.dialogue

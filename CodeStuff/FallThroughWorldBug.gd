@@ -4,7 +4,7 @@ extends BugEntity
 func _ready():
 	print("Init FallThroughWorld bug")
 
-func give_player_ref(p_player: PlatformerCharacter):
+func give_player_ref(p_player: Player):
 	super(p_player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
