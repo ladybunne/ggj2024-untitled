@@ -1,8 +1,10 @@
-extends BugEntity
+class_name ElderBug extends BugEntity
 
 @export var character_body: CharacterBody2D
 var dialogue_change_trigger_area: Area2D
 @export var alternate_dialogue: DialogueData
+signal spoke_to_elder
+
 func _ready():
 	super._ready()
 	dialogue_change_trigger_area = get_tree().get_first_node_in_group("ElderBugTrigger")
