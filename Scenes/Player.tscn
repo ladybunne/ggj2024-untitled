@@ -69,6 +69,7 @@ camera = NodePath("Camera2D")
 y_death_barrier = 730.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 0)
 limit_left = 0
 limit_right = 1280
 limit_bottom = 720
