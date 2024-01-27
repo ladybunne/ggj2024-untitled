@@ -41,10 +41,11 @@ visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="LockCamera" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+[node name="LockCamera" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_csnus")
 bug_data = SubResource("Resource_t4ddj")
 collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
 
 [node name="BugNameLabel" type="Label" parent="."]
 visibility_layer = 4

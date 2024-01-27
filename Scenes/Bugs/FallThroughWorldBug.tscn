@@ -42,8 +42,10 @@ visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="BugEntity" type="Node" parent="." groups=["BugGroup"]]
+[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_24r3v")
+collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
 
 [node name="Debug label (hide this later)" type="Label" parent="."]
 visibility_layer = 4

@@ -67,11 +67,12 @@ visibility_layer = 4
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="EnableFly" type="Node" parent="." node_paths=PackedStringArray("collision_area") groups=["BugGroup"]]
+[node name="EnableFly" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_lghlg")
 flyComponent = SubResource("Resource_k2ef6")
 bug_data = SubResource("Resource_27rqk")
 collision_area = NodePath("../Area2D")
+root_node = NodePath("..")
 
 [node name="BugNameLabel" type="Label" parent="."]
 visibility_layer = 4

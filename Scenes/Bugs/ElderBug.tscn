@@ -45,11 +45,12 @@ size = Vector2(32, 32)
 [node name="ElderBug" type="Node2D"]
 visibility_layer = 4
 
-[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area") groups=["BugGroup"]]
+[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("../CharacterBody2D")
 bug_data = SubResource("Resource_bx1ra")
 collision_area = NodePath("../CharacterBody2D/Area2D")
+root_node = NodePath("..")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 visibility_layer = 4

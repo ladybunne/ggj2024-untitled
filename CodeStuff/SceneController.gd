@@ -55,10 +55,11 @@ func skip_dialogue():
 
 func on_dialogue_changed(p_line: String, _p_done: bool):
 	ui_state = UIState.DIALOGUE
+	player.platformer_character.movement_enabled = false
 
 func on_dialogue_done():
 	ui_state = UIState.NORMAL
-	pass
+	player.platformer_character.movement_enabled = true
 
 func on_bug_goal_completed():
 	# Logic

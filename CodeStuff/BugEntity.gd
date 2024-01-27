@@ -4,6 +4,9 @@ class_name BugEntity extends Entity
 
 @export var collision_area: Area2D
 
+## The root node of the Bug scene. Please wire this up manually!
+@export var root_node: Node2D
+
 signal goal_satisfied
 signal start_dialogue(p_bug_entity: BugEntity)
 
@@ -26,11 +29,19 @@ func player_entered(body: Node2D):
 	var platformer_entered := body as PlatformerCharacter
 	if platformer_entered != null:
 		platformer_inside = platformer_entered
+		player.currently_colliding_with_bug = self
 		
 func player_exited(body: Node2D):
 	var platformer_exited := body as PlatformerCharacter
 	if platformer_exited != null:
 		platformer_inside = null
+		player.currently_colliding_with_bug = null
+
+func picked_up():
+	pass
+
+func dropped():
+	pass
 
 func _input(event):
 	if platformer_inside == null:

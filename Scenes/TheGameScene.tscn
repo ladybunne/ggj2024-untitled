@@ -10,7 +10,8 @@
 
 [node name="Level" parent="." instance=ExtResource("1_yglj6")]
 
-[node name="Player" parent="." instance=ExtResource("2_k5i3g")]
+[node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
+level_ref = NodePath("../Level")
 
 [node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "dialogue_ui", "dialogue_manager")]
 script = ExtResource("3_4gswl")
