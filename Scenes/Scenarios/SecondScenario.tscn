@@ -34,7 +34,7 @@ layer_1/tile_data = PackedInt32Array(2097162, 3, 0, 2097163, 3, 0, 2097164, 3, 0
 position = Vector2(336, 608)
 
 [node name="LonelyCollisionBoxTooBigBug" parent="." instance=ExtResource("4_phg2l")]
-position = Vector2(481, 295)
+position = Vector2(414, 295)
 
 [node name="RepelBug" parent="." instance=ExtResource("5_d8e6y")]
 position = Vector2(800, -96)
@@ -49,6 +49,8 @@ dialogue_to_trigger = ExtResource("9_rnwqd")
 dialogue_owner = NodePath("../LonelyNoCollisionBug")
 
 [node name="DialogueTriggerZone2" parent="." node_paths=PackedStringArray("dialogue_owner") instance=ExtResource("8_luj6x")]
-position = Vector2(664, 335)
+position = Vector2(654, 335)
 dialogue_to_trigger = ExtResource("10_275mp")
 dialogue_owner = NodePath("../LonelyCollisionBoxTooBigBug")
+Zone_Width = 100.0
+Zone_Height = 50.0

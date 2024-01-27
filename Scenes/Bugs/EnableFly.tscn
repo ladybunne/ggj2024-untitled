@@ -1,16 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://boaruh1pv6g8p"]
+[gd_scene load_steps=14 format=3 uid="uid://boaruh1pv6g8p"]
 
-[ext_resource type="Texture2D" uid="uid://o61x6tlcyi6i" path="res://Assets/Sprites/BugSprites/generic bug.png" id="1_rbd8o"]
+[ext_resource type="Texture2D" uid="uid://cshc4qjbs2wob" path="res://Assets/Sprites/BugSprites/Fly_down.png" id="1_j3kb5"]
+[ext_resource type="Texture2D" uid="uid://cy0bgkmjnx2xf" path="res://Assets/Sprites/BugSprites/Fly_up.png" id="2_37v0h"]
 [ext_resource type="Script" path="res://CodeStuff/EnableFly.gd" id="2_lghlg"]
 [ext_resource type="Script" path="res://CodeStuff/Fly.gd" id="3_ldsc7"]
-[ext_resource type="Resource" uid="uid://14avskl8vmgt" path="res://Assets/DialogueData/NoGravity.tres" id="4_rcetd"]
+[ext_resource type="Resource" uid="uid://dghgfmyrthu4k" path="res://Assets/DialogueData/First Pass/FlyBug.tres" id="5_cpjb6"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_qg2cn"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="6_ew675"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_rbd8o")
+"texture": ExtResource("1_j3kb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_37v0h")
 }],
 "loop": true,
 "name": &"default",
@@ -45,9 +50,23 @@ defer_hvel_to_run_component = true
 jumpsquat_time = 0.0
 rejump_buffer_time = 0.25
 
+[sub_resource type="Resource" id="Resource_a7lav"]
+script = ExtResource("6_ew675")
+name = "Lando"
+icon = ExtResource("2_37v0h")
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
 [sub_resource type="Resource" id="Resource_27rqk"]
 script = ExtResource("5_qg2cn")
-dialogue = ExtResource("4_rcetd")
+dialogue = ExtResource("5_cpjb6")
+identity = SubResource("Resource_a7lav")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaixg"]
 size = Vector2(45, 63)

@@ -19,7 +19,6 @@ enum UIState {NORMAL, DIALOGUE}
 
 func _ready():
 	platformer_character = player.platformer_character
-	
 	# Grab all bugs and listen for goal_completion
 	
 	# Give all bugs a reference to player
