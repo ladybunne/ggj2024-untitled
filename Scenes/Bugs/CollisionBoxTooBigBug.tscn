@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://m7ncdk54n4f0"]
+[gd_scene load_steps=13 format=3 uid="uid://m7ncdk54n4f0"]
 
 [ext_resource type="Script" path="res://CodeStuff/CollisionBoxTooBigPhysics.gd" id="1_hponk"]
 [ext_resource type="Texture2D" uid="uid://bwrynj0un4j2l" path="res://Assets/Sprites/Stickbug.png" id="1_yr716"]
@@ -23,6 +23,9 @@ animations = [{
 "name": &"tall_boi",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ppcd"]
+size = Vector2(256, 256)
 
 [sub_resource type="Resource" id="Resource_5gtjt"]
 script = ExtResource("4_ppr5b")
@@ -76,6 +79,13 @@ offset_top = -42.0
 offset_right = 178.0
 offset_bottom = -19.0
 text = "Lonely Collider Too Big Bug"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="RigidBody2D"]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/CharacterBody2D"]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_3ppcd")
 
 [node name="LonelyCollisionBoxTooBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_q3b4v")

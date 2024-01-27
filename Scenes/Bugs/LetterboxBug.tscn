@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://2w1vqmntt0c6"]
+[gd_scene load_steps=8 format=3 uid="uid://bmn0i3cud1n6n"]
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_5dmmt"]
 [ext_resource type="Script" path="res://CodeStuff/ToggleCinematic.gd" id="2_pryj7"]
-[ext_resource type="Resource" uid="uid://cq2esoyor4xgi" path="res://Assets/DialogueData/ToggleCinematic.tres" id="3_vwmck"]
+[ext_resource type="Resource" path="res://Assets/DialogueData/ToggleCinematic.tres" id="3_vwmck"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_e32sc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]

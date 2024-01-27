@@ -37,7 +37,7 @@ jumpsquat_time = 0.0
 rejump_buffer_time = 0.25
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qts00"]
-size = Vector2(31, 63)
+size = Vector2(63.5, 63)
 
 [node name="Player" type="Node" node_paths=PackedStringArray("platformer_character", "camera")]
 script = ExtResource("1_uwtih")
@@ -51,7 +51,7 @@ limit_bottom = 720
 [node name="PlatformerCharacter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_shape", "wallslide_shapecast")]
 visibility_layer = 2
 collision_layer = 2
-collision_mask = 129
+collision_mask = 65
 script = ExtResource("2_4suwj")
 collision_shape = NodePath("CollisionShape2D")
 wallslide_shapecast = NodePath("ShapeCast2D")
@@ -66,7 +66,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerCharacter"]
 visibility_layer = 2
-position = Vector2(16, 32)
+position = Vector2(32.25, 32)
 shape = SubResource("RectangleShape2D_qts00")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="PlatformerCharacter"]
