@@ -7,7 +7,7 @@ class_name BugEntity extends Entity
 ## The root node of the Bug scene. Please wire this up manually!
 @export var root_node: Node2D
 
-signal goal_satisfied
+signal goal_satisfied(p_bug_entity: BugEntity)
 signal start_dialogue(p_bug_entity: BugEntity)
 
 var platformer_inside: PlatformerCharacter
@@ -67,6 +67,10 @@ func _input(event):
 		if bug_data == null:
 			return
 		on_start_dialogue()
+		on_goal_satisfied()
 
 func on_start_dialogue():
 	start_dialogue.emit(self)
+
+func on_goal_satisfied():
+	goal_satisfied.emit(self)

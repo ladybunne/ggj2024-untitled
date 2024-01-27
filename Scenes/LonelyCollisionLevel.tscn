@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6n2rkacp7lqf"]
+[gd_scene load_steps=6 format=3 uid="uid://6n2rkacp7lqf"]
 
 [ext_resource type="Texture2D" uid="uid://qj8x8w66s1gs" path="res://Assets/Design/collisionleveldesign.png" id="2_5twla"]
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_g08ue"]
 [ext_resource type="PackedScene" uid="uid://c014pv8qpjv28" path="res://Scenes/Bugs/NoCollisionBug.tscn" id="3_mvsh1"]
 [ext_resource type="PackedScene" uid="uid://m7ncdk54n4f0" path="res://Scenes/Bugs/CollisionBoxTooBigBug.tscn" id="4_phg2l"]
+[ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="5_m8sm5"]
 
 [node name="LonelyCollisionLevel" type="Node2D"]
 
@@ -27,3 +28,8 @@ position = Vector2(192, 608)
 
 [node name="LonelyCollisionBoxTooBigBug" parent="." instance=ExtResource("4_phg2l")]
 position = Vector2(320, 128)
+
+[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
+script = ExtResource("5_m8sm5")
+points_required = 2
+scenario_root_node = NodePath("..")

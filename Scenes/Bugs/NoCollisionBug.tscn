@@ -62,7 +62,7 @@ collision_mask = 2
 position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+[node name="NoCollisionBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_6tgpc")
 bug_data = SubResource("Resource_dbt8h")
 collision_area = NodePath("../Area2D")
