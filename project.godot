@@ -38,6 +38,12 @@ folder_colors={
 
 import/blender/enabled=false
 
+[importer_defaults]
+
+mp3={
+"loop": true
+}
+
 [input]
 
 player_move_left={
