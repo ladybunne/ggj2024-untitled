@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_f3fj6")
-lines = Array[String](["Hello!", "I am an example bug.", "Have a nice day!", "ERROR: editor/editor_node.cpp:8240 - Condition \"plugins_list.has(p_plugin)\" is true.", "...", "Have a nice day!"])
+lines = Array[String](["Hello!", "[sfx name=Yes-bongo]I am an example bug.", "Have a nice day!", "ERROR: editor/editor_node.cpp:8240 - Condition \"plugins_list.has(p_plugin)\" is true.", "...", "Have a nice day!"])

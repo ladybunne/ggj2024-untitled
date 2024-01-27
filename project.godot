@@ -28,6 +28,12 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 
+[file_customization]
+
+folder_colors={
+"res://CodeStuff/oh god so cursed/": "red"
+}
+
 [filesystem]
 
 import/blender/enabled=false
