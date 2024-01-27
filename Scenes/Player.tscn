@@ -70,7 +70,7 @@ y_death_barrier = 730.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_right = 1385
+limit_right = 1280
 limit_bottom = 720
 limit_smoothed = true
 position_smoothing_enabled = true

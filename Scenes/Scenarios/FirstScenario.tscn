@@ -88,7 +88,7 @@ shape = SubResource("RectangleShape2D_xknjb")
 position = Vector2(96, 320)
 
 [node name="InvisibleWall" type="StaticBody2D" parent="."]
-position = Vector2(1400, 345)
+position = Vector2(1295, 345)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
 position = Vector2(0, 82.5)
