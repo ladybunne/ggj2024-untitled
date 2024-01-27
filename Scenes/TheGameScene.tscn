@@ -13,6 +13,12 @@
 [node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
 level_ref = NodePath("../Level")
 
+[node name="Camera2D" parent="Player" index="0"]
+position = Vector2(2200, 536)
+
+[node name="PlatformerCharacter" parent="Player" index="1"]
+position = Vector2(2200, 536)
+
 [node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "dialogue_ui", "dialogue_manager")]
 script = ExtResource("3_4gswl")
 player = NodePath("../Player")
@@ -24,3 +30,5 @@ visible = false
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("5_n6fbc")
+
+[editable path="Player"]

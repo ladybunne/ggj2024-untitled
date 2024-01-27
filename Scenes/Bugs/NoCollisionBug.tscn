@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c014pv8qpjv28"]
+[gd_scene load_steps=11 format=3 uid="uid://c014pv8qpjv28"]
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_ce5de"]
 [ext_resource type="Script" path="res://CodeStuff/NoCollisionBug.gd" id="2_6tgpc"]
 [ext_resource type="Texture2D" uid="uid://m08tlebjmsdi" path="res://Assets/Sprites/Ladybug.png" id="2_58gbo"]
+[ext_resource type="Resource" uid="uid://55gkxioec0gn" path="res://Assets/DialogueData/NoCollisionBug.tres" id="4_3p2y5"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="5_1s3em"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="6_o23k8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
@@ -24,7 +27,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(32, 32)
+size = Vector2(128, 96)
+
+[sub_resource type="Resource" id="Resource_u17cq"]
+script = ExtResource("5_1s3em")
+name = "LonelyNoCollisionBug"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_dbt8h"]
+script = ExtResource("6_o23k8")
+dialogue = ExtResource("4_3p2y5")
+identity = SubResource("Resource_u17cq")
 
 [node name="NoCollisionBug" type="Node2D"]
 
@@ -39,9 +59,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, 16)
+position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("root_node") groups=["BugGroup"]]
+[node name="BugEntity" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_6tgpc")
+bug_data = SubResource("Resource_dbt8h")
+collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
