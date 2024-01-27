@@ -1,5 +1,7 @@
 class_name Player extends Entity
 
+@export var pickup_enabled: bool = true
+
 @export_group("Internal")
 @export var platformer_character: PlatformerCharacter
 @export var camera: Camera2D
@@ -13,7 +15,7 @@ var currently_colliding_with_bug: BugEntity
 var currently_held_bug: BugEntity
 
 func _input(event):
-	if event.is_action_pressed("player_pick_up"):
+	if event.is_action_pressed("player_pick_up") and pickup_enabled:
 		# Drop a bug if we have one already.
 		if currently_held_bug != null:
 			#print("dropped bug: " + currently_held_bug.to_string())
