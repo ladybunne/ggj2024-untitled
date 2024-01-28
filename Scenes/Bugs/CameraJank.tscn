@@ -50,6 +50,7 @@ visibility_layer = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
+autoplay = "default"
 frame_progress = 0.45329
 centered = false
 

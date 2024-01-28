@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
 [ext_resource type="TileSet" uid="uid://ddoy7l1eh33e7" path="res://Assets/Tiles/TileSets/temp_tileset.tres" id="2_rojly"]
-[ext_resource type="PackedScene" path="res://Scenes/THEBOAT.tscn" id="4_wkxrt"]
+[ext_resource type="PackedScene" uid="uid://creevntwyjedw" path="res://Scenes/THEBOAT.tscn" id="4_wkxrt"]
 [ext_resource type="PackedScene" uid="uid://cis8mnefn8mc1" path="res://Scenes/Bugs/RemoveBackground.tscn" id="5_5btf2"]
 [ext_resource type="PackedScene" uid="uid://crxne4fp3aqd7" path="res://Scenes/Bugs/WrongLayerBug.tscn" id="5_hnwqi"]
 [ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="6_riprt"]

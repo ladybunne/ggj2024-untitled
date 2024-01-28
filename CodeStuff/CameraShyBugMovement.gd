@@ -29,6 +29,9 @@ func _ready():
 	activated = false
 
 func _physics_process(delta):
+	# HYPERCURSED ROTATION
+	#$AnimatedSprite2D.rotation += 1
+	
 	var me = global_position.x
 	var other = camera.get_screen_center_position().x
 	var distance = absf(me - other)

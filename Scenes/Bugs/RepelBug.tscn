@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0u2rqorp4mlo"]
+[gd_scene load_steps=14 format=3 uid="uid://b0u2rqorp4mlo"]
 
 [ext_resource type="Script" path="res://CodeStuff/RepelBugPhysics.gd" id="1_27vnl"]
 [ext_resource type="Texture2D" uid="uid://d0mied5lpvc" path="res://Assets/Sprites/BugSprites/Rhino_Beetle.png" id="1_angif"]
@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://df011b7nbjfrs" path="res://Assets/DialogueData/First Pass/RepelBug1.tres" id="3_o7xae"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_1k1fl"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="5_1qkph"]
+[ext_resource type="Texture2D" uid="uid://cwwmlf5pekrfc" path="res://Assets/Sprites/BugSprites/Rhino_Beetle_Left_Arm.png" id="7_15w05"]
+[ext_resource type="Texture2D" uid="uid://0riry3bx7pt" path="res://Assets/Sprites/BugSprites/Rhino_Beetle_Right_Arm.png" id="8_pch6i"]
 
 [sub_resource type="Resource" id="Resource_x238n"]
 script = ExtResource("5_1qkph")
@@ -33,10 +35,19 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_angif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_15w05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_angif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pch6i")
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loxb1"]
@@ -63,14 +74,6 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="DebugLabel" type="Label" parent="."]
-visible = false
-offset_left = -6.0
-offset_top = -31.0
-offset_right = 71.0
-offset_bottom = -8.0
-text = "Repel Bug"
-
 [node name="Talkbox" type="Area2D" parent="."]
 visibility_layer = 4
 collision_layer = 2
@@ -86,6 +89,7 @@ visibility_layer = 4
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 animation = &"new_animation"
+autoplay = "new_animation"
 centered = false
 
 [node name="Physics CollisionShape2D" type="CollisionShape2D" parent="."]

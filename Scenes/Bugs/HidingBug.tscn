@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cxorvbegiv6sf"]
 
 [ext_resource type="Texture2D" uid="uid://c24nrpa6jvptn" path="res://Assets/Sprites/BugSprites/generic hue bug.png" id="1_1uhu2"]
-[ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_hdovq"]
+[ext_resource type="Texture2D" uid="uid://pvsskygt505q" path="res://Assets/Sprites/BugSprites/Generic_Bug_Green_wink.png" id="2_0lxtv"]
 [ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_su81a"]
 [ext_resource type="Resource" uid="uid://5dpgmwtx256v" path="res://Assets/DialogueData/First Pass/HidingBug.tres" id="4_1nn6g"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_n171i"]
@@ -10,11 +10,11 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 8.0,
 "texture": ExtResource("1_1uhu2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_hdovq")
+"texture": ExtResource("2_0lxtv")
 }],
 "loop": true,
 "name": &"default",
