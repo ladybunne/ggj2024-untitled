@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=27 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
@@ -38,6 +38,9 @@ size = Vector2(34, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qldk"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uefj3"]
+size = Vector2(160, 192)
+
 [node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_mepmr")
 manager = NodePath("ScenarioManager")
@@ -53,11 +56,12 @@ layer_1/tile_data = PackedInt32Array(1441835, 9, 0, 1441834, 9, 0, 1441833, 9, 0
 layer_2/name = "Foreground2"
 layer_2/tile_data = PackedInt32Array(1376296, 1, 1610612736, 720930, 3, 805306368, 786466, 1, 1610612736, 1310756, 1, 805306368, 1376292, 1, 1610612736, 1245219, 3, 1610612736, 1376295, 3, 805306368, 1376297, 3, 805306368, 1376298, 3, 805306368, 1376299, 3, 805306368, 1114147, 3, 1342177280, 1114146, 1, 1610612736, 1245248, 7, 0, 1245238, 7, 0, 1179712, 7, 0, 1114176, 7, 0, 1048640, 7, 0, 983104, 7, 0, 1179702, 7, 0, 1114166, 7, 0, 1048630, 7, 0, 983094, 7, 0, 917568, 7, 1342308352, 917567, 7, 1342308352, 917566, 7, 1342308352, 917565, 7, 1342308352, 917564, 7, 1342308352, 917563, 7, 1342308352, 917562, 7, 1342308352, 917561, 7, 1342308352, 917560, 7, 1342308352, 917559, 7, 1342308352, 917558, 7, 1342308352)
 
-[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
+[node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node", "door_area", "room_colliders")]
 script = ExtResource("1_8jm3o")
 points_required = 3
 scenario_root_node = NodePath("..")
-new_camera_x_limit = 1000000
+door_area = NodePath("../Interactable Door Area2D")
+room_colliders = NodePath("../InsideRoomConfines")
 
 [node name="THE BOAT" parent="." instance=ExtResource("4_wkxrt")]
 position = Vector2(3210, 648)
@@ -69,11 +73,29 @@ position = Vector2(800, 431)
 scale = Vector2(9, 8.5)
 texture = SubResource("GradientTexture2D_6gq85")
 
+[node name="BugCharacters" type="Node2D" parent="."]
+
+[node name="HidingBug" parent="BugCharacters" instance=ExtResource("15_uqoc0")]
+position = Vector2(928, 352)
+
+[node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
+position = Vector2(1701, -512)
+
+[node name="CameraJank" parent="BugCharacters" instance=ExtResource("6_rqy7o")]
+position = Vector2(1868, 545)
+
+[node name="CharacterBody2D" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
+position = Vector2(1974, 263)
+
 [node name="StaticBody2D (House)" type="StaticBody2D" parent="."]
+light_mask = 33
+visibility_layer = 32
 position = Vector2(751, 421)
 
 [node name="BlockHouse" type="Sprite2D" parent="StaticBody2D (House)"]
 visible = false
+light_mask = 33
+visibility_layer = 32
 position = Vector2(-79, 91)
 scale = Vector2(1.35, 1.35)
 texture = ExtResource("17_q0t0d")
@@ -83,17 +105,19 @@ position = Vector2(2, -243)
 shape = SubResource("RectangleShape2D_hwfb1")
 
 [node name="InWall (Gets hidden by bug)" type="Sprite2D" parent="StaticBody2D (House)"]
-visibility_layer = 128
+visibility_layer = 160
 position = Vector2(16, 11)
 scale = Vector2(1.33473, 1.29524)
 texture = ExtResource("18_dimm0")
 
 [node name="HouseFrame" type="Sprite2D" parent="StaticBody2D (House)"]
+visibility_layer = 32
 position = Vector2(9.49996, 11)
 scale = Vector2(1.31238, 1.29524)
 texture = ExtResource("19_vr2wm")
 
 [node name="StaticBody2D (Floating House)" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(1696, -185)
 
 [node name="BlockHouse" type="Sprite2D" parent="StaticBody2D (Floating House)"]
@@ -106,6 +130,7 @@ position = Vector2(2, -243)
 shape = SubResource("RectangleShape2D_hwfb1")
 
 [node name="House Area2D" type="Area2D" parent="." groups=["House"]]
+visible = false
 position = Vector2(480, 128)
 collision_layer = 2
 collision_mask = 2
@@ -278,19 +303,35 @@ texture = ExtResource("11_7moa3")
 [node name="EnableFly" parent="." instance=ExtResource("14_l7k8r")]
 position = Vector2(798, 94)
 
-[node name="BugCharacters" type="Node2D" parent="."]
-
-[node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
-position = Vector2(1701, -512)
-
-[node name="CameraJank" parent="BugCharacters" instance=ExtResource("6_rqy7o")]
-position = Vector2(1868, 545)
-
-[node name="CharacterBody2D" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
-position = Vector2(1974, 263)
-
-[node name="HidingBug" parent="." instance=ExtResource("15_uqoc0")]
-position = Vector2(928, 352)
-
 [node name="ObjectBug" parent="." instance=ExtResource("16_kp37a")]
 position = Vector2(1425, 673)
+
+[node name="Interactable Door Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Door Area2D"]
+position = Vector2(656, 608)
+shape = SubResource("RectangleShape2D_uefj3")
+
+[node name="InsideRoomConfines" type="StaticBody2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InsideRoomConfines"]
+position = Vector2(800, 93.3111)
+scale = Vector2(1, 1.71528)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InsideRoomConfines"]
+position = Vector2(160, 96)
+scale = Vector2(1, 1.71528)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="InsideRoomConfines"]
+position = Vector2(1120, -96)
+rotation = 1.56986
+scale = Vector2(0.992967, 1.80783)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)
+
+[connection signal="body_entered" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_entered"]
+[connection signal="body_exited" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_exited"]

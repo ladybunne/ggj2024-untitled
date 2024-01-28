@@ -9,9 +9,15 @@ var points: int = 0
 @export var autocomplete: bool
 @export var autocomplate_player_start: int
 
+# Third scenario specific
+@export var door_area: Area2D
+@export var room_colliders: StaticBody2D
+
 var goal_satisfied_bugs: Array[BugEntity]
 var player: Player
 var camera: Camera2D
+
+var inside_door_area: bool = false
 
 signal scenario_finished
 
@@ -54,3 +60,20 @@ func on_scenario_finished():
 		invisible_wall.collision_layer = 0
 	if camera != null:
 		camera.limit_right = new_camera_x_limit
+
+func _input(event):
+	if event.is_action_pressed("player_interact") and inside_door_area:
+		print("player interacted inside door")
+		# toggle visibility of world
+		get_viewport().set_canvas_cull_mask_bit(4, !get_viewport().get_canvas_cull_mask_bit(4))
+		#get_viewport().set_canvas_cull_mask_bit(5, !get_viewport().get_canvas_cull_mask_bit(5))
+		room_colliders.set_collision_layer_value(0, true)
+		
+func on_door_entered(node):
+	print("Entered house: ", node)
+	if node is PlatformerCharacter:
+		inside_door_area = true
+	
+func on_door_exited(node):
+	if node is PlatformerCharacter:
+		inside_door_area = false
