@@ -75,9 +75,6 @@ texture = SubResource("GradientTexture2D_6gq85")
 
 [node name="BugCharacters" type="Node2D" parent="."]
 
-[node name="HidingBug" parent="BugCharacters" instance=ExtResource("15_uqoc0")]
-position = Vector2(928, 352)
-
 [node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
 position = Vector2(1598, -985)
 
@@ -92,6 +89,9 @@ position = Vector2(2627, 672)
 
 [node name="ObjectBug" parent="BugCharacters" instance=ExtResource("16_kp37a")]
 position = Vector2(1425, 673)
+
+[node name="EnableFly" parent="BugCharacters" instance=ExtResource("14_l7k8r")]
+position = Vector2(798, 94)
 
 [node name="StaticBody2D (House)" type="StaticBody2D" parent="."]
 light_mask = 33
@@ -303,11 +303,6 @@ texture = ExtResource("10_o54kc")
 [node name="BlueSquare" type="Sprite2D" parent="Scenery"]
 position = Vector2(2007, 375)
 texture = ExtResource("11_7moa3")
-
-[node name="EnableFly" parent="." instance=ExtResource("14_l7k8r")]
-position = Vector2(798, 94)
-
-[node name="BugCharacters2" type="Node2D" parent="."]
 
 [node name="Interactable Door Area2D" type="Area2D" parent="."]
 collision_layer = 2
