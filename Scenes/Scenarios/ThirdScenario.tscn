@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=28 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cb05jikn5cqug" path="res://Assets/Sprites/crate.png" id="9_eslgl"]
 [ext_resource type="Texture2D" uid="uid://d1p8s1exw0aiy" path="res://Assets/Sprites/Anchor.png" id="10_o54kc"]
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="11_7moa3"]
+[ext_resource type="Texture2D" uid="uid://buwmuhue2cwvy" path="res://Assets/Sprites/House/OutWall.png" id="13_j2xvj"]
 [ext_resource type="PackedScene" uid="uid://boaruh1pv6g8p" path="res://Scenes/Bugs/EnableFly.tscn" id="14_l7k8r"]
 [ext_resource type="PackedScene" uid="uid://cxorvbegiv6sf" path="res://Scenes/Bugs/HidingBug.tscn" id="15_uqoc0"]
 [ext_resource type="PackedScene" uid="uid://maw8tdch1dmp" path="res://Scenes/Bugs/ObjectBug.tscn" id="16_kp37a"]
@@ -109,11 +110,16 @@ position = Vector2(2, -243)
 shape = SubResource("RectangleShape2D_hwfb1")
 
 [node name="InWall (Gets hidden by bug)" type="Sprite2D" parent="StaticBody2D (House)"]
-visible = false
 visibility_layer = 32
 position = Vector2(16, 11)
 scale = Vector2(1.33473, 1.29524)
 texture = ExtResource("18_dimm0")
+
+[node name="OutWall" type="Sprite2D" parent="StaticBody2D (House)"]
+visibility_layer = 512
+position = Vector2(9.5, 18)
+scale = Vector2(1.2364, 1.2619)
+texture = ExtResource("13_j2xvj")
 
 [node name="HouseFrame" type="Sprite2D" parent="StaticBody2D (House)"]
 visibility_layer = 160
