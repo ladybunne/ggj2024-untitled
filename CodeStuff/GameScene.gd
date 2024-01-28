@@ -3,7 +3,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	AudioManager.play_music("its_a_feature_extended_silly")
+	AudioManager.play_music("It's a feature! Final 1")
 	 # most people turn volume down so lets start with it turned down
 	AudioManager.set_music_volume(0.3)
 
