@@ -95,6 +95,7 @@ flyComponent = SubResource("Resource_k2ef6")
 bug_data = SubResource("Resource_27rqk")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
+show_name_label = false
 name_label_string = "Enable flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

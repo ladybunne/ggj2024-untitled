@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_xwd4a")
-lines = Array[String](["Hi there $PlayerName. I really don't want others to see me in this state, I really don't.", "I can't find CollisionBoxTooBigBug.", "They're the only one to ever love me this noncorporeal form. You see... everyone passes through me.", "Would you help me find CollisionBoxTooBug?"])
+lines = Array[String]([])

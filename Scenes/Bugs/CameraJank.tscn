@@ -68,6 +68,7 @@ script = ExtResource("2_csnus")
 bug_data = SubResource("Resource_t4ddj")
 collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
+show_name_label = false
 name_label_string = "Lock camera"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

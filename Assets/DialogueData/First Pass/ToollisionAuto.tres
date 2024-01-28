@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_bw5lv")
-lines = Array[String](["[sfx name=buzz-loop-1]HMPH!", "Why does everyone keep avoiding me!?", "I wish just ONE person would stand next to me."])
+lines = Array[String](["[sp=b][sfx name=buzz-loop-1]HMPH!", "Why does everyone keep avoiding me!?", "I wish just ONE person would stand next to me."])

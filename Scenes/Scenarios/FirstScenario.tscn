@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5hvnlu3x2aql"]
+[gd_scene load_steps=20 format=3 uid="uid://5hvnlu3x2aql"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_qyd4o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_wx0a3"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="7_ivgsw"]
 [ext_resource type="Texture2D" uid="uid://6gn0r5qtw8pu" path="res://Assets/Sprites/Sign.png" id="8_pri7b"]
 [ext_resource type="PackedScene" uid="uid://dsc4k10lqaagt" path="res://Scenes/FallthroughTerrain.tscn" id="9_2tojp"]
+[ext_resource type="Texture2D" uid="uid://dyv257fbdjfsn" path="res://Assets/Sprites/BUTTONS/UI-Down_Arrow.png" id="10_jtdyf"]
+[ext_resource type="Texture2D" uid="uid://btaulhtbjg0ij" path="res://Assets/Sprites/BUTTONS/UI-Left_Arrow.png" id="11_3od4v"]
+[ext_resource type="Texture2D" uid="uid://twwxf78r5uju" path="res://Assets/Sprites/BUTTONS/UI-Right_Arrow.png" id="12_u3bkf"]
+[ext_resource type="Texture2D" uid="uid://cm42duirhad12" path="res://Assets/Sprites/BUTTONS/UI-Spacebar.png" id="13_xhmjv"]
+[ext_resource type="Texture2D" uid="uid://bmb7s5vrffxit" path="res://Assets/Sprites/BUTTONS/UI-UP_Arrow.png" id="14_iin8d"]
+[ext_resource type="Texture2D" uid="uid://rrkwpcqgmgeb" path="res://Assets/Sprites/BUTTONS/UI-X_Key.png" id="15_4wn8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaxhd"]
 size = Vector2(36, 22)
@@ -97,3 +103,50 @@ position = Vector2(1295, 345)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
 position = Vector2(0, 82.5)
 shape = SubResource("RectangleShape2D_6m5vh")
+
+[node name="TutorialButtons" type="Node2D" parent="."]
+
+[node name="Ui-downArrow" type="Sprite2D" parent="TutorialButtons"]
+position = Vector2(127, 276)
+texture = ExtResource("10_jtdyf")
+
+[node name="Ui-leftArrow" type="Sprite2D" parent="TutorialButtons"]
+position = Vector2(89, 310)
+texture = ExtResource("11_3od4v")
+
+[node name="Ui-rightArrow" type="Sprite2D" parent="TutorialButtons"]
+position = Vector2(164, 310)
+texture = ExtResource("12_u3bkf")
+
+[node name="Ui-spacebar" type="Sprite2D" parent="TutorialButtons"]
+position = Vector2(121, 379)
+texture = ExtResource("13_xhmjv")
+
+[node name="Ui-upArrow" type="Sprite2D" parent="TutorialButtons"]
+position = Vector2(126, 310)
+texture = ExtResource("14_iin8d")
+
+[node name="Label" type="Label" parent="TutorialButtons"]
+offset_left = 203.0
+offset_top = 285.0
+offset_right = 263.0
+offset_bottom = 308.0
+text = "MOVE"
+
+[node name="Label2" type="Label" parent="TutorialButtons"]
+offset_left = 187.0
+offset_top = 362.0
+offset_right = 229.0
+offset_bottom = 385.0
+text = "JUMP"
+
+[node name="Label3" type="Label" parent="TutorialButtons"]
+offset_left = 166.0
+offset_top = 424.0
+offset_right = 206.0
+offset_bottom = 447.0
+text = "TALK"
+
+[node name="Ui-xKey" type="Sprite2D" parent="."]
+position = Vector2(118, 440)
+texture = ExtResource("15_4wn8s")

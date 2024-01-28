@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c014pv8qpjv28"]
+[gd_scene load_steps=10 format=3 uid="uid://c014pv8qpjv28"]
 
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_ce5de"]
 [ext_resource type="Script" path="res://CodeStuff/NoCollisionBug.gd" id="2_6tgpc"]
 [ext_resource type="Texture2D" uid="uid://blhbx6oqqxdvo" path="res://Assets/Sprites/BugSprites/SadStickbug.png" id="2_csamm"]
-[ext_resource type="Resource" uid="uid://55gkxioec0gn" path="res://Assets/DialogueData/NoCollisionBug.tres" id="4_3p2y5"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="5_1s3em"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="6_o23k8"]
 
@@ -44,7 +43,6 @@ dev_notes = ""
 
 [sub_resource type="Resource" id="Resource_dbt8h"]
 script = ExtResource("6_o23k8")
-dialogue = ExtResource("4_3p2y5")
 identity = SubResource("Resource_u17cq")
 
 [node name="NoCollisionBug" type="Node2D" groups=["TrueLove"]]

@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_6kgkm")
-lines = Array[String](["Have you ever taken a moment to just stop and look around you?", "You should try it some time."])
+lines = Array[String](["[sp=b]Have you ever taken a moment to just stop and look around you?", "You should try it some time."])
