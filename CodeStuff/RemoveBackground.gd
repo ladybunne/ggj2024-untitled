@@ -27,6 +27,8 @@ func toggle_remove_background():
 	
 	# if outside of house
 	if inside_house:
-		get_viewport().set_canvas_cull_mask_bit(7, !get_viewport().get_canvas_cull_mask_bit(7))
+		print("Toggle inside house")
+		get_viewport().set_canvas_cull_mask_bit(5, !get_viewport().get_canvas_cull_mask_bit(5))
 	else:
+		print("Toggle outside house")
 		get_viewport().set_canvas_cull_mask_bit(4, !get_viewport().get_canvas_cull_mask_bit(4))

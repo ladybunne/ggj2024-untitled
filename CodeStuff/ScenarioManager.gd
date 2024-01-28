@@ -65,10 +65,9 @@ func on_scenario_finished():
 
 func _input(event):
 	if event.is_action_pressed("player_interact") and inside_door_area:
-		print("player interacted inside door")
+		#print("player interacted inside door")
 		# toggle visibility of world
 		get_viewport().set_canvas_cull_mask_bit(4, !get_viewport().get_canvas_cull_mask_bit(4))
-		#get_viewport().set_canvas_cull_mask_bit(5, !get_viewport().get_canvas_cull_mask_bit(5))
 		room_colliders.set_collision_layer_value(0, true)
 		
 func on_door_entered(node):

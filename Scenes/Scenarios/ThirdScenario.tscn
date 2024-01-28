@@ -76,7 +76,7 @@ texture = SubResource("GradientTexture2D_6gq85")
 [node name="BugCharacters" type="Node2D" parent="."]
 
 [node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
-position = Vector2(1598, -985)
+position = Vector2(1598, -1014)
 
 [node name="CameraJank" parent="BugCharacters" instance=ExtResource("6_rqy7o")]
 position = Vector2(1868, 545)
@@ -94,13 +94,11 @@ position = Vector2(1425, 673)
 position = Vector2(798, 94)
 
 [node name="StaticBody2D (House)" type="StaticBody2D" parent="."]
-light_mask = 33
 visibility_layer = 32
 position = Vector2(751, 421)
 
 [node name="BlockHouse" type="Sprite2D" parent="StaticBody2D (House)"]
 visible = false
-light_mask = 33
 visibility_layer = 32
 position = Vector2(-79, 91)
 scale = Vector2(1.35, 1.35)
@@ -111,27 +109,29 @@ position = Vector2(2, -243)
 shape = SubResource("RectangleShape2D_hwfb1")
 
 [node name="InWall (Gets hidden by bug)" type="Sprite2D" parent="StaticBody2D (House)"]
-visibility_layer = 160
+visible = false
+visibility_layer = 32
 position = Vector2(16, 11)
 scale = Vector2(1.33473, 1.29524)
 texture = ExtResource("18_dimm0")
 
 [node name="HouseFrame" type="Sprite2D" parent="StaticBody2D (House)"]
-visibility_layer = 32
+visibility_layer = 160
 position = Vector2(9.49996, 11)
 scale = Vector2(1.31238, 1.29524)
 texture = ExtResource("19_vr2wm")
 
 [node name="StaticBody2D (Floating House)" type="StaticBody2D" parent="."]
-position = Vector2(1617, -659)
+position = Vector2(1696, -185)
 
 [node name="BlockHouse" type="Sprite2D" parent="StaticBody2D (Floating House)"]
 z_index = -1
+position = Vector2(-75, -476)
 scale = Vector2(1.35, 1.35)
 texture = ExtResource("17_q0t0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (Floating House)"]
-position = Vector2(2, -243)
+position = Vector2(-64, -743)
 shape = SubResource("RectangleShape2D_hwfb1")
 
 [node name="House Area2D" type="Area2D" parent="." groups=["House"]]
