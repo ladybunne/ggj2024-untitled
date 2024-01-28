@@ -66,6 +66,7 @@ script = ExtResource("1_8jm3o")
 points_required = 3
 scenario_root_node = NodePath("..")
 door_area = NodePath("../Interactable Door Area2D")
+finish_game = true
 
 [node name="THE BOAT" parent="." instance=ExtResource("4_wkxrt")]
 position = Vector2(3210, 648)

@@ -67,6 +67,13 @@ func on_scenario_finished():
 		invisible_wall.collision_layer = 0
 	if camera != null:
 		camera.limit_right = new_camera_x_limit
+	if finish_game:
+		var bugs = get_tree().get_nodes_in_group("BugGroup")
+		AudioManager.play_sfx("crashing-game-sfx")
+		for bug in bugs:
+			var bug_casted = bug as BugEntity
+			if bug_casted:
+				bug_casted.root_node.global_position = Vector2(9000, -100)
 
 func _input(event):
 	if event.is_action_pressed("player_interact") and inside_door_area and !scene_controller.ui_state == scene_controller.UIState.DIALOGUE:
