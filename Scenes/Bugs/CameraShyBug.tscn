@@ -73,7 +73,6 @@ movement = NodePath("..")
 bug_data = SubResource("Resource_n3boc")
 collision_area = NodePath("../Talkbox")
 root_node = NodePath("..")
-talking_completes_goal = false
 show_talk_prompt = null
 show_name_label = false
 name_label_string = "Camera Shy Bug"

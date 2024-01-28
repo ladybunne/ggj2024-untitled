@@ -90,5 +90,5 @@ collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
 name_label_string = "Elder Bug"
 is_goal_bug = true
-sound_on_pickup = "yes-bongo-glitch"
-sound_on_drop = "no-bongo-glitch"
+sound_on_pickup = "Yes-bongo-glitch"
+sound_on_drop = "No-bongo-glitch"

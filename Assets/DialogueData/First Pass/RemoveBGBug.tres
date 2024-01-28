@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_cu2iv")
-lines = Array[String](["I AM THE MASTER OF THE SKIES!!!!", "DO YOU SEE IT? DO YOU BEHOLD THE NEVERENDING MAJESTY OF MY CAPABILITIES?!", "...But I can do so much more than that. I am beyond the skies. I can master ANYTHING."])
+lines = Array[String](["[sp=b]I AM THE MASTER OF THE SKIES!!!!", "DO YOU SEE IT? DO YOU BEHOLD THE NEVERENDING MAJESTY OF MY CAPABILITIES?!", "...But I can do so much more than that. I am beyond the skies. I can master ANYTHING."])
