@@ -69,19 +69,19 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 centered = false
 
-[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup"]]
+[node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup", "ElderBugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("..")
-alternate_dialogue = ExtResource("2_fwgtw")
+alternate_dialogue = Array[Resource("res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd")]([ExtResource("2_fwgtw"), null, null, null])
+dialogue_notes = "Dialogue notes:
+0: Stuck on rope in Scenario 1
+1: Enter Scenario 2
+2: First hint in Scenario 3
+3: Second hint in Scenario 3
+4: Third hint in Scenario 3
+5: \"Let's get in the boat!\""
 bug_data = SubResource("Resource_bx1ra")
 collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
-talking_completes_goal = null
-show_talk_prompt = null
-show_name_label = null
 name_label_string = "Elder Bug"
 is_goal_bug = true
-sound_on_interact = null
-sound_on_pickup = null
-sound_on_drop = null
-y_death_barrier = null

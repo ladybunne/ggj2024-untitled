@@ -3,24 +3,29 @@ class_name ElderBug extends BugEntity
 @export var character_body: CharacterBody2D
 var dialogue_change_trigger_area: Area2D
 var target_area: Area2D
-@export var alternate_dialogue: DialogueData
+@export var alternate_dialogue: Array[DialogueData]
+@export_multiline var dialogue_notes: String
 signal spoke_to_elder
 
 func _ready():
 	super._ready()
 	dialogue_change_trigger_area = get_tree().get_first_node_in_group("ElderBugTrigger")
-	dialogue_change_trigger_area.connect("body_entered", change_dialogue)
+	dialogue_change_trigger_area.connect("body_entered", change_dialogue_on_that_dialogue_trigger_thing)
 	target_area = get_tree().get_first_node_in_group("ElderBugTarget")
 	target_area.connect("body_entered", target_area_entered)
 	print(dialogue_change_trigger_area.name)	
 	print("Init Elder bug")
 	character_body.is_following = false 
 
-func change_dialogue(hopefully_this: Node2D):
+func change_dialogue_on_that_dialogue_trigger_thing(hopefully_this: Node2D):
 	print(hopefully_this.name)
 	if hopefully_this == character_body:
-		bug_data.dialogue = alternate_dialogue
+		bug_data.dialogue = alternate_dialogue[0]
 		print("things changed")
+
+func set_alternate_dialogue(p_index: int):
+	bug_data.dialogue = alternate_dialogue[p_index]
+	print("ElderBug dialogue set to alternate #" + str(p_index))
 
 func target_area_entered(object: Node2D):
 	# This is the ElderBugExtendingBase node, we are interested if its parent

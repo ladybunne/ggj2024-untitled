@@ -10,6 +10,8 @@ class_name SceneController extends Node
 
 var platformer_character: PlatformerCharacter
 
+var elder_bug: ElderBug
+
 ## This is to control the state of the game, when transitioning between things
 ## like the normal view, a tutorial popup, a dialogue instance, a choice, and so on.
 enum UIState {NORMAL, DIALOGUE}
@@ -17,9 +19,12 @@ enum UIState {NORMAL, DIALOGUE}
 ## The current state of the UI.
 @export var ui_state: UIState = UIState.NORMAL
 
+var scenario_counter: int = 0
+
 func _ready():
 	platformer_character = player.platformer_character
 	# Grab all bugs and listen for goal_completion
+	elder_bug = get_tree().get_first_node_in_group("ElderBugGroup")
 	
 	# Give all bugs a reference to player
 	for bug_uncasted in get_tree().get_nodes_in_group("BugGroup"):
@@ -76,7 +81,14 @@ func on_dialogue_done():
 	player.platformer_character.movement_enabled = true
 
 func on_scenario_completed():
-	pass
+	scenario_counter += 1
+	match scenario_counter:
+		1:
+			elder_bug.set_alternate_dialogue(1)
+		2:
+			elder_bug.set_alternate_dialogue(2)
+		3: 
+			elder_bug.set_alternate_dialogue(5)
 
 func toggle_letterboxing():
 	letterboxer.toggle()
