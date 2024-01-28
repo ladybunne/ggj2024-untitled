@@ -80,7 +80,8 @@ texture = SubResource("GradientTexture2D_6gq85")
 [node name="BugCharacters" type="Node2D" parent="."]
 
 [node name="WrongLayerBug" parent="BugCharacters" instance=ExtResource("5_hnwqi")]
-position = Vector2(896, 576)
+z_index = -4
+position = Vector2(955, 623)
 
 [node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
 position = Vector2(1598, -1014)
@@ -92,6 +93,8 @@ position = Vector2(1868, 545)
 position = Vector2(1974, 263)
 
 [node name="HidingBug2" parent="BugCharacters" instance=ExtResource("15_uqoc0")]
+z_index = -4
+z_as_relative = false
 position = Vector2(2627, 672)
 
 [node name="ObjectBug" parent="BugCharacters" instance=ExtResource("16_kp37a")]
@@ -101,6 +104,9 @@ position = Vector2(1425, 673)
 position = Vector2(798, 94)
 
 [node name="StaticBody2D (House)" type="StaticBody2D" parent="."]
+visibility_layer = 2
+z_index = -2
+z_as_relative = false
 position = Vector2(751, 421)
 
 [node name="BlockHouse" type="Sprite2D" parent="StaticBody2D (House)"]
