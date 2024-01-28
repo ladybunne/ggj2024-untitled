@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dilv83w0a3nkf"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_taaok"]
+
+[resource]
+script = ExtResource("1_taaok")
+lines = Array[String](["[sp=b]At last! Now we can finally ship all the bugs!", "Wait... no wait! WE FORGOT ABOUT CRA-"])

@@ -64,6 +64,8 @@ bug_data = SubResource("Resource_2skh8")
 collision_area = NodePath("../Talkbox")
 root_node = NodePath("..")
 show_name_label = false
+sound_on_pickup = "insect-put-me-down-glitch"
+sound_on_drop = "insect-scared-glitch"
 
 [node name="BetweenYellingTimer" type="Timer" parent="RepelBug"]
 wait_time = 3.0

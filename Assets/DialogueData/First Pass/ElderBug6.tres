@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_aod5b")
-lines = Array[String](["Cos...Cos is a bit of a scoundrel. He's never quite looked like the rest of us.", "He almost becomes part of the scenery."])
+lines = Array[String](["[sp=b]Cos...Cos is a bit of a scoundrel. He's never quite looked like the rest of us.", "He almost becomes part of the scenery."])
