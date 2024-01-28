@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://di30hfatvcpj"]
+[gd_scene load_steps=7 format=3 uid="uid://di30hfatvcpj"]
+
+[ext_resource type="Texture2D" uid="uid://dmnv05rt804q3" path="res://Assets/Sprites/MoreSnacuumStuff/Background/background_sky.png" id="1_7p6r8"]
+[ext_resource type="Texture2D" uid="uid://c7b2t5pbx04ji" path="res://Assets/Sprites/MoreSnacuumStuff/Background/background_background_clouds.png" id="2_265cx"]
+[ext_resource type="Texture2D" uid="uid://cdsfl0dw6qu7t" path="res://Assets/Sprites/MoreSnacuumStuff/Background/background_foreground_clouds.png" id="2_puxdb"]
+[ext_resource type="Texture2D" uid="uid://dl0pirfu7am73" path="res://Assets/Sprites/MoreSnacuumStuff/Background/background_mountains.png" id="4_qi3sr"]
 
 [sub_resource type="Gradient" id="Gradient_q4546"]
 offsets = PackedFloat32Array(0, 0.81875, 0.872917, 1)
@@ -10,7 +15,62 @@ fill_to = Vector2(0, 1)
 
 [node name="BackgroundCanvasLayer" type="CanvasLayer"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 16
+motion_scale = Vector2(0.05, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+visibility_layer = 16
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("1_7p6r8")
+centered = false
+
+[node name="BackgroundClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 16
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BackgroundClouds"]
+visibility_layer = 16
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_265cx")
+centered = false
+
+[node name="ForegroundClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 16
+motion_scale = Vector2(0.25, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ForegroundClouds"]
+visibility_layer = 16
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_puxdb")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+visibility_layer = 16
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountains"]
+visibility_layer = 16
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("4_qi3sr")
+centered = false
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 visibility_layer = 16
 z_index = -1
 anchors_preset = 15
