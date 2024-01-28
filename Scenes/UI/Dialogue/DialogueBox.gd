@@ -10,12 +10,12 @@ class_name DialogueBox extends PanelContainer
 @export var player_portrait: Texture2D = null
 @export_group("")
 
-var bug_entity: BugEntity
+var bug_data: BugData
 var is_narrator: bool = false
 var is_player: bool = false
 
-func set_bug(p_bug_entity: BugEntity):
-	bug_entity = p_bug_entity
+func set_bug_data(p_bug_data: BugData):
+	bug_data = p_bug_data
 
 func update_ui(p_line: String, p_done: bool):
 	
@@ -38,9 +38,9 @@ func update_ui(p_line: String, p_done: bool):
 	elif is_player:
 		portrait_rect.texture = player_portrait
 		title_label.text = "Bee Friend!"
-	elif bug_entity != null and bug_entity.bug_data != null and bug_entity.bug_data.identity != null:
-		portrait_rect.texture = bug_entity.bug_data.identity.icon
-		title_label.text = bug_entity.bug_data.identity.name
+	elif bug_data != null and bug_data != null and bug_data.identity != null:
+		portrait_rect.texture = bug_data.identity.icon
+		title_label.text = bug_data.identity.name
 	
 	dialogue_label.text = p_line
 	dialogue_cursor.texture = dialogue_cursor_not_done if not p_done else dialogue_cursor_done

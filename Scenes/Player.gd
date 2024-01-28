@@ -5,6 +5,7 @@ class_name Player extends Entity
 @export_group("Internal")
 @export var platformer_character: PlatformerCharacter
 @export var camera: Camera2D
+@export var scene_controller: SceneController
 @export_group("")
 
 @export_group("References")
@@ -23,7 +24,8 @@ func _ready():
 	start_position = platformer_character.global_position
 
 func _input(event):
-	if event.is_action_pressed("player_pick_up") and pickup_enabled:
+	if event.is_action_pressed("player_pick_up") and pickup_enabled and \
+			scene_controller.ui_state != scene_controller.UIState.DIALOGUE:
 		# Drop a bug if we have one already.
 		if currently_held_bug != null:
 			#print("dropped bug: " + currently_held_bug.to_string())

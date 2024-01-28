@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://boaruh1pv6g8p" path="res://Scenes/Bugs/EnableFly.tscn" id="14_l7k8r"]
 [ext_resource type="PackedScene" uid="uid://cxorvbegiv6sf" path="res://Scenes/Bugs/HidingBug.tscn" id="15_uqoc0"]
 [ext_resource type="PackedScene" uid="uid://maw8tdch1dmp" path="res://Scenes/Bugs/ObjectBug.tscn" id="16_kp37a"]
-[ext_resource type="Texture2D" uid="uid://c3ukr5s562qmw" path="res://Assets/Sprites/block house.png" id="17_q0t0d"]
+[ext_resource type="Texture2D" uid="uid://c3ukr5s562qmw" path="res://Assets/Sprites/House/block house.png" id="17_q0t0d"]
 
 [sub_resource type="Gradient" id="Gradient_8cto4"]
 colors = PackedColorArray(0.278054, 0.240603, 0.0781698, 1, 0.306175, 0.312177, 0.14801, 1)

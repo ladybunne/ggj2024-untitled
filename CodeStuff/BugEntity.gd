@@ -8,7 +8,7 @@ class_name BugEntity extends Entity
 @export var root_node: Node2D
 
 signal goal_satisfied(p_bug_entity: BugEntity)
-signal start_dialogue(p_bug_entity: BugEntity)
+signal start_dialogue(p_bug_data: BugData)
 
 var platformer_inside: PlatformerCharacter
 
@@ -100,7 +100,7 @@ func _input(event):
 		on_start_dialogue()
 
 func on_start_dialogue():
-	start_dialogue.emit(self)
+	start_dialogue.emit(bug_data)
 	if sound_on_interact.length():
 		AudioManager.play_sfx(sound_on_interact)
 	if talking_completes_goal: 

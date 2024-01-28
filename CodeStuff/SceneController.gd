@@ -28,10 +28,13 @@ func _ready():
 			continue
 		bug.give_player_ref(player)
 		bug.give_scene_controller_ref(self)
-		bug.start_dialogue.connect(func(p_bug: BugEntity): 
-			dialogue_ui.set_bug(p_bug)
-			dialogue_manager.data = p_bug.bug_data.dialogue
-			)
+		bug.start_dialogue.connect(dumb_lambda_for_dialogue)
+	
+	for random_node in get_tree().get_nodes_in_group("DialogueTriggerGroup"):
+		var dialogue_trigger := random_node as DialogueTriggerZone
+		if dialogue_trigger == null:
+			continue
+		dialogue_trigger.start_dialogue.connect(dumb_lambda_for_dialogue)
 	
 	# Scenario / level stuff
 	for scenario in level.scenarios:
@@ -49,7 +52,10 @@ func _ready():
 		dialogue_manager.on_scene_started()
 		dialogue_manager.on_dialogue_changed()
 		
-	
+func dumb_lambda_for_dialogue(p_bug_data: BugData):
+	dialogue_ui.set_bug_data(p_bug_data)
+	dialogue_manager.data = p_bug_data.dialogue
+
 
 func advance_dialogue():
 	dialogue_manager.advance()

@@ -41,7 +41,7 @@ func _input(event):
 
 func _process(delta):
 	super._process(delta)
-	talk_prompt.position = character_body.position - Vector2(talk_prompt.size.x / 2, 64)
+	#talk_prompt.position = character_body.position - Vector2(talk_prompt.size.x / 2, 64)
 
 func picked_up():
 	super.picked_up()

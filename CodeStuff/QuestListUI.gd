@@ -10,20 +10,17 @@ func _ready():
 	visible = true
 	for bug_uncasted in get_tree().get_nodes_in_group("BugGroup"):
 		if bug_uncasted is ElderBug:
-			bug_uncasted.start_dialogue.connect(func(p_bug: BugEntity): 
+			bug_uncasted.start_dialogue.connect(func(p_bug_data: BugData): 
 				spoke_to_elder_bug()
 			)
 		if bug_uncasted is FallThroughWorldBug:
-			bug_uncasted.start_dialogue.connect(func(p_bug: BugEntity): 
+			bug_uncasted.start_dialogue.connect(func(p_bug_data: BugData): 
 				spoke_to_fall_bug()
 			)
 		if bug_uncasted is NoCollisionBug:
-			bug_uncasted.goal_satisfied.connect(func(p_bug: BugEntity): 
+			bug_uncasted.goal_satisfied.connect(func(p_bug_data: BugData): 
 				brought_romantics_together()
 			)
-
-func _process(delta):
-	pass
 
 func spoke_to_elder_bug():
 	have_spoken_to_elder = true

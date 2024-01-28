@@ -1,6 +1,5 @@
 @tool
-extends Area2D
-class_name DialogueTriggerZone
+class_name DialogueTriggerZone extends Area2D
 @export var dialogue_to_trigger: DialogueData
 @export var dialogue_owner: Node2D
 var bug_data: BugData
@@ -10,6 +9,8 @@ var bug_data: BugData
 
 var zone_width: float = 50
 var zone_height: float = 50
+
+signal start_dialogue(p_bug_data: BugData)
 
 @export var Zone_Width: float:
 	get:
@@ -30,17 +31,27 @@ func update_shape():
 
 func _ready():
 	dialogue_manager = get_tree().get_first_node_in_group("DialogueManager")
+	
+	if Engine.is_editor_hint():
+		return
+	
 	#TODO get Kara to forgive me for this:
 	for thing in dialogue_owner.get_children():
-		print(thing.name)
-		if thing.has_signal("goal_satisfied"):
-			print(thing.name+" is the forealreal")
-			bug_data = thing.bug_data
-			print("holy shit if this works")
-	pass
+		var bug := thing as BugEntity
+		if bug == null:
+			continue
+		bug_data = bug.bug_data
+		
+		#print(thing.name)
+		#if thing.has_signal("goal_satisfied"):
+			#print(thing.name+" is the forealreal")
+			#bug_data = thing.bug_data
+			#print("holy shit if this works")
 
 func _on_body_entered(body):
-	dialogue_manager.data = dialogue_to_trigger
+	on_start_dialogue()
 	if one_shot:
 		queue_free()
-	pass # Replace with function body.
+	
+func on_start_dialogue():
+	start_dialogue.emit(bug_data)

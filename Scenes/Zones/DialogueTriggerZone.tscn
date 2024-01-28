@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8l41"]
 size = Vector2(100, 50)
 
-[node name="DialogueTriggerZone" type="Area2D" node_paths=PackedStringArray("collision_shape")]
+[node name="DialogueTriggerZone" type="Area2D" node_paths=PackedStringArray("collision_shape") groups=["DialogueTriggerGroup"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_42r0s")

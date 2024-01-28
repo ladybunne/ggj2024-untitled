@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3ukr5s562qmw"
-path="res://.godot/imported/block house.png-d27b4ba5792d25dd1df4358bddb9b9fe.ctex"
+uid="uid://buwmuhue2cwvy"
+path="res://.godot/imported/OutWall.png-1b81d88a1b8ff33aa5aa90b6ebccca5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/block house.png"
-dest_files=["res://.godot/imported/block house.png-d27b4ba5792d25dd1df4358bddb9b9fe.ctex"]
+source_file="res://Assets/Sprites/House/OutWall.png"
+dest_files=["res://.godot/imported/OutWall.png-1b81d88a1b8ff33aa5aa90b6ebccca5e.ctex"]
 
 [params]
 
