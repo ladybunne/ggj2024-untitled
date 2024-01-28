@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx2tq8urrjyhy"]
+[gd_scene load_steps=14 format=3 uid="uid://cx2tq8urrjyhy"]
 
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_yftaf"]
 [ext_resource type="Texture2D" uid="uid://qj8x8w66s1gs" path="res://Assets/Design/collisionleveldesign.png" id="2_5twla"]
@@ -10,9 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bll33c5uq2xv0" path="res://Scenes/Zones/DialogueTriggerZone.tscn" id="8_luj6x"]
 [ext_resource type="Resource" uid="uid://bpioyibnf2rca" path="res://Assets/DialogueData/First Pass/NollissionAuto.tres" id="9_rnwqd"]
 [ext_resource type="Resource" uid="uid://cjgtpoq5bpnao" path="res://Assets/DialogueData/First Pass/ToollisionAuto.tres" id="10_275mp"]
+[ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="11_o7dco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw6bf"]
 size = Vector2(21, 1058.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_254qf"]
+size = Vector2(34, 16)
 
 [node name="SecondScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_yftaf")
@@ -67,3 +71,14 @@ position = Vector2(1295, 345)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
 position = Vector2(376, -106.75)
 shape = SubResource("RectangleShape2D_tw6bf")
+
+[node name="RopeCoil" type="StaticBody2D" parent="."]
+position = Vector2(1542, 662)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCoil"]
+position = Vector2(-7, 2)
+shape = SubResource("RectangleShape2D_254qf")
+
+[node name="Sprite2D" type="Sprite2D" parent="RopeCoil"]
+z_index = 1
+texture = ExtResource("11_o7dco")

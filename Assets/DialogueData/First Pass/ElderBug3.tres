@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bserbbtlhqwg3"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_6c37t"]
+
+[resource]
+script = ExtResource("1_6c37t")
+lines = Array[String]([])
