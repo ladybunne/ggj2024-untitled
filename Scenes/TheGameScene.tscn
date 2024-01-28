@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://86jn37addt06"]
 
-[ext_resource type="PackedScene" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
+[ext_resource type="PackedScene" uid="uid://di30hfatvcpj" path="res://Scenes/UI/Background.tscn" id="1_difpc"]
 [ext_resource type="Script" path="res://CodeStuff/GameScene.gd" id="1_m32ri"]
 [ext_resource type="PackedScene" uid="uid://c2yw2m2hg0uak" path="res://Scenes/Level.tscn" id="1_yglj6"]
 [ext_resource type="PackedScene" uid="uid://bd5qcnbid5xsl" path="res://Scenes/Player.tscn" id="2_k5i3g"]
@@ -18,7 +18,8 @@ layer = -1
 
 [node name="Level" parent="." instance=ExtResource("1_yglj6")]
 
-[node name="Player" parent="." node_paths=PackedStringArray("level_ref") instance=ExtResource("2_k5i3g")]
+[node name="Player" parent="." node_paths=PackedStringArray("scene_controller", "level_ref") instance=ExtResource("2_k5i3g")]
+scene_controller = NodePath("../SceneController")
 level_ref = NodePath("../Level")
 
 [node name="SceneController" type="Node" parent="." node_paths=PackedStringArray("player", "level", "dialogue_ui", "dialogue_manager", "letterboxer")]
