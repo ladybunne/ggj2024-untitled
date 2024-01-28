@@ -7,9 +7,6 @@
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_ppr5b"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_228cw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(89, 70)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oossl"]
 size = Vector2(175, 109)
 
@@ -44,34 +41,27 @@ script = ExtResource("5_228cw")
 dialogue = ExtResource("3_5kjtr")
 identity = SubResource("Resource_5gtjt")
 
-[node name="LonelyCollisionBoxTooBigBug" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(89, 70)
 
-[node name="Interaction Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area2D"]
-position = Vector2(34.5, 31)
-shape = SubResource("RectangleShape2D_clf8f")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 128
 collision_mask = 129
 mass = 0.11
 script = ExtResource("1_hponk")
 
-[node name="Physics CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="Physics CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_oossl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kmcyf")
 animation = &"tall_boi"
 centered = false
 
-[node name="DebugLabel (but kind of want to keep it?)?" type="Label" parent="RigidBody2D"]
+[node name="DebugLabel (but kind of want to keep it?)?" type="Label" parent="."]
 visible = false
 offset_left = -32.0
 offset_top = -42.0
@@ -79,10 +69,10 @@ offset_right = 178.0
 offset_bottom = -19.0
 text = "Lonely Collider Too Big Bug"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="RigidBody2D" groups=["Partners"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Partners"]]
 collision_layer = 66
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_3ppcd")
 
@@ -93,3 +83,11 @@ collision_area = NodePath("../Interaction Area2D")
 root_node = NodePath("..")
 show_talk_prompt = false
 show_name_label = false
+
+[node name="Interaction Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area2D"]
+position = Vector2(34.5, 31)
+shape = SubResource("RectangleShape2D_clf8f")
