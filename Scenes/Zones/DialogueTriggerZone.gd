@@ -32,6 +32,9 @@ func update_shape():
 func _ready():
 	dialogue_manager = get_tree().get_first_node_in_group("DialogueManager")
 	
+	if Engine.is_editor_hint():
+		return
+	
 	#TODO get Kara to forgive me for this:
 	for thing in dialogue_owner.get_children():
 		var bug := thing as BugEntity
