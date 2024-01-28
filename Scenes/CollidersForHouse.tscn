@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d3ycutaibjlxu"]
+
+[node name="InsideRoomConfines" type="StaticBody2D"]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(800, 93.3111)
+scale = Vector2(1, 1.71528)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(160, 96)
+scale = Vector2(1, 1.71528)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(1120, -96)
+rotation = 1.56986
+scale = Vector2(0.992967, 1.80783)
+polygon = PackedVector2Array(256, 32, 320, 32, 320, 356.029, 256, 356.029, 256, 32)

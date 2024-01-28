@@ -67,11 +67,11 @@ func on_scenario_finished():
 		camera.limit_right = new_camera_x_limit
 
 func _input(event):
-	if event.is_action_pressed("player_interact") and inside_door_area:
+	if event.is_action_pressed("player_interact") and inside_door_area and !scene_controller.ui_state == scene_controller.UIState.DIALOGUE:
 		print("player interacted inside door")
 		# toggle visibility of world
 		get_viewport().set_canvas_cull_mask_bit(9, !get_viewport().get_canvas_cull_mask_bit(9))
-		room_colliders.set_collision_layer_value(0, true)
+		#room_colliders.set_collision_layer_value(0, true)
 		
 func on_door_entered(node):
 	print("Entered house: ", node)

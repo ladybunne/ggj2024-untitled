@@ -1,5 +1,6 @@
 class_name RemoveBackground extends BugEntity
 
+var within_house_area: bool = false
 var inside_house: bool = false
 
 func _ready():
@@ -10,24 +11,25 @@ func _ready():
 
 func toggle_inside(node):
 	print("Entered house body")
-	inside_house = true
+	within_house_area = true
 
 func toggle_outside(node):
-	inside_house = false
+	within_house_area = false
 
 func _input(event):
 	super._input(event)
-	if platformer_inside != null and event.is_action_pressed("player_interact"):
+	if platformer_inside != null and event.is_action_pressed("player_interact") and within_house_area:
 		toggle_remove_background.call_deferred()
 
 func toggle_remove_background():
-	if scene_controller.ui_state != scene_controller.UIState.DIALOGUE:
+	if scene_controller.ui_state == scene_controller.UIState.DIALOGUE:
 		return
 	# Toggle canvas layer 5 (background) on/off
 	
 	# if outside of house
-	if inside_house:
+	if within_house_area:
 		print("Toggle inside house")
+		get_viewport().set_canvas_cull_mask_bit(9, !get_viewport().get_canvas_cull_mask_bit(9))
 		get_viewport().set_canvas_cull_mask_bit(5, !get_viewport().get_canvas_cull_mask_bit(5))
 	else:
 		print("Toggle outside house")
