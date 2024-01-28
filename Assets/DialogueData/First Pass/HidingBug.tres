@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://5dpgmwtx256v"]
+
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd" id="1_sc24x"]
+
+[resource]
+script = ExtResource("1_sc24x")
+lines = Array[String](["Whoa! thanks for getting me outta there!", "Hiding? No I wasn't hiding I was just stuck. Good luck though!"])

@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_tato4")
-lines = Array[String](["[sfx name=insect-answer]Oh! Hello there little one. I am the Elder of this place.", "What's your name?", "[sp=p]I'm Bee! Bee Friend.", "[sp=b]Heh. Neat. Well maybe you can help me out by [i]befriending[/i] some of my townsfolk.", "[sfx name=insect-answer]They're an ecclectic bunch.", "... Lead the way! I'll follow you."])
+lines = Array[String](["[sfx name=insect-answer]Oh! Hello there little one. I am the Elder of this place.", "What's your name?", "[sp=p]I'm Bee! Bee Friend.", "[sp=b]Heh. Neat. Well maybe you can help me out by [i]befriending[/i] some of my townsfolk.", "[sfx name=insect-answer]They're an ecclectic bunch.", "... Lead the way! I'll follow you.", "[sp=-]TODO: DANIEL, PUT IN SOME TEXT ABOUT HOW YOU TALK TO ELDER BUG FOR HINTS"])

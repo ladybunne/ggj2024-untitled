@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://crxne4fp3aqd7"]
+
+[ext_resource type="Texture2D" uid="uid://7jclis41d0hm" path="res://Assets/Sprites/BugSprites/layerbug.png" id="1_dnysm"]
+[ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_0bq6k"]
+[ext_resource type="Resource" uid="uid://b8t2n8ld8hkur" path="res://Assets/DialogueData/ExampleBug.tres" id="3_v1psy"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_k8h32"]
+[ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_e5crg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dnysm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
+size = Vector2(97, 77)
+
+[sub_resource type="Resource" id="Resource_6k2u4"]
+script = ExtResource("4_k8h32")
+name = "Skippy"
+icon = ExtResource("1_dnysm")
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
+[sub_resource type="Resource" id="Resource_7en53"]
+script = ExtResource("5_e5crg")
+dialogue = ExtResource("3_v1psy")
+identity = SubResource("Resource_6k2u4")
+
+[node name="WrongLayerBug" type="Node2D"]
+visibility_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_kmcyf")
+centered = false
+
+[node name="TalkBox" type="Area2D" parent="."]
+visibility_layer = 4
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkBox"]
+visibility_layer = 4
+position = Vector2(27.5, 25.5)
+shape = SubResource("RectangleShape2D_clf8f")
+
+[node name="WrongLayerBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+script = ExtResource("2_0bq6k")
+bug_data = SubResource("Resource_7en53")
+collision_area = NodePath("../TalkBox")
+root_node = NodePath("..")
+name_label_string = "Example Bug"
+sound_on_pickup = "Yes-bongo"

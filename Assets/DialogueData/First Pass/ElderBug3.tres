@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_6c37t")
-lines = Array[String]([])
+lines = Array[String](["Oh ho ho ho ho! Thanks youngster. Townward ho!", "...although we should check on these people here to make sure they're ok."])

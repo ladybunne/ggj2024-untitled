@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_775d4")
-lines = Array[String]([])
+lines = Array[String](["Welcome to Bug Port!", "We've been trying to get everyone ready but it seems like there's a few people unaccounted for.", "We've always had three bugs that are hard to find. Maybe try talking to everyone?", "I often see one of them out of the corner of my eye but I can never quite tell them that we're ready."])

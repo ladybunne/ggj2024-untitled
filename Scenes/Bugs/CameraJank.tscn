@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://6aa52vpqyxm3"]
+[gd_scene load_steps=11 format=3 uid="uid://6aa52vpqyxm3"]
 
 [ext_resource type="Texture2D" uid="uid://o61x6tlcyi6i" path="res://Assets/Sprites/BugSprites/generic bug.png" id="1_rmccp"]
 [ext_resource type="Script" path="res://CodeStuff/LockCamera.gd" id="2_csnus"]
-[ext_resource type="Resource" uid="uid://y5y8cl8yr2oq" path="res://Assets/DialogueData/CameraJank.tres" id="3_pwryt"]
+[ext_resource type="Resource" uid="uid://joyp2vxsxsoj" path="res://Assets/DialogueData/First Pass/CameraJankBug.tres" id="3_6jfhy"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_dke50"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_ew5s5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
@@ -19,9 +20,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(74, 77)
 
+[sub_resource type="Resource" id="Resource_tegmi"]
+script = ExtResource("4_dke50")
+name = "Looker"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
 [sub_resource type="Resource" id="Resource_t4ddj"]
 script = ExtResource("5_ew5s5")
-dialogue = ExtResource("3_pwryt")
+dialogue = ExtResource("3_6jfhy")
+identity = SubResource("Resource_tegmi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbopa"]
 size = Vector2(46, 64)

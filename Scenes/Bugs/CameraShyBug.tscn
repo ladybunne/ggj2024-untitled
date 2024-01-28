@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv114wkn8fvm3"]
+[gd_scene load_steps=12 format=3 uid="uid://bv114wkn8fvm3"]
 
 [ext_resource type="Script" path="res://CodeStuff/CameraShyBug.gd" id="1_7u1bw"]
 [ext_resource type="Script" path="res://CodeStuff/CameraShyBugMovement.gd" id="2_6fy5e"]
 [ext_resource type="Texture2D" uid="uid://bgjc2ccp0rcir" path="res://Assets/Sprites/BugSprites/runnerbug.png" id="2_6jjcd"]
-[ext_resource type="Resource" uid="uid://b43uye1sxwpis" path="res://Assets/DialogueData/CameraShyBug.tres" id="2_sc4jt"]
+[ext_resource type="Resource" uid="uid://c48cuk2jcs5yf" path="res://Assets/DialogueData/First Pass/RunnerBug.tres" id="4_slij0"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="5_5vjp3"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_et0hl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
@@ -23,11 +24,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vuit1"]
 size = Vector2(51, 59)
 
+[sub_resource type="Resource" id="Resource_t7a8e"]
+script = ExtResource("5_5vjp3")
+name = "Offsetta"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
 [sub_resource type="Resource" id="Resource_n3boc"]
 script = ExtResource("5_et0hl")
-dialogue = ExtResource("2_sc4jt")
+dialogue = ExtResource("4_slij0")
+identity = SubResource("Resource_t7a8e")
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="RunnerBug" type="CharacterBody2D"]
 visibility_layer = 4
 collision_layer = 4
 collision_mask = 0
@@ -53,7 +67,7 @@ visibility_layer = 4
 position = Vector2(28.5, 34.5)
 shape = SubResource("RectangleShape2D_vuit1")
 
-[node name="CameraShyBug" type="Node" parent="." node_paths=PackedStringArray("movement", "collision_area", "root_node") groups=["BugGroup"]]
+[node name="RunnerBug" type="Node" parent="." node_paths=PackedStringArray("movement", "collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("1_7u1bw")
 movement = NodePath("..")
 bug_data = SubResource("Resource_n3boc")

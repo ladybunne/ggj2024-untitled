@@ -139,7 +139,6 @@ position = Vector2(288, 320)
 shape = SubResource("RectangleShape2D_7w7ay")
 
 [node name="Scenery" type="Node2D" parent="."]
-visible = false
 
 [node name="Sign" type="Sprite2D" parent="Scenery"]
 z_index = -1
@@ -313,10 +312,10 @@ position = Vector2(1868, 545)
 [node name="CharacterBody2D" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
 position = Vector2(1974, 263)
 
-[node name="HidingBug" parent="." instance=ExtResource("15_uqoc0")]
-position = Vector2(1597, 626)
+[node name="HidingBug" parent="BugCharacters" instance=ExtResource("15_uqoc0")]
+position = Vector2(2627, 672)
 
-[node name="ObjectBug" parent="." instance=ExtResource("16_kp37a")]
+[node name="ObjectBug" parent="BugCharacters" instance=ExtResource("16_kp37a")]
 position = Vector2(1425, 673)
 
 [node name="Interactable Door Area2D" type="Area2D" parent="."]

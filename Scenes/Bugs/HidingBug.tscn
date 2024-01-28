@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c24nrpa6jvptn" path="res://Assets/Sprites/BugSprites/generic hue bug.png" id="1_1uhu2"]
 [ext_resource type="Texture2D" uid="uid://dvtt08seyvirs" path="res://Assets/Sprites/blue_square.png" id="1_hdovq"]
 [ext_resource type="Script" path="res://CodeStuff/BugEntity.gd" id="2_su81a"]
-[ext_resource type="Resource" uid="uid://dac6gyyj72w5" path="res://Assets/DialogueData/HidingBug.tres" id="3_uuja0"]
+[ext_resource type="Resource" uid="uid://5dpgmwtx256v" path="res://Assets/DialogueData/First Pass/HidingBug.tres" id="4_1nn6g"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_n171i"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_fphja"]
 
@@ -26,7 +26,7 @@ size = Vector2(90, 79)
 
 [sub_resource type="Resource" id="Resource_6k2u4"]
 script = ExtResource("4_n171i")
-name = "Example Bug"
+name = "Hiding Bug"
 category = "Uncategorised"
 tags = Array[String]([])
 description = ""
@@ -38,7 +38,7 @@ dev_notes = ""
 
 [sub_resource type="Resource" id="Resource_7en53"]
 script = ExtResource("5_fphja")
-dialogue = ExtResource("3_uuja0")
+dialogue = ExtResource("4_1nn6g")
 identity = SubResource("Resource_6k2u4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4mr"]
@@ -62,7 +62,7 @@ visibility_layer = 4
 position = Vector2(35, 25.5)
 shape = SubResource("RectangleShape2D_clf8f")
 
-[node name="ExampleBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
+[node name="HidingBug" type="Node" parent="." node_paths=PackedStringArray("collision_area", "root_node") groups=["BugGroup"]]
 script = ExtResource("2_su81a")
 bug_data = SubResource("Resource_7en53")
 collision_area = NodePath("../TalkBox")

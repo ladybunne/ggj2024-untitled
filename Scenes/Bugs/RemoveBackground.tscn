@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cis8mnefn8mc1"]
+[gd_scene load_steps=11 format=3 uid="uid://cis8mnefn8mc1"]
 
 [ext_resource type="Texture2D" uid="uid://dfyeuoputrc5c" path="res://Assets/Sprites/BugSprites/Background Deleter.png" id="1_kmnsk"]
-[ext_resource type="Resource" path="res://Assets/DialogueData/RemoveBackground.tres" id="3_21557"]
+[ext_resource type="Resource" uid="uid://bxlo2k34jgx5v" path="res://Assets/DialogueData/First Pass/RemoveBGBug.tres" id="3_7u34p"]
+[ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_0674e"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_pqwy1"]
 [ext_resource type="Script" path="res://CodeStuff/RemoveBackground.gd" id="6_q7ycx"]
 
@@ -19,9 +20,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(113, 78)
 
+[sub_resource type="Resource" id="Resource_eebar"]
+script = ExtResource("4_0674e")
+name = "MASTER OF THE SKY?"
+category = "Uncategorised"
+tags = Array[String]([])
+description = ""
+short_description = ""
+long_description = ""
+flavour_text = ""
+lore_text = ""
+dev_notes = ""
+
 [sub_resource type="Resource" id="Resource_5gq2q"]
 script = ExtResource("5_pqwy1")
-dialogue = ExtResource("3_21557")
+dialogue = ExtResource("3_7u34p")
+identity = SubResource("Resource_eebar")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptino"]
 size = Vector2(64, 64)
