@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpkt0kbvntfsn"]
+[gd_scene load_steps=14 format=3 uid="uid://bpkt0kbvntfsn"]
 
 [ext_resource type="Script" path="res://CodeStuff/ElderBugMovement.gd" id="1_n15lr"]
 [ext_resource type="Resource" uid="uid://b67khq3qy0pe6" path="res://Assets/DialogueData/First Pass/Elderbug2.tres" id="2_fwgtw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://by3h17ocqqfj5" path="res://Assets/DialogueData/First Pass/Elderbug1.tres" id="3_pfncl"]
 [ext_resource type="Texture2D" uid="uid://b60mwkkbbtghj" path="res://Assets/Sprites/BugSprites/Placeholder.png" id="3_w80y2"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="4_sau0y"]
+[ext_resource type="Resource" uid="uid://bserbbtlhqwg3" path="res://Assets/DialogueData/First Pass/ElderBug3.tres" id="5_3q0yq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(139, 84)
@@ -72,7 +73,7 @@ centered = false
 [node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup", "ElderBugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("..")
-alternate_dialogue = Array[Resource("res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd")]([ExtResource("2_fwgtw"), null, null, null])
+alternate_dialogue = Array[Resource("res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd")]([ExtResource("2_fwgtw"), ExtResource("5_3q0yq"), null, null])
 dialogue_notes = "Dialogue notes:
 0: Stuck on rope in Scenario 1
 1: Enter Scenario 2
