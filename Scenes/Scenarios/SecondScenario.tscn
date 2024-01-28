@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx2tq8urrjyhy"]
+[gd_scene load_steps=15 format=3 uid="uid://cx2tq8urrjyhy"]
 
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_yftaf"]
 [ext_resource type="Texture2D" uid="uid://qj8x8w66s1gs" path="res://Assets/Design/collisionleveldesign.png" id="2_5twla"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://bpioyibnf2rca" path="res://Assets/DialogueData/First Pass/NollissionAuto.tres" id="9_rnwqd"]
 [ext_resource type="Resource" uid="uid://cjgtpoq5bpnao" path="res://Assets/DialogueData/First Pass/ToollisionAuto.tres" id="10_275mp"]
 [ext_resource type="Texture2D" uid="uid://ci8y71ew8bdo0" path="res://Assets/Sprites/rope coil.png" id="11_o7dco"]
+[ext_resource type="Texture2D" uid="uid://n1vngpyb882n" path="res://Assets/Sprites/BUTTONS/UI-C_Key.png" id="12_yh6s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw6bf"]
 size = Vector2(21, 1058.5)
@@ -82,3 +83,7 @@ shape = SubResource("RectangleShape2D_254qf")
 [node name="Sprite2D" type="Sprite2D" parent="RopeCoil"]
 z_index = 1
 texture = ExtResource("11_o7dco")
+
+[node name="Ui-cKey" type="Sprite2D" parent="."]
+position = Vector2(1659, 312)
+texture = ExtResource("12_yh6s4")

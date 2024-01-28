@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpkt0kbvntfsn"]
+[gd_scene load_steps=17 format=3 uid="uid://bpkt0kbvntfsn"]
 
 [ext_resource type="Script" path="res://CodeStuff/ElderBugMovement.gd" id="1_n15lr"]
 [ext_resource type="Resource" uid="uid://b67khq3qy0pe6" path="res://Assets/DialogueData/First Pass/Elderbug2.tres" id="2_fwgtw"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://b60mwkkbbtghj" path="res://Assets/Sprites/BugSprites/Placeholder.png" id="3_w80y2"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="4_sau0y"]
 [ext_resource type="Resource" uid="uid://bserbbtlhqwg3" path="res://Assets/DialogueData/First Pass/ElderBug3.tres" id="5_3q0yq"]
+[ext_resource type="Resource" uid="uid://452npjrqeng4" path="res://Assets/DialogueData/First Pass/ElderBug4.tres" id="6_3se5a"]
+[ext_resource type="Resource" uid="uid://d3u3u5h4ed27q" path="res://Assets/DialogueData/First Pass/ElderBug5.tres" id="7_jordm"]
+[ext_resource type="Resource" uid="uid://c4lb2vj76quug" path="res://Assets/DialogueData/First Pass/ElderBug6.tres" id="8_1873y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
 size = Vector2(139, 84)
@@ -73,7 +76,7 @@ centered = false
 [node name="ElderBugExtendingBase" type="Node" parent="." node_paths=PackedStringArray("character_body", "collision_area", "root_node") groups=["BugGroup", "ElderBugGroup"]]
 script = ExtResource("2_n4g52")
 character_body = NodePath("..")
-alternate_dialogue = Array[Resource("res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd")]([ExtResource("2_fwgtw"), ExtResource("5_3q0yq"), null, null])
+alternate_dialogue = Array[Resource("res://bunne-gdkit/Systems/Dialogue/dialogue_data.gd")]([ExtResource("2_fwgtw"), ExtResource("5_3q0yq"), ExtResource("6_3se5a"), ExtResource("7_jordm"), ExtResource("8_1873y")])
 dialogue_notes = "Dialogue notes:
 0: Stuck on rope in Scenario 1
 1: Enter Scenario 2

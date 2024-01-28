@@ -40,7 +40,8 @@ func _ready():
 		var bug := thing as BugEntity
 		if bug == null:
 			continue
-		bug_data = bug.bug_data
+		bug_data = bug.bug_data.duplicate()
+		bug_data.dialogue = dialogue_to_trigger
 		
 		#print(thing.name)
 		#if thing.has_signal("goal_satisfied"):

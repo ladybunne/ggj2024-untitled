@@ -63,6 +63,7 @@ script = ExtResource("6_q7ycx")
 bug_data = SubResource("Resource_5gq2q")
 collision_area = NodePath("../Area2D")
 root_node = NodePath("..")
+show_name_label = false
 name_label_string = "Remove background"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
