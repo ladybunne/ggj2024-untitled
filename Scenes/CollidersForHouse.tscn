@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://d3ycutaibjlxu"]
+[gd_scene load_steps=2 format=3 uid="uid://d3ycutaibjlxu"]
+
+[ext_resource type="Script" path="res://CodeStuff/CollidersForHouse.gd" id="1_xvo05"]
 
 [node name="InsideRoomConfines" type="StaticBody2D"]
-collision_layer = 0
+script = ExtResource("1_xvo05")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(800, 93.3111)

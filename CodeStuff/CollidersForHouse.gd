@@ -1,0 +1,1 @@
+class_name CollidersForHouse extends StaticBody2D

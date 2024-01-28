@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=28 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://c3ukr5s562qmw" path="res://Assets/Sprites/House/block house.png" id="17_q0t0d"]
 [ext_resource type="Texture2D" uid="uid://c4bg2kwxlsh6y" path="res://Assets/Sprites/House/InWall.png" id="18_dimm0"]
 [ext_resource type="Texture2D" uid="uid://bf314victnn4u" path="res://Assets/Sprites/House/House Frame.png" id="19_vr2wm"]
-[ext_resource type="PackedScene" uid="uid://d3ycutaibjlxu" path="res://Scenes/CollidersForHouse.tscn" id="21_rmgkr"]
 
 [sub_resource type="Gradient" id="Gradient_8cto4"]
 colors = PackedColorArray(0.278054, 0.240603, 0.0781698, 1, 0.306175, 0.312177, 0.14801, 1)
@@ -316,8 +315,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Door Area2D"]
 position = Vector2(656, 608)
 shape = SubResource("RectangleShape2D_uefj3")
-
-[node name="InsideRoomConfines" parent="." instance=ExtResource("21_rmgkr")]
 
 [connection signal="body_entered" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_entered"]
 [connection signal="body_exited" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_exited"]

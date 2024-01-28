@@ -18,6 +18,7 @@ var player: Player
 var camera: Camera2D
 
 var inside_door_area: bool = false
+var in_the_house: bool = false
 
 var scene_controller: SceneController
 
@@ -69,9 +70,19 @@ func on_scenario_finished():
 func _input(event):
 	if event.is_action_pressed("player_interact") and inside_door_area and !scene_controller.ui_state == scene_controller.UIState.DIALOGUE:
 		print("player interacted inside door")
-		# toggle visibility of world
-		get_viewport().set_canvas_cull_mask_bit(9, !get_viewport().get_canvas_cull_mask_bit(9))
-		#room_colliders.set_collision_layer_value(0, true)
+		if !in_the_house:
+			# toggle visibility of world
+			get_viewport().set_canvas_cull_mask_bit(9, false)
+			var colliders = preload("res://Scenes/CollidersForHouse.tscn").instantiate()
+			get_parent().add_child(colliders)
+			in_the_house = true
+		else:
+			# toggle visibility of world
+			get_viewport().set_canvas_cull_mask_bit(9, true)
+			for adjacent in get_parent().get_children():
+				if adjacent is CollidersForHouse:
+					get_parent().remove_child(adjacent)
+			in_the_house = false
 		
 func on_door_entered(node):
 	print("Entered house: ", node)
