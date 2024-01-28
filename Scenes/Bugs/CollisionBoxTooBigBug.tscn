@@ -26,7 +26,8 @@ size = Vector2(175, 109)
 
 [sub_resource type="Resource" id="Resource_5gtjt"]
 script = ExtResource("4_ppr5b")
-name = "LonelyCollisionBoxTooBigBug"
+name = "Shundi"
+icon = ExtResource("1_yr716")
 category = "Uncategorised"
 tags = Array[String]([])
 description = ""
@@ -42,7 +43,7 @@ dialogue = ExtResource("3_5kjtr")
 identity = SubResource("Resource_5gtjt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clf8f"]
-size = Vector2(89, 70)
+size = Vector2(89, 56)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 128
@@ -89,5 +90,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area2D"]
-position = Vector2(34.5, 31)
+position = Vector2(34.5, 24)
 shape = SubResource("RectangleShape2D_clf8f")

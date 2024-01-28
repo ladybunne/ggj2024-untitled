@@ -51,7 +51,6 @@ script = ExtResource("7_umfnc")
 scenario_root_node = NodePath("..")
 invisible_wall = NodePath("../InvisibleWall")
 new_camera_x_limit = 1000000
-autocomplete = true
 autocomplate_player_start = 3100
 
 [node name="DialogueTriggerZone" parent="." node_paths=PackedStringArray("dialogue_owner") instance=ExtResource("8_luj6x")]

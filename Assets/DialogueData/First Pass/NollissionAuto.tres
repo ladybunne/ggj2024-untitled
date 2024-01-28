@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_bvqwa")
-lines = Array[String](["[sfx name=insect-answer-glitch]*sigh*...", "It feels like everybody just walks right by me"])
+lines = Array[String](["[sfx name=insect-answer-glitch]*sigh*...", "It feels like everybody just walks right past me"])

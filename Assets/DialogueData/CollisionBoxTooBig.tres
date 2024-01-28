@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_3fgvk")
-lines = Array[String](["*snuffles* Oh, I'm so lonely up here all by myself.", "Oh! Hello down there, little friend.", "Someone made my collision box too damn big *exclaims*\\n and now I'm stuck floating up here.\\n No one can get close to me...", "I'm oh so lonely. Could you help me push me to my love, NoCollisionsBug?"])
+lines = Array[String](["Whoa you actually shouldn't be able to see this, for realsies. This is a proper bug lol. ", "sux2suck it's a feature now."])

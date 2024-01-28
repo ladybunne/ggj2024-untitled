@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_x238n"]
 script = ExtResource("5_1qkph")
-name = "Rep Bug"
+name = "Rep"
 icon = ExtResource("1_angif")
 category = "Uncategorised"
 tags = Array[String]([])
@@ -52,6 +52,7 @@ script = ExtResource("2_iy1sd")
 bug_data = SubResource("Resource_2skh8")
 collision_area = NodePath("../Talkbox")
 root_node = NodePath("..")
+show_name_label = false
 
 [node name="BetweenYellingTimer" type="Timer" parent="RepelBug"]
 wait_time = 3.0
