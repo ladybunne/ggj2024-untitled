@@ -79,21 +79,12 @@ texture = SubResource("GradientTexture2D_6gq85")
 position = Vector2(928, 352)
 
 [node name="RemoveBackgroundBug" parent="BugCharacters" instance=ExtResource("5_5btf2")]
-position = Vector2(1701, -512)
+position = Vector2(1598, -985)
 
 [node name="CameraJank" parent="BugCharacters" instance=ExtResource("6_rqy7o")]
 position = Vector2(1868, 545)
 
-[node name="CharacterBody2D" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
-position = Vector2(1974, 263)
-
-[node name="RemoveBackgroundBug2" parent="BugCharacters" instance=ExtResource("5_5btf2")]
-position = Vector2(1588, -985)
-
-[node name="CameraJank2" parent="BugCharacters" instance=ExtResource("6_rqy7o")]
-position = Vector2(1868, 545)
-
-[node name="CharacterBody2D2" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
+[node name="RunnerBug" parent="BugCharacters" instance=ExtResource("7_e1nf6")]
 position = Vector2(1974, 263)
 
 [node name="HidingBug2" parent="BugCharacters" instance=ExtResource("15_uqoc0")]
