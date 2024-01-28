@@ -56,6 +56,7 @@ layer_2/tile_data = PackedInt32Array(1376296, 1, 1610612736, 720930, 3, 80530636
 [node name="ScenarioManager" type="Node" parent="." node_paths=PackedStringArray("scenario_root_node")]
 script = ExtResource("1_8jm3o")
 scenario_root_node = NodePath("..")
+new_camera_x_limit = 1000000
 
 [node name="THE BOAT" parent="." instance=ExtResource("4_wkxrt")]
 position = Vector2(3210, 648)

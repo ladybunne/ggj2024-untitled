@@ -30,6 +30,7 @@ dialogue = ExtResource("2_sc4jt")
 [node name="CharacterBody2D" type="CharacterBody2D"]
 visibility_layer = 4
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("2_6fy5e")
 
 [node name="Talkbox" type="Area2D" parent="."]
@@ -58,4 +59,12 @@ movement = NodePath("..")
 bug_data = SubResource("Resource_n3boc")
 collision_area = NodePath("../Talkbox")
 root_node = NodePath("..")
+talking_completes_goal = true
+show_talk_prompt = null
+show_name_label = null
 name_label_string = "Camera Shy Bug"
+is_goal_bug = true
+sound_on_interact = null
+sound_on_pickup = null
+sound_on_drop = null
+y_death_barrier = null
