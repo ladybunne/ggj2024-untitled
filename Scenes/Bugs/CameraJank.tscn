@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://6aa52vpqyxm3"]
+[gd_scene load_steps=12 format=3 uid="uid://6aa52vpqyxm3"]
 
 [ext_resource type="Texture2D" uid="uid://o61x6tlcyi6i" path="res://Assets/Sprites/BugSprites/generic bug.png" id="1_rmccp"]
 [ext_resource type="Script" path="res://CodeStuff/LockCamera.gd" id="2_csnus"]
+[ext_resource type="Texture2D" uid="uid://cisltku6tks35" path="res://Assets/Sprites/BugSprites/Generic_Bug_Gray_wink.png" id="2_o3otr"]
 [ext_resource type="Resource" uid="uid://joyp2vxsxsoj" path="res://Assets/DialogueData/First Pass/CameraJankBug.tres" id="3_6jfhy"]
 [ext_resource type="Script" path="res://bunne-gdkit/Systems/Identity/identity.gd" id="4_dke50"]
 [ext_resource type="Script" path="res://CodeStuff/BugData.gd" id="5_ew5s5"]
@@ -9,8 +10,11 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmcyf"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 8.0,
 "texture": ExtResource("1_rmccp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o3otr")
 }],
 "loop": true,
 "name": &"default",
@@ -46,6 +50,7 @@ visibility_layer = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 sprite_frames = SubResource("SpriteFrames_kmcyf")
+frame_progress = 0.45329
 centered = false
 
 [node name="TalkBox" type="Area2D" parent="."]
