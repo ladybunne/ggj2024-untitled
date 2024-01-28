@@ -12,6 +12,7 @@ var points: int = 0
 # Third scenario specific
 @export var door_area: Area2D
 @export var room_colliders: StaticBody2D
+@export var finish_game: bool
 
 var goal_satisfied_bugs: Array[BugEntity]
 var player: Player

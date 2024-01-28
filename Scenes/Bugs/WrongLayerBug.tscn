@@ -63,4 +63,6 @@ collision_area = NodePath("../TalkBox")
 root_node = NodePath("..")
 show_name_label = false
 name_label_string = "Example Bug"
+is_goal_bug = true
 sound_on_pickup = "Yes-bongo"
+needs_to_go_on_ship = true

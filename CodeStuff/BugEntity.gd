@@ -40,6 +40,7 @@ var original_global_position: Vector2
 
 @export var needs_to_go_on_ship: bool = false
 var ship_area: Area2D
+var ship_area_rectangle: Rect2
 
 func _ready():
 	if collision_area != null:
@@ -62,6 +63,8 @@ func _ready():
 	
 	if needs_to_go_on_ship:
 		ship_area = get_tree().get_first_node_in_group("ShipArea") as Area2D
+		var collision_shape = get_tree().get_first_node_in_group("ShipAreaRectangle") as CollisionShape2D
+		ship_area_rectangle = collision_shape.shape.get_rect()
 
 func give_player_ref(p_player: Player):
 	player = p_player
@@ -93,8 +96,12 @@ func picked_up():
 func dropped():
 	if sound_on_drop.length():
 		AudioManager.play_sfx(sound_on_drop)
-	if needs_to_go_on_ship and is_goal_bug and ship_area != null:
-		if ship_area.overlaps_area(collision_area):
+	if needs_to_go_on_ship and is_goal_bug and ship_area_rectangle != null:
+		# Sorry for this
+		var global_rectangle = Rect2(ship_area.global_position, ship_area_rectangle.size)
+		print(global_rectangle)
+		print(root_node.global_position)
+		if global_rectangle.has_point(root_node.global_position):
 			on_goal_satisfied()
 			root_node.visible = false
 
