@@ -15,3 +15,7 @@ func _input(event):
 			body.collision_mask ^= 1
 			body.toggleTerrainCollision()
 			goal_satisfied.emit(self)
+
+func _process(delta):
+	# Suppress resurrection
+	pass

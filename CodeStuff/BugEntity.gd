@@ -35,6 +35,9 @@ var name_label: Control
 @export var sound_on_pickup: String
 @export var sound_on_drop: String
 
+@export var y_death_barrier: float = 800.0
+var original_global_position: Vector2
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
@@ -51,6 +54,8 @@ func _ready():
 		root_node.add_child.call_deferred(name_label)
 		name_label.label.text = name_label_string
 		(func(): name_label.position = Vector2(-(name_label.size.x / 2) + 16, -32)).call_deferred()
+	
+	original_global_position = root_node.global_position
 
 func give_player_ref(p_player: Player):
 	player = p_player
@@ -103,3 +108,8 @@ func on_start_dialogue():
 
 func on_goal_satisfied():
 	goal_satisfied.emit(self)
+
+func _process(delta):
+	# Check if bug has fallen off the end of the world
+	if root_node.global_position.y > y_death_barrier:
+		root_node.global_position = original_global_position
