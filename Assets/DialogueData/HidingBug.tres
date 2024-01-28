@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_jd72m")
-lines = Array[String](["You found me, you get a cookie"])
+lines = Array[String](["", "You found me, you get a cookie!"])
