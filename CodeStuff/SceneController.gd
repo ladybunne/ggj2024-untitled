@@ -48,6 +48,7 @@ func _ready():
 	
 	# Scenario / level stuff
 	for scenario in level.scenarios:
+		scenario.manager.scene_controller = self
 		scenario.manager.goal_satisfied.connect(on_goal_satisfied)
 		scenario.manager.scenario_finished.connect(on_scenario_completed)
 	

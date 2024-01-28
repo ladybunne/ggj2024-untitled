@@ -19,8 +19,11 @@ var camera: Camera2D
 
 var inside_door_area: bool = false
 
+var scene_controller: SceneController
+
 signal goal_satisfied(p_bug_name: String)
 signal scenario_finished
+
 
 func _ready():
 	# Get all bugs in the scenario and wire them up to this scenario manager's
@@ -65,7 +68,7 @@ func on_scenario_finished():
 
 func _input(event):
 	if event.is_action_pressed("player_interact") and inside_door_area:
-		#print("player interacted inside door")
+		print("player interacted inside door")
 		# toggle visibility of world
 		get_viewport().set_canvas_cull_mask_bit(9, !get_viewport().get_canvas_cull_mask_bit(9))
 		room_colliders.set_collision_layer_value(0, true)
