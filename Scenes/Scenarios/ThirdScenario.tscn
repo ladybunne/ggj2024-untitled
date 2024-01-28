@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wyv5u3k1a6tx"]
+[gd_scene load_steps=30 format=3 uid="uid://wyv5u3k1a6tx"]
 
 [ext_resource type="Script" path="res://CodeStuff/ScenarioManager.gd" id="1_8jm3o"]
 [ext_resource type="Script" path="res://CodeStuff/Scenario.gd" id="1_mepmr"]
@@ -42,6 +42,9 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uefj3"]
 size = Vector2(160, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wspdc"]
+size = Vector2(376, 208)
 
 [node name="ThirdScenario" type="Node2D" node_paths=PackedStringArray("manager")]
 script = ExtResource("1_mepmr")
@@ -319,6 +322,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Door Area2D"]
 position = Vector2(656, 608)
 shape = SubResource("RectangleShape2D_uefj3")
+
+[node name="ShipArea" type="Area2D" parent="." groups=["ShipArea"]]
+position = Vector2(3194, 602)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShipArea"]
+position = Vector2(96, 58)
+shape = SubResource("RectangleShape2D_wspdc")
 
 [connection signal="body_entered" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_entered"]
 [connection signal="body_exited" from="Interactable Door Area2D" to="ScenarioManager" method="on_door_exited"]

@@ -38,6 +38,9 @@ var name_label: Control
 @export var y_death_barrier: float = 800.0
 var original_global_position: Vector2
 
+@export var needs_to_go_on_ship: bool = false
+var ship_area: Area2D
+
 func _ready():
 	if collision_area != null:
 		collision_area.body_entered.connect(player_entered)
@@ -56,6 +59,9 @@ func _ready():
 		(func(): name_label.position = Vector2(-(name_label.size.x / 2) + 16, -32)).call_deferred()
 	
 	original_global_position = root_node.global_position
+	
+	if needs_to_go_on_ship:
+		ship_area = get_tree().get_first_node_in_group("ShipArea") as Area2D
 
 func give_player_ref(p_player: Player):
 	player = p_player
@@ -87,6 +93,10 @@ func picked_up():
 func dropped():
 	if sound_on_drop.length():
 		AudioManager.play_sfx(sound_on_drop)
+	if needs_to_go_on_ship and is_goal_bug and ship_area != null:
+		if ship_area.overlaps_area(collision_area):
+			on_goal_satisfied()
+			root_node.visible = false
 
 func _input(event):
 	if platformer_inside == null:
