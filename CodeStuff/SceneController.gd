@@ -12,6 +12,11 @@ var platformer_character: PlatformerCharacter
 
 var elder_bug: ElderBug
 
+# Lazy. idc, day 3.
+var scene3_bug1_done: bool = false
+var scene3_bug2_done: bool = false
+var scene3_bug3_done: bool = false
+
 ## This is to control the state of the game, when transitioning between things
 ## like the normal view, a tutorial popup, a dialogue instance, a choice, and so on.
 enum UIState {NORMAL, DIALOGUE}
@@ -43,6 +48,7 @@ func _ready():
 	
 	# Scenario / level stuff
 	for scenario in level.scenarios:
+		scenario.manager.goal_satisfied.connect(on_goal_satisfied)
 		scenario.manager.scenario_finished.connect(on_scenario_completed)
 	
 	# Connect the DialogueManager and the Dialogue UI.
@@ -79,6 +85,26 @@ func on_dialogue_changed(p_line: String, _p_done: bool):
 func on_dialogue_done():
 	ui_state = UIState.NORMAL
 	player.platformer_character.movement_enabled = true
+
+func on_goal_satisfied(p_bug_name: String):
+	print("GOAL SATISFIED: %s" % p_bug_name)
+	match p_bug_name:
+		# Object bug
+		"Offsetta":
+			scene3_bug1_done = true
+		# Behind the layers bug
+		"Skippy":
+			scene3_bug2_done = true
+		# Camera bug
+		"Cos":
+			scene3_bug3_done = true
+		
+	if not scene3_bug1_done:
+		elder_bug.set_alternate_dialogue(2)
+	elif not scene3_bug2_done:
+		elder_bug.set_alternate_dialogue(3)
+	elif not scene3_bug3_done:
+		elder_bug.set_alternate_dialogue(4)
 
 func on_scenario_completed():
 	scenario_counter += 1

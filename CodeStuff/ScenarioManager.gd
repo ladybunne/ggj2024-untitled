@@ -19,6 +19,7 @@ var camera: Camera2D
 
 var inside_door_area: bool = false
 
+signal goal_satisfied(p_bug_name: String)
 signal scenario_finished
 
 func _ready():
@@ -47,6 +48,7 @@ func on_goal_satisfied(p_bug_entity: BugEntity):
 	if goal_satisfied_bugs.has(p_bug_entity):
 		return
 	goal_satisfied_bugs.append(p_bug_entity)
+	goal_satisfied.emit(p_bug_entity.bug_data.identity.name)
 	points += 1
 	if points == points_required:
 		on_scenario_finished()

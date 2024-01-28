@@ -18,7 +18,7 @@ func _ready():
 				spoke_to_fall_bug()
 			)
 		if bug_uncasted is NoCollisionBug:
-			bug_uncasted.goal_satisfied.connect(func(p_bug_data: BugData): 
+			bug_uncasted.goal_satisfied.connect(func(p_bug: BugEntity): 
 				brought_romantics_together()
 			)
 
