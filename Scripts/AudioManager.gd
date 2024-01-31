@@ -9,14 +9,32 @@ var audioStreamPlayers2D: Array[AudioStreamPlayer2D] = []
 var audioStreamPlayers3D: Array[AudioStreamPlayer3D] = []
 var musicAudioStreamPlayers: Array[AudioStreamPlayer2D] = []
 
-var sfx_clips = {}
-var music_clips = {}
+var sfx_clips = {
+	"buzz-loop-1": "res://Assets/Audio/SFX/buzz-loop-1.wav",
+	"crashing-game-sfx": "res://Assets/Audio/SFX/crashing-game-sfx.wav",
+	"insect-answer-glitch": "res://Assets/Audio/SFX/insect-answer-glitch.wav",
+	"insect-answer": "res://Assets/Audio/SFX/insect-answer.wav",
+	"insect-falling": "res://Assets/Audio/SFX/insect-falling.wav",
+	"insect-put-me-down-glitch": "res://Assets/Audio/SFX/insect-put-me-down-glitch.wav",
+	"insect-put-me-down": "res://Assets/Audio/SFX/insect-put-me-down.wav",
+	"insect-question-glitch": "res://Assets/Audio/SFX/insect-question-glitch.wav",
+	"insect-question": "res://Assets/Audio/SFX/insect-question.wav",
+	"insect-scared-glitch": "res://Assets/Audio/SFX/insect-scared-glitch.wav",
+	"insect-scared": "res://Assets/Audio/SFX/insect-scared.wav",
+	"No-bongo-glitch": "res://Assets/Audio/SFX/No-bongo-glitch.wav",
+	"No-bongo": "res://Assets/Audio/SFX/No-bongo.wav",
+	"Yes-bongo-glitch": "res://Assets/Audio/SFX/Yes-bongo-glitch.wav",
+	"Yes-bongo": "res://Assets/Audio/SFX/Yes-bongo.wav",
+}
 
+var music_clips = {
+	"It's a feature! Final 1": "res://Assets/Audio/Music/It's a feature! Final 1.mp3",
+}
 
 # Called when the node enters the scene tree for the first time.
 func _init():
-	_get_audio_files("res://Assets/Audio/SFX",sfx_clips)
-	_get_audio_files("res://Assets/Audio/Music",music_clips)
+	#_get_audio_files("res://Assets/Audio/SFX",sfx_clips)
+	#_get_audio_files("res://Assets/Audio/Music",music_clips)
 	
 	# Add new busses for the sfx and music
 	_add_bus("Music")
